@@ -8,24 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, PresenterDelegate {
+
     //private var dataProvider : DataProvider<Feed>
-    private var parser : Parser!
+    private var parser : GenericFeedParser!
+    private var presenter : FeedPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        self.parser = FeedkitParser();
+        // Do any additional setup after loading the view, typically from a nib.
         let feedUrl = URL(string: "https://www.yvrdeals.com/atom/1");
-        parser.parse(url: feedUrl!) { (resultDict : Dictionary<String, Any>?, err: Error?) in
-    
-            
-        }
+        self.parser = FeedkitParser(feedUrl: feedUrl!);
+        self.presenter = FeedPresenter(parser:self.parser, delegate: self);
         
     }
 
+    func presenterReadyToPresent<Feed>(item: Feed?, error: Error?) {
+        if let err = error {
+            //TODO : Show a meaningful Error
+            print(err.localizedDescription);
+            return;
+        }
+        
+        //Feed ready to be presented.
+    }
 
 }
 

@@ -9,11 +9,16 @@
 import Foundation
 //import FeedKit
 
-class FeedkitParser: Parser {
+class FeedkitParser: GenericFeedParser {
+    private var feedUrl : URL
+    required init(feedUrl: URL) {
+        self.feedUrl = feedUrl;
+    }
+    
     private let parserError = NSError(domain: "Parser", code: 1, userInfo: nil);
 
-    func parse<T>(url: URL,whenFinished onParseFinished: @escaping (T?, Error?) -> Void) {
-        let parser = FeedParser(URL: url);
+    func parse(whenFinished onParseFinished:@escaping(_ result:Feed?, _ error:Error?) -> Void) {
+        let parser = FeedParser(URL: self.feedUrl);
         
         parser.parseAsync { [weak self] (result) in
             
@@ -22,7 +27,7 @@ class FeedkitParser: Parser {
                 return;
             }
             
-            let result = Feed.init();
+            let result = Feed()
             
             guard let entries = feed.entries else {
                 onParseFinished(nil, self?.parserError);
@@ -50,7 +55,7 @@ class FeedkitParser: Parser {
                 });
                 
                 entryItem.link = entry.links?.first(where: { (theLink) -> Bool in
-                    theLink.attributes?.rel=="alternate";
+                    return theLink.attributes?.rel=="alternate";
                 })?.attributes?.href;
                 
                 entryItem.title = entry.title;
@@ -58,14 +63,7 @@ class FeedkitParser: Parser {
             }
             
             print(result);
+            onParseFinished(result, nil);
+        }
     }
-    
-    
-    
-    func parse<T>(url: URL, whenFinished: @escaping (T, Error?) -> Void) where T:Feed {
-        
-    }
-
-
-    
 }

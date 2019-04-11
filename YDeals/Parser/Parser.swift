@@ -8,7 +8,12 @@
 
 import Foundation
 
-protocol Parser {
-    func parse<T>(url: URL,
-                whenFinished:@escaping(_ result:T?, _ error:Error?) -> Void)
+protocol GenericParser {
+    associatedtype T
+    func parse<T>(whenFinished:@escaping(_ result:T?, _ error:Error?) -> Void)
+}
+
+protocol GenericFeedParser {
+    init(feedUrl:URL)
+    func parse(whenFinished:@escaping(_ result:Feed?, _ error:Error?) -> Void)
 }

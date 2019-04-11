@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF4C3D44225F0FDE0091FF27 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C3D43225F0FDE0091FF27 /* FeedPresenter.swift */; };
+		BF4C3D46225F102E0091FF27 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C3D45225F102E0091FF27 /* Presenter.swift */; };
 		BF54E09F225DABD200574817 /* DateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E034225DABD100574817 /* DateSpec.swift */; };
 		BF54E0A0225DABD200574817 /* RFC3339DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E035225DABD100574817 /* RFC3339DateFormatter.swift */; };
 		BF54E0A1225DABD200574817 /* RFC822DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E036225DABD100574817 /* RFC822DateFormatter.swift */; };
@@ -134,6 +136,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF4C3D43225F0FDE0091FF27 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
+		BF4C3D45225F102E0091FF27 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		BF54E034225DABD100574817 /* DateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateSpec.swift; sourceTree = "<group>"; };
 		BF54E035225DABD100574817 /* RFC3339DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFC3339DateFormatter.swift; sourceTree = "<group>"; };
 		BF54E036225DABD100574817 /* RFC822DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFC822DateFormatter.swift; sourceTree = "<group>"; };
@@ -275,6 +279,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF4C3D42225F0FC10091FF27 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BF4C3D43225F0FDE0091FF27 /* FeedPresenter.swift */,
+				BF4C3D45225F102E0091FF27 /* Presenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		BF54E032225DABD100574817 /* FeedKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +528,7 @@
 				BFB49AE4225D97A70098F830 /* Parser */,
 				BFB49ADC225D8BA70098F830 /* Serialization */,
 				BFB49AD5225D84B30098F830 /* Models */,
+				BF4C3D42225F0FC10091FF27 /* Presenter */,
 				BFB49AE3225D96CC0098F830 /* UI */,
 				BFB49AB3225D84810098F830 /* Info.plist */,
 				BFB49AAE225D84810098F830 /* Assets.xcassets */,
@@ -728,6 +742,7 @@
 				BF54E0BB225DABD200574817 /* RSSFeedSkipDay.swift in Sources */,
 				BF54E0D3225DABD200574817 /* MediaRating.swift in Sources */,
 				BF54E0A4225DABD200574817 /* AtomFeedEntryContent.swift in Sources */,
+				BF4C3D46225F102E0091FF27 /* Presenter.swift in Sources */,
 				BF54E0C0225DABD200574817 /* RSSPath.swift in Sources */,
 				BF54E0D8225DABD200574817 /* MediaLocation.swift in Sources */,
 				BF54E0E8225DABD200574817 /* MediaThumbnail.swift in Sources */,
@@ -817,6 +832,7 @@
 				BF54E0F2225DABD200574817 /* JSONFeedParser.swift in Sources */,
 				BF54E0E4225DABD200574817 /* MediaText.swift in Sources */,
 				BF54E0C5225DABD200574817 /* SyndicationUpdatePeriod.swift in Sources */,
+				BF4C3D44225F0FDE0091FF27 /* FeedPresenter.swift in Sources */,
 				BF54E0DD225DABD200574817 /* MediaCopyright.swift in Sources */,
 				BF54E0A9225DABD200574817 /* AtomFeedCategory.swift in Sources */,
 				BF54E0B8225DABD200574817 /* RSSFeedItem.swift in Sources */,
