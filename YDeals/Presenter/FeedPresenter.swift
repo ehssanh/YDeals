@@ -13,15 +13,15 @@ import Foundation
 class FeedPresenter : Presenter {
     typealias T = Feed
     
-    private var delegate : PresenterDelegate
+    private var delegate : FeedPresenterDelegate
     private var parser : GenericFeedParser
     
-    init(parser:GenericFeedParser, delegate:PresenterDelegate) {
+    init(parser:GenericFeedParser, delegate:FeedPresenterDelegate) {
         self.delegate = delegate;
         self.parser = parser;
     }
     
-    func present<T>(item: T) {
+    func present() {
         DispatchQueue.global().async {
             self.parser.parse { (feed, error) in
                 DispatchQueue.main.async {

@@ -8,12 +8,18 @@
 
 import Foundation
 
+
+protocol Presenter {
+    associatedtype T
+    func present()
+}
+
+
 protocol PresenterDelegate{
     func presenterReadyToPresent<X>(item:X?, error:Error?)
 }
 
 
-protocol Presenter {
-    associatedtype T
-    func present<T>(item:T)
+protocol FeedPresenterDelegate {
+    func presenterReadyToPresent(item:Feed?, error:Error?)
 }

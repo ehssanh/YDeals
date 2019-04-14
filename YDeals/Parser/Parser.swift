@@ -17,3 +17,5 @@ protocol GenericFeedParser {
     init(feedUrl:URL)
     func parse(whenFinished:@escaping(_ result:Feed?, _ error:Error?) -> Void)
 }
+
+

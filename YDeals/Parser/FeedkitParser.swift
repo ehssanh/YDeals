@@ -10,6 +10,7 @@ import Foundation
 //import FeedKit
 
 class FeedkitParser: GenericFeedParser {
+    
     private var feedUrl : URL
     required init(feedUrl: URL) {
         self.feedUrl = feedUrl;
@@ -48,7 +49,6 @@ class FeedkitParser: GenericFeedParser {
                 let entryItem = FeedEntry();
                 
                 entryItem.id = entry.id;
-                entryItem.htmlContent = entry.content?.value;
                 
                 entryItem.keywords = entry.categories?.map({ (category) -> String in
                     return category.attributes?.term ?? "";
@@ -59,6 +59,21 @@ class FeedkitParser: GenericFeedParser {
                 })?.attributes?.href;
                 
                 entryItem.title = entry.title;
+                
+                entryItem.htmlContent = entry.content?.value;
+                
+                //img src=&quot;https://yvrdeals.com/img/ul/f1rqi551jcrz75do.jpg&quot;
+                //<img src=\"https://yvrdeals.com/img/ul/vvnzmb1ubuaswlr0.jpg\"
+                if let htmlContent = entryItem.htmlContent {
+                    let imgTagRange = htmlContent.range(of: "<img src=\"")!
+                    let restOfString = String(htmlContent[imgTagRange.upperBound...]);
+                    let indexOfClosingQuote = restOfString.firstIndex(of: "\"");
+                    var imgLink = restOfString[...indexOfClosingQuote!];
+                    imgLink.removeLast()
+
+                    entryItem.imageUrl = String(imgLink);
+                }
+                
                 result.entries?.append(entryItem);
             }
             
