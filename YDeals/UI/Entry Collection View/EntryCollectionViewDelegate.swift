@@ -10,6 +10,15 @@ import Foundation
 import UIKit
 
 
-class EntryCollectionViewDelegate: NSObject, UICollectionViewDelegate {
+class EntryCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+ 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let size = CGSize(width: collectionView.frame.size.width, height: 220);
+        return size;
+    }
 }

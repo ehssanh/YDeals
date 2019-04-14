@@ -17,5 +17,7 @@ class FeedEntry  {
     var publishedDate : Date?
     var keywords : Array <String>?
     var htmlContent : String?
+    
+    var imageUrl : String?
         
 }
