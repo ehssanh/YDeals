@@ -16,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let rootVC = determineInitialViewController();
+        let navCtrl = UINavigationController(rootViewController: rootVC);
+        self.window?.rootViewController = navCtrl;
+        self.window?.makeKeyAndVisible();
+        
         return true
+    }
+    
+    private func determineInitialViewController() -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
