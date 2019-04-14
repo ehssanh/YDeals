@@ -36,10 +36,7 @@ class EntryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EntryCollectionViewDataSource.CELL_REUSE_ID, for: indexPath) as! EntryCollectionViewCell
         let entry = data[indexPath.row];
         
-        cell.title.text = entry.title;
-        cell.title.sizeToFit();
-        
-        cell.backgroundImage.lazyLoadFromUrl(url: entry.imageUrl!);
+        cell.loadData(entry: entry);
         
         return cell;
     }

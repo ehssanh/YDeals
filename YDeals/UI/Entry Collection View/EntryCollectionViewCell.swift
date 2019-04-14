@@ -12,10 +12,25 @@ class EntryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var title: UILabel!
+    
+    var data : FeedEntry?
+    
         
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.backgroundColor = .red
+    }
+    
+    func loadData(entry: FeedEntry) -> Void {
+        
+        self.data = entry;
+        
+        self.title.text = entry.title;
+        self.title.sizeToFit();
+    
+        self.backgroundImage.lazyLoadFromUrl(url: entry.imageUrl!);
     }
 
 }

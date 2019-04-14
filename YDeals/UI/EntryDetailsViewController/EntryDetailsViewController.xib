@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntryDetailsViewController" customModule="YDeals" customModuleProvider="target">
+            <connections>
+                <outlet property="image" destination="Vdh-ZG-pMU" id="TbU-LR-m3X"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="NHO-O7-Vha" id="Jay-EH-lAr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vdh-ZG-pMU">
+                    <rect key="frame" x="0.0" y="44" width="414" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="Pei-a3-KTt"/>
+                    </constraints>
+                </imageView>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHO-O7-Vha">
+                    <rect key="frame" x="0.0" y="272" width="414" height="624"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Vdh-ZG-pMU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1uD-7k-m7y"/>
+                <constraint firstItem="NHO-O7-Vha" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="2if-cX-egR"/>
+                <constraint firstAttribute="bottom" secondItem="NHO-O7-Vha" secondAttribute="bottom" id="CAl-n4-Yhb"/>
+                <constraint firstItem="Vdh-ZG-pMU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KEn-xL-M2T"/>
+                <constraint firstItem="NHO-O7-Vha" firstAttribute="top" secondItem="Vdh-ZG-pMU" secondAttribute="bottom" constant="8" id="Z2o-yv-yo4"/>
+                <constraint firstItem="Vdh-ZG-pMU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sZF-cY-tpA"/>
+                <constraint firstItem="NHO-O7-Vha" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ueL-ZU-veA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="141.96428571428569"/>
+        </view>
+    </objects>
+</document>
