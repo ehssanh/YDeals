@@ -72,6 +72,18 @@ class FeedkitParser: GenericFeedParser {
                     imgLink.removeLast()
 
                     entryItem.imageUrl = String(imgLink);
+                    
+                    // Remove the image from the content
+                    let closeTagRange = htmlContent.range(of: "<br clear=\"all\"></p>")
+                    var newHtmlContent = "<p>" + String(htmlContent[(closeTagRange?.upperBound)!...]);
+                    entryItem.htmlContent = newHtmlContent;
+                    
+                    // Remove end tags "Join us .."
+                    let rangeOfFooter = newHtmlContent.range(of: "<h3>Join");
+                    if let footerRange = rangeOfFooter{
+                        newHtmlContent = String(newHtmlContent[...footerRange.lowerBound.advanced(by: -1)])
+                        entryItem.htmlContent = newHtmlContent;
+                    }
                 }
                 
                 result.entries?.append(entryItem);
