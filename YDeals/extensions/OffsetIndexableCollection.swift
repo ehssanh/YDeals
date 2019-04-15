@@ -220,7 +220,7 @@ public extension OffsetIndexableCollection {
     }
     
     func index(where predicate: (Self.Element) throws -> Bool) rethrows -> OffsetIndex? {
-        return try index(where: predicate).map(offsetIndices.proxyIndex)
+        return try firstIndex(where: predicate).map(offsetIndices.proxyIndex)
     }
     
 }
@@ -228,7 +228,7 @@ public extension OffsetIndexableCollection {
 public extension OffsetIndexableCollection where Self.Element : Equatable {
     
     func index(of element: Self.Element) -> OffsetIndex? {
-        return index(of: element).map(offsetIndices.proxyIndex)
+        return firstIndex(of: element).map(offsetIndices.proxyIndex)
     }
     
 }

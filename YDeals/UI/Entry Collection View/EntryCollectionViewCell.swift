@@ -20,7 +20,6 @@ class EntryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.backgroundColor = .red
     }
     
     func loadData(entry: FeedEntry) -> Void {

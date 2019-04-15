@@ -17,15 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let rootVC = determineInitialViewController();
-        let navCtrl = UINavigationController(rootViewController: rootVC);
-        self.window?.rootViewController = navCtrl;
+        self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
         
         return true
     }
     
     private func determineInitialViewController() -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!;
+        return UIStoryboard(name: "SpalshScreen", bundle: nil).instantiateInitialViewController()!;
+    }
+    
+    private func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
+        let navCtrl = UINavigationController(rootViewController: rootVC);
+        navCtrl.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navCtrl.navigationBar.shadowImage = UIImage()
+        navCtrl.navigationBar.isTranslucent = true
+        navCtrl.view.backgroundColor = .clear
+        navCtrl.navigationBar.tintColor = .white;
+        
+        return navCtrl;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

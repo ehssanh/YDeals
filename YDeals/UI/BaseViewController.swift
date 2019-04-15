@@ -21,12 +21,14 @@ class BaseViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = true;
-        
+        showNavBar(false)
     }
     
+    func showNavBar(_ show:Bool) -> Void{
+        self.navigationController?.navigationBar.isHidden = !show;
+    }
     
-    func navigateTo<V>(xibName:String, clazzType:V.Type, initBlock:(_ viewController:V)->Void) -> V where V:UIViewController {
+    func navigateTo<V>(xibName:String, clazzType:V.Type, initBlock:(_ viewController:V)->Void) -> V where V:UIViewController{
         let VC = V(nibName: xibName, bundle:nil);
         self.navigationController?.pushViewController(VC, animated: true);
         initBlock(VC);

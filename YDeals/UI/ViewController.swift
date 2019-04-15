@@ -27,6 +27,7 @@ class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollection
         let feedUrl = URL(string: "https://www.yvrdeals.com/atom/1");
         self.parser = FeedkitParser(feedUrl: feedUrl!);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
+        self.showUIBusy();
         self.presenter.present();
     }
     
@@ -47,6 +48,8 @@ class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollection
     }
 
     func presenterReadyToPresent(item:Feed?, error:Error?) {
+        hideUIBusy();
+        
         if let err = error {
             //TODO : Show a meaningful Error
             print(err.localizedDescription);

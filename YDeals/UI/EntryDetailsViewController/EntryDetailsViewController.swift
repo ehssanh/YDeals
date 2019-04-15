@@ -26,14 +26,23 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        showNavBar(true);
+    }
+    
     func loadItem(item:FeedEntry) -> Void {
         self.item = item;
     }
     
     private func loadContent(item:FeedEntry){
+        
+        showShareButton();
         showUIBusy();
         self.image.lazyLoadFromUrl(url: item.imageUrl);
-        webView.loadHTMLString("<html><head><meta name=\"viewport\" content=\"width=320, initial-scale=1\"></head><body style=\"font-family:Helvetica\"><p>"+"<h2>\(item.title ?? "")</h2>"+"\(item.htmlContent ?? "")</p></body></html>", baseURL: nil);
+        let htmlString = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body style=\"font-family:Helvetica\"><p>"+"<h2>\(item.title ?? "")</h2>"+"\(item.htmlContent ?? "")</p></body></html>";
+        
+        webView.loadHTMLString(htmlString, baseURL: URL(string: "https://www.yvrdeals.com"));
+        
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -42,5 +51,24 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         hideUIBusy();
+    }
+    
+    func showShareButton() -> Void{
+        let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action:#selector(EntryDetailsViewController.onShareButtonPressed));
+        self.navigationItem.rightBarButtonItem = shareButton;
+    }
+    
+    @objc
+    func onShareButtonPressed(){
+        let appLink = "http://itunes.apple.com/us/app/YTravelDeals/id" + (Bundle.main.infoDictionary!["CFBundleIdentifier"] as! String);
+        guard let title = item?.title, let image = self.image.image else{
+            return;
+        }
+        
+        let shareItem : [Any] = [ title , appLink, image];
+        let activityController  = UIActivityViewController(activityItems: shareItem, applicationActivities: nil);
+        self.present(activityController, animated: true) {
+            //completion
+        }
     }
 }
