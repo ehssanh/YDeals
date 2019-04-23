@@ -43,6 +43,10 @@ class BaseViewController: UIViewController {
     func hideUIBusy(){
         self.activityIndicator.hide();
     }
+    
+    func refreshViewController() -> Void{
+        
+    }
 
     
     private func setupActivityIndicator(){

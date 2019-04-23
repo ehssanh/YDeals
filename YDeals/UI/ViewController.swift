@@ -8,12 +8,10 @@
 
 import UIKit
 
-class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollectionViewDelegateCallback {
+class ViewController: BaseViewController, FeedPresenterDelegate {
 
     @IBOutlet weak var collectionView: InfiniteCollectionView!
-    private var collectionViewDelegate : EntryCollectionViewDelegate?;
-    private var collectionViewDataSource : EntryCollectionViewDataSource?;
-    
+ 
     //private var dataProvider : DataProvider<Feed>
     private var parser : GenericFeedParser!
     private var presenter : FeedPresenter!
@@ -23,7 +21,6 @@ class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollection
         
         setupCollectionView();
         
-        // Do any additional setup after loading the view, typically from a nib.
         let feedUrl = URL(string: "https://www.yvrdeals.com/atom/1");
         self.parser = FeedkitParser(feedUrl: feedUrl!);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
@@ -32,21 +29,9 @@ class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollection
     }
     
     func setupCollectionView() -> Void {
-        
-        self.collectionViewDataSource = EntryCollectionViewDataSource(entries: [FeedEntry]());
-        self.collectionViewDelegate = EntryCollectionViewDelegate(callback: self);
-        self.collectionView.dataSource = collectionViewDataSource;
-        self.collectionView.delegate = collectionViewDelegate;
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.minimumLineSpacing = 1
-        flowLayout.minimumInteritemSpacing = 0
-        self.collectionView.collectionViewLayout = flowLayout;
-        
-        let nib = UINib(nibName: "EntryCollectionViewCell", bundle: Bundle.main);
-        self.collectionView.register(nib, forCellWithReuseIdentifier: EntryCollectionViewDataSource.CELL_REUSE_ID);
+        self.collectionView.setupCollectionView(with: self);
     }
-
+    
     func presenterReadyToPresent(item:Feed?, error:Error?) {
         hideUIBusy();
         
@@ -62,16 +47,12 @@ class ViewController: BaseViewController, FeedPresenterDelegate, EntryCollection
             return;
         }
         
-        self.collectionViewDataSource?.reloadEntries(entries: feed.entries!);
-        self.collectionView.reloadData();
-    }
-    
-    func itemClicked(feedEntry: FeedEntry) {
-        let vc = EntryDetailsViewController(nibName: "EntryDetailsViewController", bundle: Bundle.main)
-        vc.loadItem(item: feedEntry)
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        self.collectionView.reloadEntries(entries: feed.entries)
     }
 
+    override func refreshViewController() {
+        self.showUIBusy();
+        self.presenter.present();
+    }
 }
 
