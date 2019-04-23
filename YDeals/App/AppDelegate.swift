@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UIStoryboard(name: "SpalshScreen", bundle: nil).instantiateInitialViewController()!;
     }
     
-    private func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
+    func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
         let navCtrl = UINavigationController(rootViewController: rootVC);
         navCtrl.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navCtrl.navigationBar.shadowImage = UIImage()

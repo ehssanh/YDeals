@@ -23,7 +23,9 @@ class SpalshScreenViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let main = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
             self.navigationController?.pushViewController(main!, animated: true)
-            let nav = UINavigationController(rootViewController: main!)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let nav = appDelegate.setupNavigationController(main!)
             UIApplication.shared.windows.first?.rootViewController = nav;
         }
     }
@@ -40,7 +42,7 @@ class SpalshScreenViewController: UIViewController {
         beatShort.fromValue = NSValue(cgSize: CGSize(width: 1, height: 1))
         beatShort.toValue = NSValue(cgSize: CGSize(width: 0.8, height: 0.8))
         beatShort.autoreverses = true
-        beatShort.duration = 0.7
+        beatShort.duration = 0.6
         beatShort.beginTime = beatLong.duration
         beatLong.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn )
         
@@ -52,16 +54,5 @@ class SpalshScreenViewController: UIViewController {
         heartBeatAnim.repeatCount = .greatestFiniteMagnitude
         view.layer.add(heartBeatAnim, forKey: nil)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
