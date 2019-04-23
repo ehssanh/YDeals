@@ -333,6 +333,16 @@
 			path = Logo;
 			sourceTree = "<group>";
 		};
+		BF41AC9B226EDCF500F730CE /* Entity CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BF51EBA422628D63001E1017 /* GradientView.swift */,
+				BF51EB9B226284A5001E1017 /* EntryCollectionViewCell.swift */,
+				BF51EB9C226284A5001E1017 /* EntryCollectionViewCell.xib */,
+			);
+			path = "Entity CollectionView Cell";
+			sourceTree = "<group>";
+		};
 		BF4C3D42225F0FC10091FF27 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,12 +355,9 @@
 		BF51EBA12262897D001E1017 /* Entry Collection View */ = {
 			isa = PBXGroup;
 			children = (
-				BF51EBA422628D63001E1017 /* GradientView.swift */,
 				BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */,
 				BF51EB9F22628620001E1017 /* EntryCollectionViewDataSource.swift */,
 				BF51EBA2226289AC001E1017 /* EntryCollectionViewDelegate.swift */,
-				BF51EB9B226284A5001E1017 /* EntryCollectionViewCell.swift */,
-				BF51EB9C226284A5001E1017 /* EntryCollectionViewCell.xib */,
 			);
 			path = "Entry Collection View";
 			sourceTree = "<group>";
@@ -679,6 +686,7 @@
 				BF0AAB562262EA7900506592 /* Logo */,
 				BFDF92DE2262FBD8009076C8 /* EntryDetailsViewController */,
 				BF51EBA12262897D001E1017 /* Entry Collection View */,
+				BF41AC9B226EDCF500F730CE /* Entity CollectionView Cell */,
 				BF51EB9522628240001E1017 /* BaseViewController.swift */,
 				BFB49AA9225D847E0098F830 /* ViewController.swift */,
 				BFB49AAB225D847E0098F830 /* Main.storyboard */,
