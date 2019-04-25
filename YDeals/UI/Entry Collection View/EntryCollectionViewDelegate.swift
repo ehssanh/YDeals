@@ -12,11 +12,15 @@ import UIKit
 
 protocol EntryCollectionViewDelegateCallback : NSObject {
     func itemClicked(feedEntry: FeedEntry);
+    func requestExpand(whenDone completion:(_ success:Bool)->Void);
 }
 
 class EntryCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
  
     private weak var callback : EntryCollectionViewDelegateCallback?
+    private let CELL_HEIGHT : CGFloat = 250
+    
+    private var expansionRequestSent : Bool = false;
     
     init(callback:EntryCollectionViewDelegateCallback) {
         self.callback = callback;
@@ -31,7 +35,7 @@ class EntryCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let size = CGSize(width: collectionView.frame.size.width, height: 250);
+        let size = CGSize(width: collectionView.frame.size.width, height: CELL_HEIGHT);
         return size;
     }
     
@@ -39,5 +43,14 @@ class EntryCollectionViewDelegate: NSObject, UICollectionViewDelegate, UICollect
         return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0);
     }
     
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let indexOfLastCompleteVisibleCell = ceil(scrollView.frame.size.height/CELL_HEIGHT + scrollView.contentOffset.y / CELL_HEIGHT - 1);
+        if (!expansionRequestSent){
+            self.callback?.requestExpand(whenDone: { (expansionRequestSuccess) in
+                expansionRequestSent = false;
+            })
+        }
+        print(indexOfLastCompleteVisibleCell);
+    }
 
 }

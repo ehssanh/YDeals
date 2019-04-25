@@ -22,6 +22,9 @@ class EntryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         self.data = Array.init(entries);
     }
     
+    func addEntries(newEntries:[FeedEntry]){
+        self.data.append(contentsOf: newEntries);
+    }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1;

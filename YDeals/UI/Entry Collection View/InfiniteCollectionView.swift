@@ -9,7 +9,7 @@
 import UIKit
 
 class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallback{
-    
+
     private var controller : BaseViewController?
     private var collectionViewDelegate : EntryCollectionViewDelegate?;
     private var collectionViewDataSource : EntryCollectionViewDataSource?;
@@ -46,12 +46,6 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         self.controller?.refreshViewController();
     }
     
-    func itemClicked(feedEntry: FeedEntry) {
-        let vc = EntryDetailsViewController(nibName: "EntryDetailsViewController", bundle: Bundle.main)
-        vc.loadItem(item: feedEntry)
-        self.controller?.navigationController?.pushViewController(vc, animated: true)
-    }
-    
     func reloadEntries(entries:[FeedEntry]?){
         guard let entries = entries else{
             return;
@@ -63,5 +57,27 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
             self.refreshControl?.endRefreshing();
         }
     }
+    
+    func appendEntries(entries:[FeedEntry]?){
+        guard let entries = entries else{
+            return;
+        }
+        
+        self.collectionViewDataSource?.addEntries(newEntries: entries)
+    }
+    
+    // MARK: -
+    // MARK: EntryCollectionViewDelegateCallback Methods
+    func itemClicked(feedEntry: FeedEntry) {
+        let vc = EntryDetailsViewController(nibName: "EntryDetailsViewController", bundle: Bundle.main)
+        vc.loadItem(item: feedEntry)
+        self.controller?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func requestExpand(whenDone completion: (Bool) -> Void) {
+        self.controller?.loadMore();
+    }
+    
+    
     
 }

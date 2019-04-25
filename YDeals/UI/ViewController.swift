@@ -15,6 +15,8 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
     //private var dataProvider : DataProvider<Feed>
     private var parser : GenericFeedParser!
     private var presenter : FeedPresenter!
+    
+    private var currentFeed : Feed?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,19 +41,40 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
             //TODO : Show a meaningful Error
             print(err.localizedDescription);
             return;
-        }        
-
-        //Feed ready to be presented.
+        }
+        
+        //First time
         guard let feed = item, feed.entries != nil else{
             print("Fatal Err - No feed loaded.");
             return;
         }
         
-        self.collectionView.reloadEntries(entries: feed.entries)
+        //Feed ready to be presented.
+        if (self.currentFeed == nil){
+            self.collectionView.reloadEntries(entries: feed.entries);
+            self.currentFeed = item;
+        }else{
+            //load more
+            self.collectionView.appendEntries(entries: feed.entries)
+            self.currentFeed = item;
+            self.collectionView.reloadData();
+        }
     }
 
     override func refreshViewController() {
         self.showUIBusy();
+        self.presenter.present();
+    }
+    
+    override func loadMore(){
+        let nextLink = self.currentFeed?.nextFeedLink
+        guard let nextFeedLink = nextLink else{
+            hideUIBusy();
+            return;
+        }
+        
+        showUIBusy();
+        self.parser.updateUrl(feedUrl: URL(string: nextFeedLink)!);
         self.presenter.present();
     }
 }

@@ -47,6 +47,8 @@ class BaseViewController: UIViewController {
     func refreshViewController() -> Void{
         
     }
+    
+    func loadMore(){}
 
     
     private func setupActivityIndicator(){

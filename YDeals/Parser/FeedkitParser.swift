@@ -12,12 +12,16 @@ import Foundation
 class FeedkitParser: GenericFeedParser {
     
     private var feedUrl : URL
+    private let parserError = NSError(domain: "Parser", code: 1, userInfo: nil);
+    
     required init(feedUrl: URL) {
         self.feedUrl = feedUrl;
     }
-    
-    private let parserError = NSError(domain: "Parser", code: 1, userInfo: nil);
 
+    func updateUrl(feedUrl: URL) {
+        self.feedUrl = feedUrl;
+    }
+    
     func parse(whenFinished onParseFinished:@escaping(_ result:Feed?, _ error:Error?) -> Void) {
         let parser = FeedParser(URL: self.feedUrl);
         
@@ -91,7 +95,6 @@ class FeedkitParser: GenericFeedParser {
                 result.entries?.append(entryItem);
             }
             
-            print(result);
             onParseFinished(result, nil);
         }
     }
