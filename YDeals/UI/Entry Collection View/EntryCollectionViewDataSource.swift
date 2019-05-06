@@ -41,6 +41,12 @@ class EntryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         cell.loadData(entry: entry);
         
+        if (indexPath.row == data.count-1){
+            if (collectionView is InfiniteCollectionView){
+                (collectionView as! InfiniteCollectionView).requestExpansion();
+            }
+        }
+        
         return cell;
     }
   

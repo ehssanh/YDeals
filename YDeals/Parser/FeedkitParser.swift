@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import FeedKit
 
 class FeedkitParser: GenericFeedParser {
     
@@ -79,10 +78,14 @@ class FeedkitParser: GenericFeedParser {
                     
                     // Remove the image from the content
                     let closeTagRange = htmlContent.range(of: "<br clear=\"all\"></p>")
-                    var newHtmlContent = "<p>" + String(htmlContent[(closeTagRange?.upperBound)!...]);
                     
-                    entryItem.htmlContent = newHtmlContent;
-                    
+                    var newHtmlContent:String
+                    if (closeTagRange != nil){
+                        newHtmlContent = "<p>" + String(htmlContent[(closeTagRange?.upperBound)!...]);
+                        entryItem.htmlContent = newHtmlContent;
+                    }else{
+                        newHtmlContent = htmlContent
+                    }
                     
                     // Remove end tags "Join us .."
                     let rangeOfFooter = newHtmlContent.range(of: "<h3>Join");

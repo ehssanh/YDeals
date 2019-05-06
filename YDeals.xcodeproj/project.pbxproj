@@ -12,6 +12,8 @@
 		BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */; };
 		BF0AAB552262E6A100506592 /* OffsetIndexableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB542262E6A100506592 /* OffsetIndexableCollection.swift */; };
 		BF0AAB582262EAA500506592 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB572262EAA500506592 /* LogoView.swift */; };
+		BF3AED352275776F0058B5CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3AED332275776F0058B5CB /* LoginViewController.swift */; };
+		BF3AED362275776F0058B5CB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF3AED342275776F0058B5CB /* LoginViewController.xib */; };
 		BF4C3D44225F0FDE0091FF27 /* FeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C3D43225F0FDE0091FF27 /* FeedPresenter.swift */; };
 		BF4C3D46225F102E0091FF27 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C3D45225F102E0091FF27 /* Presenter.swift */; };
 		BF51EB9622628240001E1017 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF51EB9522628240001E1017 /* BaseViewController.swift */; };
@@ -163,6 +165,8 @@
 		BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableSequence.swift; sourceTree = "<group>"; };
 		BF0AAB542262E6A100506592 /* OffsetIndexableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableCollection.swift; sourceTree = "<group>"; };
 		BF0AAB572262EAA500506592 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		BF3AED332275776F0058B5CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF3AED342275776F0058B5CB /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BF4C3D43225F0FDE0091FF27 /* FeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPresenter.swift; sourceTree = "<group>"; };
 		BF4C3D45225F102E0091FF27 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		BF51EB9522628240001E1017 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +335,15 @@
 				BF53985522642B6400587CAE /* LogoView.xib */,
 			);
 			path = Logo;
+			sourceTree = "<group>";
+		};
+		BF3AED32227577130058B5CB /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				BF3AED332275776F0058B5CB /* LoginViewController.swift */,
+				BF3AED342275776F0058B5CB /* LoginViewController.xib */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		BF41AC9B226EDCF500F730CE /* Entity CollectionView Cell */ = {
@@ -681,6 +694,7 @@
 		BFB49AE3225D96CC0098F830 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BF3AED32227577130058B5CB /* OnBoarding */,
 				BF53985722643F4C00587CAE /* SplashScreen */,
 				BFDF92E52263DCD1009076C8 /* ActivityIndicator */,
 				BF0AAB562262EA7900506592 /* Logo */,
@@ -839,6 +853,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF3AED362275776F0058B5CB /* LoginViewController.xib in Resources */,
 				BFDF92EA2263DD25009076C8 /* CustomActivityIndicatorView.xib in Resources */,
 				BF53985622642B6400587CAE /* LogoView.xib in Resources */,
 				BFDF92E22262FC13009076C8 /* EntryDetailsViewController.xib in Resources */,
@@ -980,6 +995,7 @@
 				BFB49AE8225D98240098F830 /* Parser.swift in Sources */,
 				BF51EBA3226289AC001E1017 /* EntryCollectionViewDelegate.swift in Sources */,
 				BF54E0D4225DABD200574817 /* MediaRights.swift in Sources */,
+				BF3AED352275776F0058B5CB /* LoginViewController.swift in Sources */,
 				BF0AAB582262EAA500506592 /* LogoView.swift in Sources */,
 				BFB49AEA225D98E90098F830 /* FeedkitParser.swift in Sources */,
 				BF54E0F2225DABD200574817 /* JSONFeedParser.swift in Sources */,

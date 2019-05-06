@@ -9,6 +9,10 @@
 import UIKit
 
 class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallback{
+    func requestExpand(lastVisibleCellIndex: Int, whenDone completion: (Bool) -> Void) {
+
+    }
+    
 
     private var controller : BaseViewController?
     private var collectionViewDelegate : EntryCollectionViewDelegate?;
@@ -28,7 +32,8 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         flowLayout.minimumInteritemSpacing = 0
         self.collectionViewLayout = flowLayout;
         
-        setupRefreshControl();
+        //Refresh Control
+        //setupRefreshControl();
         
         let nib = UINib(nibName: "EntryCollectionViewCell", bundle: Bundle.main);
         self.register(nib, forCellWithReuseIdentifier: EntryCollectionViewDataSource.CELL_REUSE_ID);
@@ -53,7 +58,7 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         
         self.collectionViewDataSource?.reloadEntries(entries: entries);
         self.reloadData();
-        if (self.refreshControl!.isRefreshing){
+        if (self.refreshControl != nil && self.refreshControl!.isRefreshing){
             self.refreshControl?.endRefreshing();
         }
     }
@@ -66,6 +71,10 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         self.collectionViewDataSource?.addEntries(newEntries: entries)
     }
     
+    func requestExpansion() {
+        self.controller?.loadMore();
+    }
+    
     // MARK: -
     // MARK: EntryCollectionViewDelegateCallback Methods
     func itemClicked(feedEntry: FeedEntry) {
@@ -73,11 +82,5 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         vc.loadItem(item: feedEntry)
         self.controller?.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func requestExpand(whenDone completion: (Bool) -> Void) {
-        self.controller?.loadMore();
-    }
-    
-    
     
 }

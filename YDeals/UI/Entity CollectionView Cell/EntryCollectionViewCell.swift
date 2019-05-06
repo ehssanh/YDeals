@@ -27,6 +27,7 @@ class EntryCollectionViewCell: UICollectionViewCell {
         self.data = entry;
         
         self.title.text = entry.title;
+        self.title.frame = CGRect(x: 8, y: 10, width: self.contentView.frame.size.width-10 , height: self.frame.size.height / 2.0);
         self.title.sizeToFit();
     
         self.backgroundImage.lazyLoadFromUrl(url: entry.imageUrl!);

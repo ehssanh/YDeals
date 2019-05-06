@@ -26,8 +26,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="111"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-GI-cNa">
-                                <rect key="frame" x="8" y="8" width="344" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-GI-cNa">
+                                <rect key="frame" x="8" y="8" width="344" height="110"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -37,7 +37,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" red="0.05816678449602862" green="0.078758790761780356" blue="0.12535992547425479" alpha="0.70145440251572322" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.03614362976581368" green="0.048745767924922946" blue="0.078474339430894324" alpha="0.70145440251572322" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,10 +47,10 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="WeQ-ie-Bd9" secondAttribute="bottom" id="795-mR-v48"/>
-                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cr4-hz-Ucp"/>
-                <constraint firstAttribute="trailing" secondItem="WeQ-ie-Bd9" secondAttribute="trailing" id="H8B-KF-1kk"/>
-                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="I74-5x-ZyI"/>
+                <constraint firstAttribute="bottom" secondItem="WeQ-ie-Bd9" secondAttribute="bottom" id="6Yv-1f-wS0"/>
+                <constraint firstAttribute="trailing" secondItem="WeQ-ie-Bd9" secondAttribute="trailing" id="J81-cJ-KDC"/>
+                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SJv-bS-OjL"/>
+                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qeD-gk-acm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="360" height="220"/>
