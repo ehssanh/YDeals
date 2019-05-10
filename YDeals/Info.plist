@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The app needs your location to find airports closest to your location. </string>
+	<key>NSLocationUsageDescription</key>
+	<string>The app needs your location to find airports closest to your location. </string>
 </dict>
 </plist>

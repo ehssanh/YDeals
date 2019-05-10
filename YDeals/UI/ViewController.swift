@@ -23,6 +23,8 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
         
         setupCollectionView();
         
+        
+        //TODO: Use data provider based on User option to
         let feedUrl = URL(string: "https://www.yvrdeals.com/atom/1");
         self.parser = FeedkitParser(feedUrl: feedUrl!);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
