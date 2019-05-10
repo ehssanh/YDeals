@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91FC866D2284F190002E204C /* AllowPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC866B2284F190002E204C /* AllowPushViewController.swift */; };
+		91FC866E2284F190002E204C /* AllowPushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC866C2284F190002E204C /* AllowPushViewController.xib */; };
+		91FC86712284F1B7002E204C /* PickAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC866F2284F1B7002E204C /* PickAirportViewController.swift */; };
+		91FC86722284F1B7002E204C /* PickAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC86702284F1B7002E204C /* PickAirportViewController.xib */; };
+		91FC86742284FA8A002E204C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC86732284FA8A002E204C /* OnboardingViewController.swift */; };
 		BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */; };
 		BF0AAB512262E34C00506592 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB502262E34C00506592 /* UIColor.swift */; };
 		BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */; };
@@ -160,6 +165,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		91FC866B2284F190002E204C /* AllowPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowPushViewController.swift; sourceTree = "<group>"; };
+		91FC866C2284F190002E204C /* AllowPushViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllowPushViewController.xib; sourceTree = "<group>"; };
+		91FC866F2284F1B7002E204C /* PickAirportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAirportViewController.swift; sourceTree = "<group>"; };
+		91FC86702284F1B7002E204C /* PickAirportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickAirportViewController.xib; sourceTree = "<group>"; };
+		91FC86732284FA8A002E204C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionView.swift; sourceTree = "<group>"; };
 		BF0AAB502262E34C00506592 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableSequence.swift; sourceTree = "<group>"; };
@@ -340,8 +350,13 @@
 		BF3AED32227577130058B5CB /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
+				91FC86732284FA8A002E204C /* OnboardingViewController.swift */,
 				BF3AED332275776F0058B5CB /* LoginViewController.swift */,
 				BF3AED342275776F0058B5CB /* LoginViewController.xib */,
+				91FC866B2284F190002E204C /* AllowPushViewController.swift */,
+				91FC866C2284F190002E204C /* AllowPushViewController.xib */,
+				91FC866F2284F1B7002E204C /* PickAirportViewController.swift */,
+				91FC86702284F1B7002E204C /* PickAirportViewController.xib */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -861,6 +876,8 @@
 				BF51EB9E226284A5001E1017 /* EntryCollectionViewCell.xib in Resources */,
 				BFB49AAF225D84810098F830 /* Assets.xcassets in Resources */,
 				BFDF92EE2263FFB7009076C8 /* HtmlTemplate.html in Resources */,
+				91FC866E2284F190002E204C /* AllowPushViewController.xib in Resources */,
+				91FC86722284F1B7002E204C /* PickAirportViewController.xib in Resources */,
 				BFD4398C2264621B0009FFA0 /* SpalshScreen.storyboard in Resources */,
 				BFB49AAD225D847E0098F830 /* Main.storyboard in Resources */,
 			);
@@ -950,6 +967,7 @@
 				BF54E0D6225DABD200574817 /* MediaTag.swift in Sources */,
 				BF54E0E7225DABD200574817 /* MediaStarRating.swift in Sources */,
 				BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */,
+				91FC86712284F1B7002E204C /* PickAirportViewController.swift in Sources */,
 				BF54E0EE225DABD200574817 /* JSONFeedAuthor.swift in Sources */,
 				BF54E0FA225DABD200574817 /* Date + codingStrategy.swift in Sources */,
 				BF54E09F225DABD200574817 /* DateSpec.swift in Sources */,
@@ -973,6 +991,7 @@
 				BF54E0CE225DABD200574817 /* MediaLicence.swift in Sources */,
 				BF54E0B3225DABD200574817 /* AtomFeedSubtitle.swift in Sources */,
 				BF0AAB512262E34C00506592 /* UIColor.swift in Sources */,
+				91FC866D2284F190002E204C /* AllowPushViewController.swift in Sources */,
 				BF54E0AB225DABD200574817 /* AtomPath.swift in Sources */,
 				BF54E0EC225DABD200574817 /* JSONFeedHub.swift in Sources */,
 				BF54E0AA225DABD200574817 /* AtomFeedEntrySummary.swift in Sources */,
@@ -1000,6 +1019,7 @@
 				BFB49AEA225D98E90098F830 /* FeedkitParser.swift in Sources */,
 				BF54E0F2225DABD200574817 /* JSONFeedParser.swift in Sources */,
 				BF54E0E4225DABD200574817 /* MediaText.swift in Sources */,
+				91FC86742284FA8A002E204C /* OnboardingViewController.swift in Sources */,
 				BF54E0C5225DABD200574817 /* SyndicationUpdatePeriod.swift in Sources */,
 				BF51EBA022628620001E1017 /* EntryCollectionViewDataSource.swift in Sources */,
 				BF4C3D44225F0FDE0091FF27 /* FeedPresenter.swift in Sources */,

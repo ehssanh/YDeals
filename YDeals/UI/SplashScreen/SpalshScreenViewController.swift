@@ -21,11 +21,17 @@ class SpalshScreenViewController: UIViewController {
         addHeartBeatAnimation(view: self.logo)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let main = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
-            self.navigationController?.pushViewController(main!, animated: true)
+            let nextVC : UIViewController?
+            if (false){
+                nextVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
+            }else{
+                nextVC = OnboardingViewController();
+            }
+
             
+            self.navigationController?.pushViewController(nextVC!, animated: true)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let nav = appDelegate.setupNavigationController(main!)
+            let nav = appDelegate.setupNavigationController(nextVC!)
             UIApplication.shared.windows.first?.rootViewController = nav;
         }
     }
