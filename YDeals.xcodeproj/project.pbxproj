@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		916B34C4228A1AC100AB545E /* YDealsGatewaysParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */; };
+		916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C5228A1AE200AB545E /* YDealsGateway.swift */; };
+		916B34C8228A2F7F00AB545E /* MKAirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */; };
 		91CC03E12285FE5700DE80DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E02285FE5700DE80DA /* Utilities.swift */; };
 		91CC03E3228620DC00DE80DA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E2228620DC00DE80DA /* AppSettings.swift */; };
 		91CC03E6228623D000DE80DA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E5228623D000DE80DA /* LocationHelper.swift */; };
@@ -169,6 +172,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGatewaysParser.swift; sourceTree = "<group>"; };
+		916B34C5228A1AE200AB545E /* YDealsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGateway.swift; sourceTree = "<group>"; };
+		916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAirportAnnotation.swift; sourceTree = "<group>"; };
 		91CC03E02285FE5700DE80DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		91CC03E2228620DC00DE80DA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		91CC03E5228623D000DE80DA /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
@@ -423,6 +429,7 @@
 				BF0AAB542262E6A100506592 /* OffsetIndexableCollection.swift */,
 				BF51EBA92262C0D8001E1017 /* UIImageViewExtensions.swift */,
 				BF0AAB502262E34C00506592 /* UIColor.swift */,
+				916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -713,6 +720,7 @@
 				BFB49AD6225D84CF0098F830 /* TravelDeal.swift */,
 				BFB49AD8225D85410098F830 /* Feed.swift */,
 				BFB49ADA225D85550098F830 /* FeedEntry.swift */,
+				916B34C5228A1AE200AB545E /* YDealsGateway.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -759,6 +767,7 @@
 				BF54E09E225DABD200574817 /* FeedKit.h */,
 				BFB49AE7225D98240098F830 /* Parser.swift */,
 				BFB49AE9225D98E90098F830 /* FeedkitParser.swift */,
+				916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */,
 			);
 			path = Parser;
 			sourceTree = "<group>";
@@ -935,6 +944,7 @@
 			files = (
 				BFB49AAA225D847E0098F830 /* ViewController.swift in Sources */,
 				BF51EBA522628D63001E1017 /* GradientView.swift in Sources */,
+				916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */,
 				BF54E0CC225DABD200574817 /* ContentNamespace.swift in Sources */,
 				BF54E0ED225DABD200574817 /* JSONFeedItem.swift in Sources */,
 				BF54E0CD225DABD200574817 /* DublinCoreNamespace.swift in Sources */,
@@ -961,6 +971,7 @@
 				BF54E0C2225DABD200574817 /* RSSFeedItemEnclosure.swift in Sources */,
 				BF54E0AC225DABD200574817 /* AtomFeedAuthor.swift in Sources */,
 				BF54E0B4225DABD200574817 /* AtomFeedEntry.swift in Sources */,
+				916B34C4228A1AC100AB545E /* YDealsGatewaysParser.swift in Sources */,
 				BF54E0B9225DABD200574817 /* RSSFeed + mapAttributes.swift in Sources */,
 				BF54E0D9225DABD200574817 /* MediaGroup.swift in Sources */,
 				BF54E0CB225DABD200574817 /* iTunesOwner.swift in Sources */,
@@ -1022,6 +1033,7 @@
 				BF54E0B3225DABD200574817 /* AtomFeedSubtitle.swift in Sources */,
 				BF0AAB512262E34C00506592 /* UIColor.swift in Sources */,
 				91FC866D2284F190002E204C /* AllowPushViewController.swift in Sources */,
+				916B34C8228A2F7F00AB545E /* MKAirportAnnotation.swift in Sources */,
 				BF54E0AB225DABD200574817 /* AtomPath.swift in Sources */,
 				BF54E0EC225DABD200574817 /* JSONFeedHub.swift in Sources */,
 				BF54E0AA225DABD200574817 /* AtomFeedEntrySummary.swift in Sources */,

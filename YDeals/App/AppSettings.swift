@@ -8,4 +8,5 @@
 
 import Foundation
 
-let MAP_ZOOM_DIAMETER_METERS : Double = 200000 //200 km
+let MAP_ZOOM_DIAMETER_METERS : Double = 150000 //150 km
+let YDEALS_GATEWAY_URL = "https://www.solidxpert.com/appdata/traveldeals/traveldeals_ydealsdata.json";

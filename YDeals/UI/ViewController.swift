@@ -15,7 +15,7 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
     //private var dataProvider : DataProvider<Feed>
     private var parser : GenericFeedParser!
     private var presenter : FeedPresenter!
-    
+    private var airport : YDealsGateway!
     private var currentFeed : Feed?
 
     override func viewDidLoad() {
@@ -23,13 +23,16 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
         
         setupCollectionView();
         
-        
         //TODO: Use data provider based on User option to
-        let feedUrl = URL(string: "https://www.yvrdeals.com/atom/1");
-        self.parser = FeedkitParser(feedUrl: feedUrl!);
+        let feedUrl = URL(string: self.airport.url)!;
+        self.parser = FeedkitParser(feedUrl: feedUrl);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
         self.showUIBusy();
         self.presenter.present();
+    }
+    
+    func setYDealsGateway(_ gateway:YDealsGateway){
+        self.airport = gateway
     }
     
     func setupCollectionView() -> Void {

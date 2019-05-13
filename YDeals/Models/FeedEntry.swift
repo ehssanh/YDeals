@@ -19,5 +19,4 @@ class FeedEntry  {
     var htmlContent : String?
     
     var imageUrl : String?
-        
 }

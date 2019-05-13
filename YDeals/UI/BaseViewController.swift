@@ -37,11 +37,15 @@ class BaseViewController: UIViewController {
     }
     
     func showUIBusy(){
-        self.activityIndicator.show();
+        DispatchQueue.main.async {
+            self.activityIndicator.show();
+        }
     }
     
     func hideUIBusy(){
-        self.activityIndicator.hide();
+        DispatchQueue.main.async {
+            self.activityIndicator.hide();
+        }
     }
     
     func refreshViewController() -> Void{
