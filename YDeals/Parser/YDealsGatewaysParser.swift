@@ -34,7 +34,6 @@ class YDealsGatewaysParser: NSObject {
            
             do {
                  gateways = try JSONDecoder().decode([YDealsGateway].self, from: data)
-                 print(gateways);
             }catch let serErr{
                 gateways = nil;
                 serializationError = serErr

@@ -11,7 +11,8 @@ import UIKit
 class ViewController: BaseViewController, FeedPresenterDelegate {
 
     @IBOutlet weak var collectionView: InfiniteCollectionView!
- 
+    @IBOutlet weak var gatewayName: UILabel!
+    
     //private var dataProvider : DataProvider<Feed>
     private var parser : GenericFeedParser!
     private var presenter : FeedPresenter!
@@ -25,6 +26,7 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
         
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;
+        self.gatewayName?.text = self.airport.gateway + " Deals";
         self.parser = FeedkitParser(feedUrl: feedUrl);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
         self.showUIBusy();
@@ -33,6 +35,7 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
     
     func setYDealsGateway(_ gateway:YDealsGateway){
         self.airport = gateway
+        
     }
     
     func setupCollectionView() -> Void {

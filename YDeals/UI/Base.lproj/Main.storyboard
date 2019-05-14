@@ -53,6 +53,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="SRf-MN-Rek" id="Cwi-98-BRp"/>
+                        <outlet property="gatewayName" destination="K2q-qZ-qoT" id="WRA-lm-b9k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

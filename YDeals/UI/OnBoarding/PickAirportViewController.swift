@@ -13,7 +13,7 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     var locationManager : LocationHelper?
-    var parser =  YDealsGatewaysParser()
+    var yDealsGatewaysParser =  YDealsGatewaysParser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
         
         self.showUIBusy();
         
-        parser.parse { (gateways, parseError) in
+        self.yDealsGatewaysParser.parse { (gateways, parseError) in
             
             guard let gateways = gateways, parseError == nil else {
                 //TODO: default airport : Toronto
@@ -53,7 +53,7 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
 
                 let annotation = MKAirportAnnotation()
                 annotation.coordinate = location.coordinate;
-                annotation.title = airport.cityName;
+                annotation.title = airport.cityName + "(" + airport.gateway + ")";
                 annotation.airportData = airport
                 
                 DispatchQueue.main.async {
@@ -94,7 +94,12 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        
         let annotationView = view;
+        guard let annotation = annotationView.annotation , annotation is MKAirportAnnotation  else {
+            return;
+        }
+        
         let airportAnnotation = annotationView.annotation as! MKAirportAnnotation
         let title = airportAnnotation.title!
         print(title)
@@ -104,25 +109,5 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
         self.navigationController?.pushViewController(main, animated: true);
         
     }
-    
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        let annotationIdentifier = "AirportAnnotationIdentifier"
-//        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
-//
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-//            annotationView!.canShowCallout = true
-//        }
-//        else {
-//            annotationView!.annotation = annotation
-//        }
-//
-//        //let pinImage = UIImage(named: "customPinImage")
-//        //annotationView!.image = pinImage
-//
-//        return annotationView;
-//    }
-    
-
 }
 
