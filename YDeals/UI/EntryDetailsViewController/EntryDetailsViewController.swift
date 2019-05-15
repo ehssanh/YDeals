@@ -67,8 +67,6 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         
         let shareItem : [Any] = [ title , appLink, image];
         let activityController  = UIActivityViewController(activityItems: shareItem, applicationActivities: nil);
-        self.present(activityController, animated: true) {
-            //completion
-        }
+        self.present(activityController, animated: true)
     }
 }

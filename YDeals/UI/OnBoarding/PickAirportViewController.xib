@@ -22,15 +22,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="mutedStandard" rotateEnabled="NO" pitchEnabled="NO" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-QD-JpR">
-                    <rect key="frame" x="0.0" y="-2.5" width="414" height="901"/>
+                    <rect key="frame" x="0.0" y="151" width="414" height="748"/>
                     <viewLayoutGuide key="safeArea" id="uBA-ye-7va"/>
                 </mapView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your favourite departure airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK3-7u-0rw">
+                    <rect key="frame" x="20" y="52" width="374" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="dTo-bM-CY2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUE-Sc-meI">
+                    <rect key="frame" x="20" y="92" width="374" height="43"/>
+                    <string key="text">By giving location permission, we can locate the airport nearest to you faster.  You can always change your mind in your iPhone's Settings.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.2998960483" green="0.74726168999999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="nUE-Sc-meI" secondAttribute="trailing" constant="20" id="6Ji-8z-9XX"/>
                 <constraint firstItem="Yvk-QD-JpR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B3n-CA-PIK"/>
-                <constraint firstItem="Yvk-QD-JpR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Vxb-fz-jVC"/>
-                <constraint firstItem="Yvk-QD-JpR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="5" id="WDQ-O2-CLa"/>
+                <constraint firstItem="nUE-Sc-meI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Ijc-Vp-5vJ"/>
+                <constraint firstItem="Yvk-QD-JpR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="77" id="Vxb-fz-jVC"/>
+                <constraint firstItem="Yvk-QD-JpR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="-148" id="WDQ-O2-CLa"/>
+                <constraint firstItem="nUE-Sc-meI" firstAttribute="top" secondItem="pK3-7u-0rw" secondAttribute="bottom" constant="8" id="aI4-ss-MQu"/>
+                <constraint firstItem="pK3-7u-0rw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="cmb-Hq-Rek"/>
+                <constraint firstAttribute="trailing" secondItem="pK3-7u-0rw" secondAttribute="trailing" constant="20" id="iZC-cz-Xkh"/>
+                <constraint firstItem="pK3-7u-0rw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="pOj-H3-Bnn"/>
+                <constraint firstItem="nUE-Sc-meI" firstAttribute="width" secondItem="pK3-7u-0rw" secondAttribute="width" id="uVY-xt-ffW"/>
                 <constraint firstItem="Yvk-QD-JpR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="vLZ-ao-jJs"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>

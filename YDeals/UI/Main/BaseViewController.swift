@@ -15,23 +15,41 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad();
-        self.view.backgroundColor = UIColor(red256: 26, green: 166, blue: 237, alpha: 1);
+        self.view.backgroundColor = APP_BACKGROUND_COLOR;
         
         setupActivityIndicator();
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        showNavBar(false)
+        showNavBar(false);
     }
     
-    func showNavBar(_ show:Bool) -> Void{
+    func showNavBar(_ show:Bool,withTitle title:String? = nil) -> Void{
         self.navigationController?.navigationBar.isHidden = !show;
+       
+        if (show){
+            self.navigationController?.navigationBar.barTintColor = APP_BACKGROUND_COLOR;
+            self.navigationController?.navigationBar.tintColor = .white;
+
+            if (title != nil){
+                self.navigationController?.navigationBar.isHidden = false;
+                let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
+                titleLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+                titleLabel.textColor = .white
+                titleLabel.text = title
+                titleLabel.textAlignment = .center
+                self.navigationItem.titleView = titleLabel;
+            }
+        }
     }
     
-    func navigateTo<V>(xibName:String, clazzType:V.Type, initBlock:(_ viewController:V)->Void) -> V where V:UIViewController{
+    func navigateTo<V>(xibName:String, clazzType:V.Type, initBlock:((_ viewController:V)->Void)?) -> V where V:UIViewController{
         let VC = V(nibName: xibName, bundle:nil);
         self.navigationController?.pushViewController(VC, animated: true);
-        initBlock(VC);
+        
+        if (initBlock != nil){
+            initBlock!(VC);
+        }
 
         return VC;
     }
@@ -52,13 +70,14 @@ class BaseViewController: UIViewController {
         
     }
     
-    func loadMore(){}
-
-    
     private func setupActivityIndicator(){
         self.activityIndicator = CustomActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 140, height: 100))
         self.activityIndicator.center = UIApplication.shared.windows.first?.center ?? self.view.center;
         self.view.addSubview(self.activityIndicator);
         hideUIBusy();
     }
+}
+
+class BaseInfiniteViewController : BaseViewController{
+    func loadMore(){}
 }

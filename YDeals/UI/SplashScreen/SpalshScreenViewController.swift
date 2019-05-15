@@ -28,12 +28,16 @@ class SpalshScreenViewController: UIViewController {
                 nextVC = OnboardingViewController();
             }
 
-            
             self.navigationController?.pushViewController(nextVC!, animated: true)
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let nav = appDelegate.setupNavigationController(nextVC!)
             UIApplication.shared.windows.first?.rootViewController = nav;
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        self.navigationController?.navigationBar.isHidden = true;
     }
     
     func addHeartBeatAnimation (view : UIView) {

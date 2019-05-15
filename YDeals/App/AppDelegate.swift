@@ -29,12 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
         let navCtrl = UINavigationController(rootViewController: rootVC);
-        navCtrl.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navCtrl.navigationBar.shadowImage = UIImage()
-        navCtrl.navigationBar.isTranslucent = true
-        navCtrl.view.backgroundColor = .clear
-        navCtrl.navigationBar.tintColor = .white;
-        
         return navCtrl;
     }
 
@@ -58,6 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    class func appVersion() -> String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
 
 

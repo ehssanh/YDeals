@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: BaseViewController, FeedPresenterDelegate {
+class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
 
     @IBOutlet weak var collectionView: InfiniteCollectionView!
     @IBOutlet weak var gatewayName: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
     
-    //private var dataProvider : DataProvider<Feed>
     private var parser : GenericFeedParser!
     private var presenter : FeedPresenter!
     private var airport : YDealsGateway!
@@ -23,25 +24,58 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
         super.viewDidLoad()
         
         setupCollectionView();
+        setupButtons();
+        
         
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;
         self.gatewayName?.text = self.airport.gateway + " Deals";
+        
         self.parser = FeedkitParser(feedUrl: feedUrl);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
         self.showUIBusy();
         self.presenter.present();
     }
     
-    func setYDealsGateway(_ gateway:YDealsGateway){
-        self.airport = gateway
+    override func viewWillAppear(_ animated: Bool) {
+        self.showNavBar(false);
+    }
+    
+    func setupButtons(){
+        //Settings
+        self.settingsButton.addTarget(self, action: #selector(onSettingsButtonClicked), for: UIControl.Event.touchUpInside);
+        //Search
+        self.searchButton.addTarget(self, action: #selector(onSearchButtonClicked), for: UIControl.Event.touchUpInside)
+        //Search button UI
+        self.searchButton.layer.shadowColor = UIColor.white.cgColor
+        self.searchButton.layer.shadowOpacity = 1
+        self.searchButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.searchButton.layer.shadowRadius = 10
+    }
+    
+    @objc func onSearchButtonClicked() -> Void{
         
     }
     
-    func setupCollectionView() -> Void {
+    @objc func onSettingsButtonClicked() -> Void{
+        let _ = self.navigateTo(xibName: "SettingsViewController", clazzType: SettingsViewController.self, initBlock: nil);
+    }
+    
+    public func setYDealsGateway(_ gateway:YDealsGateway){
+        self.airport = gateway
+    }
+    
+    override func refreshViewController() {
+        self.showUIBusy();
+        self.presenter.present();
+    }
+    
+    
+    private func setupCollectionView() -> Void {
         self.collectionView.setupCollectionView(with: self);
     }
     
+    //MARK: PresenterDelegate
     func presenterReadyToPresent(item:Feed?, error:Error?) {
         hideUIBusy();
         
@@ -69,11 +103,6 @@ class ViewController: BaseViewController, FeedPresenterDelegate {
         }
     }
 
-    override func refreshViewController() {
-        self.showUIBusy();
-        self.presenter.present();
-    }
-    
     override func loadMore(){
         let nextLink = self.currentFeed?.nextFeedLink
         guard let nextFeedLink = nextLink else{

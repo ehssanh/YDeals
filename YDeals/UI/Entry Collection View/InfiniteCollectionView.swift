@@ -14,11 +14,11 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
     }
     
 
-    private var controller : BaseViewController?
+    private var controller : BaseInfiniteViewController?
     private var collectionViewDelegate : EntryCollectionViewDelegate?;
     private var collectionViewDataSource : EntryCollectionViewDataSource?;
     
-    func setupCollectionView(with controller:BaseViewController?) -> Void {
+    func setupCollectionView(with controller:BaseInfiniteViewController?) -> Void {
         
         self.controller = controller;
         
