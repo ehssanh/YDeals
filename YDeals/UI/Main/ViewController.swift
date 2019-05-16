@@ -27,7 +27,7 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
         setupButtons();
         
         
-        self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY) as? YDealsGateway ;
+        self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
         
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;

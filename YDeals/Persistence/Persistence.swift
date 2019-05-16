@@ -16,18 +16,27 @@ class Persistence {
     }
     
     class func save<T>(value:T?, key:String) where T:Codable{
-        let object = try? PropertyListEncoder().encode(value!)
-        UserDefaults.standard.set(object, forKey: key);
-        UserDefaults.standard.synchronize();
+        
+        guard let value = value else{
+            return;
+        }
+        
+        do {
+            let object = try JSONEncoder().encode(value)
+            UserDefaults.standard.set(object, forKey: key);
+            UserDefaults.standard.synchronize();
+        }catch {
+            print(error);
+        }
     }
     
     class func load(key:String) -> Any? {
         return UserDefaults.standard.value(forKey: key);
     }
     
-    class func load<T>(value:T?, key:String) -> T? where T:Codable {
+    class func load<T>(key:String, type:T.Type) -> T? where T:Codable {
         if let data = UserDefaults.standard.value(forKey: key) as? Data {
-            return try? PropertyListDecoder().decode(T.self, from: data);
+            return try? JSONDecoder().decode(T.self, from: data);
         }
         
         return nil;

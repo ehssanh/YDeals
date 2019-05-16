@@ -79,8 +79,7 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
             guard let userLoation = location else{
                 Utilities.showError("Cant find user location", parent: self)
                 return;
-            }
-            
+            }            
             
             DispatchQueue.main.async {
                 let coordinate2d = CLLocationCoordinate2D(latitude: userLoation.coordinate.latitude, longitude: userLoation.coordinate.longitude);
@@ -104,13 +103,9 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
         let title = airportAnnotation.title!
         print(title)
         
-        Persistence.save(value: airportAnnotation.airportData, key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY)
+        let airport = airportAnnotation.airportData
+        Persistence.save(value:airport , key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY)
         self.navigateToNext(withData: airportAnnotation.airportData);
-        
-//        let main = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! ViewController
-//        main.setYDealsGateway(airportAnnotation.airportData!)
-//        self.navigationController?.pushViewController(main, animated: true);
-        
     }
 }
 
