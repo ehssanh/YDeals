@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PickAirportViewController: BaseViewController, MKMapViewDelegate {
+class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
 
     @IBOutlet weak var map: MKMapView!
     var locationManager : LocationHelper?
@@ -104,9 +104,12 @@ class PickAirportViewController: BaseViewController, MKMapViewDelegate {
         let title = airportAnnotation.title!
         print(title)
         
-        let main = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! ViewController
-        main.setYDealsGateway(airportAnnotation.airportData!)
-        self.navigationController?.pushViewController(main, animated: true);
+        Persistence.save(value: airportAnnotation.airportData, key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY)
+        self.navigateToNext(withData: airportAnnotation.airportData);
+        
+//        let main = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController() as! ViewController
+//        main.setYDealsGateway(airportAnnotation.airportData!)
+//        self.navigationController?.pushViewController(main, animated: true);
         
     }
 }

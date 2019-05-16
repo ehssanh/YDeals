@@ -8,7 +8,7 @@
 
 import Foundation
 
-class YDealsGateway: Decodable {
+class YDealsGateway: Codable {
     var enabled : Bool
     var cityName : String
     var gateway : String

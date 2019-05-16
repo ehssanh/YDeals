@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: BaseViewController {
+class LoginViewController: OnboardingSequenceElement {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +16,8 @@ class LoginViewController: BaseViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func onSigninPressed(_ sender: Any) {
+        self.navigateToNext(withData: nil);
+    }
+    
 }

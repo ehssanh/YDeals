@@ -66,7 +66,20 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        switch indexPath.section {
+            case GENERAL_GROUP_INDEX:
+                if ( indexPath.row == generalSettings.firstIndex(of: "About") ){
+                    _ = self.navigateTo(xibName: "WebDetailViewController", clazzType: WebDetailViewController.self) { (vc) in
+                        vc.loadPage(url:APP_ABOUT_URL , withtitle: "About")
+                    }
+                }else if (indexPath.row == generalSettings.firstIndex(of: "Privacy Policy")){
+                    _ = self.navigateTo(xibName: "WebDetailViewController", clazzType: WebDetailViewController.self) { (vc) in
+                        vc.loadPage(url:APP_PRIVACY_POLICY_URL , withtitle: "About")
+                    }
+            }
+            default:
+                return;
+        }
     }
     
 }

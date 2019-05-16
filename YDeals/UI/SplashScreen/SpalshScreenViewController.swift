@@ -11,6 +11,7 @@ import UIKit
 class SpalshScreenViewController: UIViewController {
 
     let logo = LogoView(frame: CGRect(x: 0.0, y: 0.0, width: 200.0, height: 110.0));
+    let onboarding = OnboardingController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +22,22 @@ class SpalshScreenViewController: UIViewController {
         addHeartBeatAnimation(view: self.logo)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let nextVC : UIViewController?
-            if (false){
-                nextVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
+            if (self.onboarding.isOnboardingComplete()){
+                self.showMainView();
             }else{
-                nextVC = OnboardingViewController();
+                self.onboarding.startOnboarding {
+                    self.showMainView();
+                }
             }
-
-            self.navigationController?.pushViewController(nextVC!, animated: true)
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let nav = appDelegate.setupNavigationController(nextVC!)
-            UIApplication.shared.windows.first?.rootViewController = nav;
         }
+    }
+    
+    func showMainView() -> Void{
+        let mainVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
+        self.navigationController?.pushViewController(mainVC!, animated: true)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let nav = appDelegate.setupNavigationController(mainVC!)
+        UIApplication.shared.windows.first?.rootViewController = nav;
     }
     
     override func viewWillAppear(_ animated: Bool) {

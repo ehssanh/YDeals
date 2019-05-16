@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		914AB5B5228C97B70073DD81 /* WebDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AB5B3228C97B70073DD81 /* WebDetailViewController.swift */; };
+		914AB5B6228C97B70073DD81 /* WebDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 914AB5B4228C97B70073DD81 /* WebDetailViewController.xib */; };
+		914AB5B9228CD3190073DD81 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914AB5B8228CD3190073DD81 /* Persistence.swift */; };
 		916B34C4228A1AC100AB545E /* YDealsGatewaysParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */; };
 		916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C5228A1AE200AB545E /* YDealsGateway.swift */; };
 		916B34C8228A2F7F00AB545E /* MKAirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */; };
@@ -17,7 +20,7 @@
 		91FC866E2284F190002E204C /* AllowPushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC866C2284F190002E204C /* AllowPushViewController.xib */; };
 		91FC86712284F1B7002E204C /* PickAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC866F2284F1B7002E204C /* PickAirportViewController.swift */; };
 		91FC86722284F1B7002E204C /* PickAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC86702284F1B7002E204C /* PickAirportViewController.xib */; };
-		91FC86742284FA8A002E204C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC86732284FA8A002E204C /* OnboardingViewController.swift */; };
+		91FC86742284FA8A002E204C /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC86732284FA8A002E204C /* OnboardingController.swift */; };
 		BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */; };
 		BF0AAB512262E34C00506592 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB502262E34C00506592 /* UIColor.swift */; };
 		BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */; };
@@ -175,6 +178,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		914AB5B3228C97B70073DD81 /* WebDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebDetailViewController.swift; sourceTree = "<group>"; };
+		914AB5B4228C97B70073DD81 /* WebDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WebDetailViewController.xib; sourceTree = "<group>"; };
+		914AB5B8228CD3190073DD81 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGatewaysParser.swift; sourceTree = "<group>"; };
 		916B34C5228A1AE200AB545E /* YDealsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGateway.swift; sourceTree = "<group>"; };
 		916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAirportAnnotation.swift; sourceTree = "<group>"; };
@@ -185,7 +191,7 @@
 		91FC866C2284F190002E204C /* AllowPushViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllowPushViewController.xib; sourceTree = "<group>"; };
 		91FC866F2284F1B7002E204C /* PickAirportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAirportViewController.swift; sourceTree = "<group>"; };
 		91FC86702284F1B7002E204C /* PickAirportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickAirportViewController.xib; sourceTree = "<group>"; };
-		91FC86732284FA8A002E204C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		91FC86732284FA8A002E204C /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionView.swift; sourceTree = "<group>"; };
 		BF0AAB502262E34C00506592 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableSequence.swift; sourceTree = "<group>"; };
@@ -358,6 +364,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		914AB5B7228CD3080073DD81 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				914AB5B8228CD3190073DD81 /* Persistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		91CC03DF2285FE4400DE80DA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +400,7 @@
 		BF3AED32227577130058B5CB /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				91FC86732284FA8A002E204C /* OnboardingViewController.swift */,
+				91FC86732284FA8A002E204C /* OnboardingController.swift */,
 				BF3AED332275776F0058B5CB /* LoginViewController.swift */,
 				BF3AED342275776F0058B5CB /* LoginViewController.xib */,
 				91FC866B2284F190002E204C /* AllowPushViewController.swift */,
@@ -688,6 +702,7 @@
 		BFB49AA6225D847E0098F830 /* YDeals */ = {
 			isa = PBXGroup;
 			children = (
+				914AB5B7228CD3080073DD81 /* Persistence */,
 				91CC03E4228623B900DE80DA /* Location */,
 				BFB49AE4225D97A70098F830 /* Parser */,
 				BFB49ADC225D8BA70098F830 /* Serialization */,
@@ -783,6 +798,8 @@
 			children = (
 				BFDC7106228A93FD00013E0B /* SettingsViewController.swift */,
 				BFDC7107228A93FD00013E0B /* SettingsViewController.xib */,
+				914AB5B3228C97B70073DD81 /* WebDetailViewController.swift */,
+				914AB5B4228C97B70073DD81 /* WebDetailViewController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -936,6 +953,7 @@
 				BF53985622642B6400587CAE /* LogoView.xib in Resources */,
 				BFDF92E22262FC13009076C8 /* EntryDetailsViewController.xib in Resources */,
 				BFDC7109228A93FD00013E0B /* SettingsViewController.xib in Resources */,
+				914AB5B6228C97B70073DD81 /* WebDetailViewController.xib in Resources */,
 				BFD4398E2264642D0009FFA0 /* Launch Screen.storyboard in Resources */,
 				BF51EB9E226284A5001E1017 /* EntryCollectionViewCell.xib in Resources */,
 				BFB49AAF225D84810098F830 /* Assets.xcassets in Resources */,
@@ -988,6 +1006,7 @@
 				BF54E0E8225DABD200574817 /* MediaThumbnail.swift in Sources */,
 				BF54E0C9225DABD200574817 /* iTunesNamespace.swift in Sources */,
 				BF54E0F9225DABD200574817 /* Array + Equatable.swift in Sources */,
+				914AB5B5228C97B70073DD81 /* WebDetailViewController.swift in Sources */,
 				BF54E0B2225DABD200574817 /* AtomFeed + mapAttributes.swift in Sources */,
 				BF54E0A8225DABD200574817 /* AtomFeedContributor.swift in Sources */,
 				BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */,
@@ -1089,9 +1108,10 @@
 				BF3AED352275776F0058B5CB /* LoginViewController.swift in Sources */,
 				BF0AAB582262EAA500506592 /* LogoView.swift in Sources */,
 				BFB49AEA225D98E90098F830 /* FeedkitParser.swift in Sources */,
+				914AB5B9228CD3190073DD81 /* Persistence.swift in Sources */,
 				BF54E0F2225DABD200574817 /* JSONFeedParser.swift in Sources */,
 				BF54E0E4225DABD200574817 /* MediaText.swift in Sources */,
-				91FC86742284FA8A002E204C /* OnboardingViewController.swift in Sources */,
+				91FC86742284FA8A002E204C /* OnboardingController.swift in Sources */,
 				BF54E0C5225DABD200574817 /* SyndicationUpdatePeriod.swift in Sources */,
 				BF51EBA022628620001E1017 /* EntryCollectionViewDataSource.swift in Sources */,
 				BF4C3D44225F0FDE0091FF27 /* FeedPresenter.swift in Sources */,

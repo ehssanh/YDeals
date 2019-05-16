@@ -27,6 +27,8 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
         setupButtons();
         
         
+        self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY) as? YDealsGateway ;
+        
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;
         self.gatewayName?.text = self.airport.gateway + " Deals";
@@ -59,10 +61,6 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
     
     @objc func onSettingsButtonClicked() -> Void{
         let _ = self.navigateTo(xibName: "SettingsViewController", clazzType: SettingsViewController.self, initBlock: nil);
-    }
-    
-    public func setYDealsGateway(_ gateway:YDealsGateway){
-        self.airport = gateway
     }
     
     override func refreshViewController() {
