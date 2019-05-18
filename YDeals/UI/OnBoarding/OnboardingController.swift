@@ -13,7 +13,9 @@ class OnboardingController {
     
     let onboardingSequence : [OnboardingSequenceElement.Type] = [LoginViewController.self, PickAirportViewController.self]
     
-    var currentSequeceElement : UIViewController?
+    var currentSequeceElement : OnboardingSequenceElement?
+    var sequenceElements = [OnboardingSequenceElement]()
+    
     var onboardingCompletionBlock : (() -> Void)?
     
     public func startOnboarding(whenFinished completion:@escaping (() -> Void)) -> Void{
@@ -38,9 +40,10 @@ class OnboardingController {
         if (self.currentSequeceElement == nil){
             
             let T = onboardingSequence.first!;
-            self.currentSequeceElement = T.init(nibName: String(describing: T), bundle: Bundle.main, controller: self);
-            
-            let nav = (UIApplication.shared.delegate as! AppDelegate).setupNavigationController(self.currentSequeceElement!);
+            let initialOnBoardingVC = T.init(nibName: String(describing: T), bundle: Bundle.main, controller: self);
+            self.sequenceElements.append(initialOnBoardingVC);
+            self.currentSequeceElement = initialOnBoardingVC;
+            let nav = (UIApplication.shared.delegate as! AppDelegate).setupNavigationController(initialOnBoardingVC);
             UIApplication.shared.windows.first?.rootViewController = nav;
         }else{
             
@@ -55,11 +58,42 @@ class OnboardingController {
             }
             
             let N = self.onboardingSequence[currentItemIndex! + 1]
-            let nav = self.currentSequeceElement?.navigationController
-            self.currentSequeceElement = N.init(nibName: String(describing: N), bundle: Bundle.main, controller: self);
-            nav?.pushViewController(self.currentSequeceElement!, animated: true);
+            let existingOnboardingElement = self.sequenceElements.first { (theElement) -> Bool in
+                return type(of: theElement) == N
+            }
             
+            if (existingOnboardingElement != nil){
+                //already exists, overwrite nav controller
+                self.currentSequeceElement = existingOnboardingElement!;
+                let nav = (UIApplication.shared.delegate as! AppDelegate).setupNavigationController(existingOnboardingElement!);
+                UIApplication.shared.windows.first?.rootViewController = nav;
+            }else{
+                let nav = self.currentSequeceElement?.navigationController
+                let vc = N.init(nibName: String(describing: N), bundle: Bundle.main, controller: self);
+                self.currentSequeceElement = vc;
+                self.sequenceElements.append(vc);
+                nav?.pushViewController(self.currentSequeceElement!, animated: true);
+            }
         }
+    }
+    
+    func navigateTo(elementType:OnboardingSequenceElement.Type) -> Void{
+        let onboardingElement = self.sequenceElements.first { (theElement) -> Bool in
+            return type(of: theElement) == elementType
+        }
+        
+        guard let foundElement = onboardingElement else {
+            return;
+        }
+        
+        if foundElement == sequenceElements.first {
+            self.currentSequeceElement = nil
+        }else{
+            let theIndex = self.sequenceElements.firstIndex(of: foundElement)
+            self.currentSequeceElement = self.sequenceElements[theIndex! - 1]
+        }
+        
+        iterateOnboardingSequence()
     }
 }
 

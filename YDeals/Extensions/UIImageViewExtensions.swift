@@ -18,8 +18,8 @@ extension UIImageView{
         }
         
         let imageUrl = URL(string: url)!
-        
-        URLSession.shared.dataTask(with: imageUrl, completionHandler: { (data, response, error) in
+        let request = URLRequest(url: imageUrl, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
             
             if let err = error{
                 print("Download error " + err.localizedDescription);
@@ -39,7 +39,10 @@ extension UIImageView{
                 })
                 
             }
-        }).resume();
+        });
+        
+        
+        task.resume();
     }
 }
 

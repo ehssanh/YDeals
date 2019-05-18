@@ -26,7 +26,6 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
         setupCollectionView();
         setupButtons();
         
-        
         self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
         
         //TODO: Use data provider based on User option to

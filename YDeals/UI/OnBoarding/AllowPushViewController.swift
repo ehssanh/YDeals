@@ -8,13 +8,17 @@
 
 import UIKit
 
-class AllowPushViewController: UIViewController {
+class AllowPushViewController: OnboardingSequenceElement {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.navigateToNext(withData: nil);
     }
+    
+    
 
 
     /*
