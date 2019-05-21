@@ -39,10 +39,25 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         showShareButton();
         showUIBusy();
         self.image.lazyLoadFromUrl(url: item.imageUrl);
-        let htmlString = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body style=\"font-family:Helvetica\"><p>"+"<h2>\(item.title ?? "")</h2>"+"\(item.htmlContent ?? "")</p></body></html>";
+        let htmlString = "<html><head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body style=\"font-family:Helvetica\"><p>"
+            + "<h2>\(item.title ?? "")</h2>"
+            + "<div style=\"color:#A9A9A9;text-color:#A9A9A9;\"><hr>\(self.dateToString(date: item.publishedDate))<hr></div>"
+            + "\(item.htmlContent ?? "")</p></body></html>";
         
         webView.loadHTMLString(htmlString, baseURL: URL(string: "https://www.yvrdeals.com"));
         
+    }
+    
+    func dateToString(date:Date?) -> String{
+        //       2019-03-28T14:19:50-06:00
+        guard let date = date else {
+            return "";
+        }
+        
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_CA");
+        formatter.dateFormat = "EEEE, YYYY MMMM dd"
+        return formatter.string(from: date)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

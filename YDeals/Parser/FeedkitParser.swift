@@ -48,6 +48,7 @@ class FeedkitParser: GenericFeedParser {
                 }
             }
             
+            
             for entry in entries {
                 let entryItem = FeedEntry();
                 
@@ -62,6 +63,8 @@ class FeedkitParser: GenericFeedParser {
                 })?.attributes?.href;
                 
                 entryItem.title = entry.title;
+                
+                entryItem.publishedDate = entry.published;
                 
                 entryItem.htmlContent = entry.content?.value;
                 
@@ -91,6 +94,13 @@ class FeedkitParser: GenericFeedParser {
                     let rangeOfFooter = newHtmlContent.range(of: "<h3>Join");
                     if let footerRange = rangeOfFooter{
                         newHtmlContent = String(newHtmlContent[...footerRange.lowerBound.advanced(by: -1)])
+                        entryItem.htmlContent = newHtmlContent;
+                    }
+                    
+                    // Remove footer (can't fond this..")
+                    let rangeOfFooter2 = newHtmlContent.range(of:"<div style=\"background-color: #ffffd7;");
+                    if let footerRange2 = rangeOfFooter2{
+                        newHtmlContent = String(newHtmlContent[...footerRange2.lowerBound.advanced(by: -1)])
                         entryItem.htmlContent = newHtmlContent;
                     }
                 }
