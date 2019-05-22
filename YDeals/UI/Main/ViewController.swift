@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
+class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, SearchbarViewDelegate {
 
     @IBOutlet weak var collectionView: InfiniteCollectionView!
     @IBOutlet weak var gatewayName: UILabel!
@@ -19,12 +19,16 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
     private var presenter : FeedPresenter!
     private var airport : YDealsGateway!
     private var currentFeed : Feed?
+    
+    private var searchBarView : SearchbarView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView();
         setupButtons();
+        setupSearchbar();
+        
         
         self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
         
@@ -55,7 +59,7 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
     }
     
     @objc func onSearchButtonClicked() -> Void{
-        
+        self.searchBarView?.isHidden = false
     }
     
     @objc func onSettingsButtonClicked() -> Void{
@@ -110,6 +114,23 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate {
         showUIBusy();
         self.parser.updateUrl(feedUrl: URL(string: nextFeedLink)!);
         self.presenter.present();
+    }
+    
+    
+    //Mark: Searchbar
+    private func setupSearchbar(){
+        self.searchBarView?.isHidden = true
+        self.searchBarView = SearchbarView(frame: CGRect(x: 0, y: 50, width: self.collectionView.frame.width, height: 49))
+        self.view.addSubview(self.searchBarView!);
+        self.searchBarView?.delegate = self;
+    }
+    
+    func searchTermDidChange(term: String?) {
+        
+    }
+    
+    func onActionButtonClicked() {
+        self.searchBarView?.isHidden = true;
     }
 }
 

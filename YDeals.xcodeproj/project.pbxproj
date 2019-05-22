@@ -136,6 +136,8 @@
 		BF54E0FC225DABD200574817 /* String + toBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09D225DABD100574817 /* String + toBool.swift */; };
 		BF585F71228B69150051561B /* PopupInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF585F70228B69150051561B /* PopupInformationView.swift */; };
 		BF585F73228B69200051561B /* PopupInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF585F72228B69200051561B /* PopupInformationView.xib */; };
+		BFA544D722951FBB008266E1 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA544D622951FBB008266E1 /* SearchbarView.swift */; };
+		BFA544D922951FC7008266E1 /* SearchbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA544D822951FC7008266E1 /* SearchbarView.xib */; };
 		BFB49AA8225D847E0098F830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA7225D847E0098F830 /* AppDelegate.swift */; };
 		BFB49AAA225D847E0098F830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA9225D847E0098F830 /* ViewController.swift */; };
 		BFB49AAD225D847E0098F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB49AAB225D847E0098F830 /* Main.storyboard */; };
@@ -308,6 +310,8 @@
 		BF54E09E225DABD200574817 /* FeedKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedKit.h; sourceTree = "<group>"; };
 		BF585F70228B69150051561B /* PopupInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInformationView.swift; sourceTree = "<group>"; };
 		BF585F72228B69200051561B /* PopupInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupInformationView.xib; sourceTree = "<group>"; };
+		BFA544D622951FBB008266E1 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
+		BFA544D822951FC7008266E1 /* SearchbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchbarView.xib; sourceTree = "<group>"; };
 		BFB49AA4225D847E0098F830 /* YDeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB49AA7225D847E0098F830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB49AA9225D847E0098F830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -678,6 +682,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BFA544D522951F9E008266E1 /* SearchbarView */ = {
+			isa = PBXGroup;
+			children = (
+				BFA544D622951FBB008266E1 /* SearchbarView.swift */,
+				BFA544D822951FC7008266E1 /* SearchbarView.xib */,
+			);
+			path = SearchbarView;
+			sourceTree = "<group>";
+		};
 		BFB49A9B225D847E0098F830 = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +781,7 @@
 		BFB49AE3225D96CC0098F830 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BFA544D522951F9E008266E1 /* SearchbarView */,
 				BF53985722643F4C00587CAE /* SplashScreen */,
 				BF0AAB562262EA7900506592 /* Logo */,
 				BF3AED32227577130058B5CB /* OnBoarding */,
@@ -955,6 +969,7 @@
 				BFDC7109228A93FD00013E0B /* SettingsViewController.xib in Resources */,
 				914AB5B6228C97B70073DD81 /* WebDetailViewController.xib in Resources */,
 				BFD4398E2264642D0009FFA0 /* Launch Screen.storyboard in Resources */,
+				BFA544D922951FC7008266E1 /* SearchbarView.xib in Resources */,
 				BF51EB9E226284A5001E1017 /* EntryCollectionViewCell.xib in Resources */,
 				BFB49AAF225D84810098F830 /* Assets.xcassets in Resources */,
 				BFDF92EE2263FFB7009076C8 /* HtmlTemplate.html in Resources */,
@@ -1012,6 +1027,7 @@
 				BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */,
 				BFDC7108228A93FD00013E0B /* SettingsViewController.swift in Sources */,
 				BF54E0BD225DABD200574817 /* RSSFeedSkipHour.swift in Sources */,
+				BFA544D722951FBB008266E1 /* SearchbarView.swift in Sources */,
 				BF54E0BA225DABD200574817 /* RSSFeedImage.swift in Sources */,
 				BF54E0F4225DABD200574817 /* FeedParser.swift in Sources */,
 				BF54E0C2225DABD200574817 /* RSSFeedItemEnclosure.swift in Sources */,

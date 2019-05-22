@@ -56,7 +56,7 @@
                                 <state key="normal" image="search_floating"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.29989604825901828" green="0.74726168997731413" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.29582345485687256" green="0.74881148338317871" blue="0.99858099222183228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zwZ-av-xNe" secondAttribute="trailing" constant="20" id="55W-aK-WlN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TKs-rP-WYO" secondAttribute="trailing" constant="20" id="B90-rr-vnc"/>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.13043478260872" y="131.91964285714286"/>
+            <point key="canvasLocation" x="138.40000000000001" y="131.52709359605913"/>
         </scene>
     </scenes>
     <resources>
