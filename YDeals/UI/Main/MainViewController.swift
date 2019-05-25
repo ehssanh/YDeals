@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, SearchbarViewDelegate {
+class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, SearchbarViewDelegate {
 
     @IBOutlet weak var collectionView: InfiniteCollectionView!
     @IBOutlet weak var gatewayName: UILabel!
@@ -21,6 +21,7 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, Searchb
     private var currentFeed : Feed?
     
     private var searchBarView : SearchbarView?
+    var tapGestureRecognizer : UITapGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, Searchb
         setupButtons();
         setupSearchbar();
         
+        self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onViewTapped))
         
         self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
         
@@ -60,6 +62,16 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, Searchb
     
     @objc func onSearchButtonClicked() -> Void{
         self.searchBarView?.isHidden = false
+        self.collectionView.isUserInteractionEnabled = false;
+        self.tapGestureRecognizer?.numberOfTouchesRequired = 1;
+        self.view.isUserInteractionEnabled = true;
+        self.view.addGestureRecognizer(self.tapGestureRecognizer!);
+    }
+    
+    @objc func onViewTapped() -> Void {
+        self.searchBarView?.hideKeyboard();
+        self.collectionView.isUserInteractionEnabled = true;
+        self.view.removeGestureRecognizer(self.tapGestureRecognizer!);
     }
     
     @objc func onSettingsButtonClicked() -> Void{
@@ -70,7 +82,6 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, Searchb
         self.showUIBusy();
         self.presenter.present();
     }
-    
     
     private func setupCollectionView() -> Void {
         self.collectionView.setupCollectionView(with: self);
@@ -119,18 +130,24 @@ class ViewController: BaseInfiniteViewController, FeedPresenterDelegate, Searchb
     
     //Mark: Searchbar
     private func setupSearchbar(){
-        self.searchBarView?.isHidden = true
         self.searchBarView = SearchbarView(frame: CGRect(x: 0, y: 50, width: self.collectionView.frame.width, height: 49))
         self.view.addSubview(self.searchBarView!);
         self.searchBarView?.delegate = self;
+        self.searchBarView?.isHidden = true
     }
     
     func searchTermDidChange(term: String?) {
+        guard let term = term, !(term.isEmpty) else {
+            return;
+        }
         
+        self.collectionView.searchFor(keyword: term);
     }
     
     func onActionButtonClicked() {
+        self.collectionView.endFiltering();
         self.searchBarView?.isHidden = true;
+        self.collectionView.isUserInteractionEnabled = true;
     }
 }
 

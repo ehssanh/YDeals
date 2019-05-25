@@ -39,17 +39,17 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         self.register(nib, forCellWithReuseIdentifier: EntryCollectionViewDataSource.CELL_REUSE_ID);
     }
     
-    func setupRefreshControl(){
-        self.refreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 60));
-        self.refreshControl?.backgroundColor = self.controller?.view.backgroundColor
-        self.refreshControl?.tintColor = .white
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "Reloading...")
-        self.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged);
-    }
-    
-    @objc func handleRefreshControl(){
-        self.controller?.refreshViewController();
-    }
+//    func setupRefreshControl(){
+//        self.refreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 60));
+//        self.refreshControl?.backgroundColor = self.controller?.view.backgroundColor
+//        self.refreshControl?.tintColor = .white
+//        self.refreshControl?.attributedTitle = NSAttributedString(string: "Reloading...")
+//        self.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged);
+//    }
+//
+//    @objc func handleRefreshControl(){
+//        self.controller?.refreshViewController();
+//    }
     
     func reloadEntries(entries:[FeedEntry]?){
         guard let entries = entries else{
@@ -69,6 +69,16 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         }
         
         self.collectionViewDataSource?.addEntries(newEntries: entries)
+    }
+    
+    func searchFor(keyword:String){
+        self.collectionViewDataSource?.filterEntriesWithKeyword(keyword: keyword);
+        self.reloadData();
+    }
+    
+    func endFiltering(){
+        self.collectionViewDataSource?.endFilteringMode();
+        self.reloadData();
     }
     
     func requestExpansion() {

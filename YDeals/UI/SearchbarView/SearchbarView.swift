@@ -44,11 +44,23 @@ protocol SearchbarViewDelegate : NSObject  {
         
         self.searchField.delegate = self;
         self.button.addTarget(self, action: #selector(onButtonClicked), for: UIControl.Event.touchUpInside);
+        
+        self.searchField.addTarget(self, action: #selector(textFieldEditingDidChange), for: UIControl.Event.editingChanged)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let searchTerm = textField.text
-        self.delegate?.searchTermDidChange(term: searchTerm);
+    @objc func textFieldEditingDidChange() -> Void {
+        let searchterm = searchField.text
+        self.delegate?.searchTermDidChange(term: searchterm);
+    }
+
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        return false;
+    }
+    
+    func hideKeyboard() -> Void{
+        self.searchField.endEditing(true);
     }
     
     @objc func onButtonClicked() -> Void {

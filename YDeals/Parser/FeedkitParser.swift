@@ -55,7 +55,7 @@ class FeedkitParser: GenericFeedParser {
                 entryItem.id = entry.id;
                 
                 entryItem.keywords = entry.categories?.map({ (category) -> String in
-                    return category.attributes?.term ?? "";
+                    return category.attributes?.term?.lowercased() ?? "";
                 });
                 
                 entryItem.link = entry.links?.first(where: { (theLink) -> Bool in
