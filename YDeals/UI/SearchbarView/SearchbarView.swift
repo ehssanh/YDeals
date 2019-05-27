@@ -64,6 +64,7 @@ protocol SearchbarViewDelegate : NSObject  {
     }
     
     @objc func onButtonClicked() -> Void {
+        self.hideKeyboard();
         self.delegate?.onActionButtonClicked();
     }
 

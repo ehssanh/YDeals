@@ -21,7 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
         
+        _ = checkAppVersionForUpdate();
+        
         return true
+    }
+    
+    private func checkAppVersionForUpdate() -> Bool{
+        let version = getAppVersion();
+        let lastSavedVersion = Persistence.load(key: PERSISTENCE_KEY_APP_VERSION) as! String?
+        Persistence.save(value: version, key: PERSISTENCE_KEY_APP_VERSION);
+
+        if (lastSavedVersion == nil){
+            return false;
+        }else if (lastSavedVersion != version){
+            return true;
+        }
+        
+        print(version);
+        return false;
     }
     
     private func determineInitialViewController() -> UIViewController {
@@ -31,6 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
         let navCtrl = UINavigationController(rootViewController: rootVC);
         return navCtrl;
+    }
+    
+    func getAppVersion() -> String {
+        let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        return versionNumber + "." + buildNumber;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -54,11 +77,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    class func appVersion() -> String {
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-    }
-
-
 }
 

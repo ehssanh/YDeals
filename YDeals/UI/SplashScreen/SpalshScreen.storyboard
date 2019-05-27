@@ -17,13 +17,51 @@
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="SplashScreen" id="Olp-sm-23B">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered  by YDeals. Special Thanks to Chris Myden." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HT0-Hl-Ymn">
+                                <rect key="frame" x="20" y="823" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="a4u-Bi-SdE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ydeals.png" translatesAutoresizingMaskIntoConstraints="NO" id="qbN-bp-POT">
+                                <rect key="frame" x="362" y="812" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Os2-Uv-dEv"/>
+                                    <constraint firstAttribute="height" constant="32" id="vzk-Ns-7SF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_plane" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-5k-WJH">
+                                <rect key="frame" x="101" y="92" width="212" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="rC9-qk-0v9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2958234549" green="0.74881148340000003" blue="0.99858099219999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KRF-qF-s2q" firstAttribute="trailing" secondItem="HT0-Hl-Ymn" secondAttribute="trailing" constant="20" id="3qS-V1-RNy"/>
+                            <constraint firstItem="Bfd-5k-WJH" firstAttribute="leading" secondItem="KRF-qF-s2q" secondAttribute="leading" constant="101" id="CKv-eG-BzU"/>
+                            <constraint firstItem="KRF-qF-s2q" firstAttribute="trailing" secondItem="Bfd-5k-WJH" secondAttribute="trailing" constant="101" id="JLU-8X-376"/>
+                            <constraint firstItem="Bfd-5k-WJH" firstAttribute="top" secondItem="KRF-qF-s2q" secondAttribute="top" constant="48" id="O0v-uX-KjB"/>
+                            <constraint firstItem="HT0-Hl-Ymn" firstAttribute="leading" secondItem="KRF-qF-s2q" secondAttribute="leading" constant="20" id="Rnr-TE-QSv"/>
+                            <constraint firstItem="KRF-qF-s2q" firstAttribute="bottom" secondItem="HT0-Hl-Ymn" secondAttribute="bottom" constant="18" id="goh-CW-cen"/>
+                            <constraint firstItem="KRF-qF-s2q" firstAttribute="trailing" secondItem="qbN-bp-POT" secondAttribute="trailing" constant="20" id="i5d-7M-M8g"/>
+                            <constraint firstItem="KRF-qF-s2q" firstAttribute="bottom" secondItem="qbN-bp-POT" secondAttribute="bottom" constant="18" id="yPm-Np-fdq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KRF-qF-s2q"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EjT-GY-FfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="-1"/>
+            <point key="canvasLocation" x="-184.05797101449278" y="-1.3392857142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sale_plane" width="156" height="156"/>
+        <image name="ydeals.png" width="116" height="124"/>
+    </resources>
 </document>

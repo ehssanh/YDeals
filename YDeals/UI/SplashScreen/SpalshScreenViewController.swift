@@ -26,6 +26,7 @@ class SpalshScreenViewController: UIViewController {
                 self.showMainView();
             }else{
                 self.onboarding.startOnboarding {
+                    //when complete:
                     self.showMainView();
                 }
             }

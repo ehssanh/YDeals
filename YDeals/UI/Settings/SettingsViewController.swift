@@ -52,7 +52,7 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
             case GENERAL_GROUP_INDEX:
                 text =  self.generalSettings[indexPath.row];
             case VERSION_GROUP_INDEX:
-                text =  AppDelegate.appVersion();
+                text =  Persistence.load(key: PERSISTENCE_KEY_APP_VERSION) as! String
             default:
                 text = "-"
         }

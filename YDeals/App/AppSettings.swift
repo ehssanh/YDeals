@@ -19,3 +19,7 @@ let APP_PRIVACY_POLICY_URL = "https://www.solidxpert.com/appdata/traveldeals/pri
 
 let PERSISTENCE_KEY_ONBOARDING_DONE = "P_Onboarding"
 let PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY = "P_Ydeals_Gateway"
+let PERSISTENCE_KEY_APP_VERSION = "P_App_Ver"
+
+
+

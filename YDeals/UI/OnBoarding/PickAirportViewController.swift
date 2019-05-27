@@ -96,6 +96,7 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
         
         let annotationView = view;
         guard let annotation = annotationView.annotation , annotation is MKAirportAnnotation  else {
+            mapView.deselectAnnotation(annotationView.annotation, animated: false);
             return;
         }
         

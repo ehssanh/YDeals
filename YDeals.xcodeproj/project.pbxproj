@@ -138,6 +138,7 @@
 		BF585F73228B69200051561B /* PopupInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF585F72228B69200051561B /* PopupInformationView.xib */; };
 		BFA544D722951FBB008266E1 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA544D622951FBB008266E1 /* SearchbarView.swift */; };
 		BFA544D922951FC7008266E1 /* SearchbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA544D822951FC7008266E1 /* SearchbarView.xib */; };
+		BFB13166229A609200A4CCCA /* ydeals.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB13165229A609200A4CCCA /* ydeals.png */; };
 		BFB49AA8225D847E0098F830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA7225D847E0098F830 /* AppDelegate.swift */; };
 		BFB49AAA225D847E0098F830 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB49AA9225D847E0098F830 /* MainViewController.swift */; };
 		BFB49AAD225D847E0098F830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB49AAB225D847E0098F830 /* Main.storyboard */; };
@@ -312,6 +313,7 @@
 		BF585F72228B69200051561B /* PopupInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupInformationView.xib; sourceTree = "<group>"; };
 		BFA544D622951FBB008266E1 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		BFA544D822951FC7008266E1 /* SearchbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchbarView.xib; sourceTree = "<group>"; };
+		BFB13165229A609200A4CCCA /* ydeals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydeals.png; sourceTree = "<group>"; };
 		BFB49AA4225D847E0098F830 /* YDeals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YDeals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB49AA7225D847E0098F830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB49AA9225D847E0098F830 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 				91CC03DF2285FE4400DE80DA /* Utilities */,
 				BFDF92EB2263FC56009076C8 /* Assets */,
 				BFB49AB3225D84810098F830 /* Info.plist */,
+				BFB13165229A609200A4CCCA /* ydeals.png */,
 				BFB49AAE225D84810098F830 /* Assets.xcassets */,
 			);
 			path = YDeals;
@@ -961,6 +964,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFB13166229A609200A4CCCA /* ydeals.png in Resources */,
 				BF3AED362275776F0058B5CB /* LoginViewController.xib in Resources */,
 				BF585F73228B69200051561B /* PopupInformationView.xib in Resources */,
 				BFDF92EA2263DD25009076C8 /* CustomActivityIndicatorView.xib in Resources */,

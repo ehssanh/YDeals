@@ -130,7 +130,15 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
     
     //Mark: Searchbar
     private func setupSearchbar(){
-        self.searchBarView = SearchbarView(frame: CGRect(x: 0, y: 50, width: self.collectionView.frame.width, height: 49))
+        let topAnchor : CGFloat
+        if #available(iOS 11.0, *) {
+            topAnchor = self.view.safeAreaInsets.top
+        }else{
+            topAnchor = 0;
+        }
+        
+        self.searchBarView = SearchbarView(frame: CGRect(x: 0, y: topAnchor + 24, width: self.collectionView.bounds.width, height: 49))
+        self.searchBarView?.backgroundColor = self.view.backgroundColor;
         self.view.addSubview(self.searchBarView!);
         self.searchBarView?.delegate = self;
         self.searchBarView?.isHidden = true

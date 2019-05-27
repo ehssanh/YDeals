@@ -11,7 +11,7 @@ import UIKit
 
 class OnboardingController {
     
-    let onboardingSequence : [OnboardingSequenceElement.Type] = [LoginViewController.self, PickAirportViewController.self]
+    let onboardingSequence : [OnboardingSequenceElement.Type] = [PickAirportViewController.self]
     
     var currentSequeceElement : OnboardingSequenceElement?
     var sequenceElements = [OnboardingSequenceElement]()
@@ -27,7 +27,7 @@ class OnboardingController {
         }
     }
     
-    private func onboardingComplete(){
+    private func onboardingComplete_Persist(){
         Persistence.save(value: true, key: PERSISTENCE_KEY_ONBOARDING_DONE);
     }
     
@@ -54,6 +54,7 @@ class OnboardingController {
             if (currentItemIndex == self.onboardingSequence.count - 1){
                 print ("last index");
                 self.onboardingCompletionBlock!();
+                self.onboardingComplete_Persist();
                 return;
             }
             
