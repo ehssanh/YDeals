@@ -134,13 +134,17 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
         if #available(iOS 11.0, *) {
             let window = UIApplication.shared.keyWindow
             topPadding = (window?.safeAreaInsets.top)!;
+
         }else{
             topPadding = 0;
         }
         
         self.searchBarView = SearchbarView(frame: CGRect(x: 0, y: topPadding + 2, width: self.collectionView.bounds.width, height: 49))
         self.searchBarView?.backgroundColor = self.view.backgroundColor;
+
         self.view.addSubview(self.searchBarView!);
+        self.searchBarView?.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true;
+        self.searchBarView?.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true;
         self.searchBarView?.delegate = self;
         self.searchBarView?.isHidden = true
     }
