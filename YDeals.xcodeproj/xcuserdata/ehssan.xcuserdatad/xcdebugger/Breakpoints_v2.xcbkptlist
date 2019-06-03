@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YDeals/UI/OnBoarding/OnboardingController.swift"
-            timestampString = "580637308.597239"
+            filePath = "YDeals/UI/Main/MainViewController.swift"
+            timestampString = "581225859.628108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "iterateOnboardingSequence()"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "setupSearchbar()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
