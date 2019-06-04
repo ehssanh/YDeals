@@ -140,7 +140,7 @@ public struct OffsetIndices<T: Collection> {
 
 extension OffsetIndices : IndexProxyProtocol, Collection {
     
-    public typealias Index = T.IndexDistance
+    public typealias Index = Int
     public typealias Target = T
     
     #if swift(>=4.1)
