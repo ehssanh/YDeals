@@ -53,7 +53,16 @@ class OnboardingController {
             
             if (currentItemIndex == self.onboardingSequence.count - 1){
                 print ("last index");
-                self.onboardingCompletionBlock!();
+                if (self.onboardingCompletionBlock != nil){
+                    self.onboardingCompletionBlock!();
+                }else{
+                    let mainVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController();
+                    self.currentSequeceElement?.navigationController?.pushViewController(mainVC!, animated: true)
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    let nav = appDelegate.setupNavigationController(mainVC!)
+                    UIApplication.shared.windows.first?.rootViewController = nav;
+                }
+                
                 self.onboardingComplete_Persist();
                 return;
             }
@@ -83,7 +92,9 @@ class OnboardingController {
             return type(of: theElement) == elementType
         }
         
+        
         guard let foundElement = onboardingElement else {
+            iterateOnboardingSequence()
             return;
         }
         

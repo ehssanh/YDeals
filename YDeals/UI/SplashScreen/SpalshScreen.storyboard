@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="32" id="vzk-Ns-7SF"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sale_plane" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-5k-WJH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane_sale" translatesAutoresizingMaskIntoConstraints="NO" id="Bfd-5k-WJH">
                                 <rect key="frame" x="101" y="92" width="212" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="rC9-qk-0v9"/>
@@ -61,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sale_plane" width="156" height="156"/>
+        <image name="plane_sale" width="16" height="16"/>
         <image name="ydeals.png" width="116" height="124"/>
     </resources>
 </document>
