@@ -14,7 +14,7 @@ let APP_BACKGROUND_COLOR : UIColor = UIColor(red256: 26, green: 166, blue: 237, 
 let MAP_ZOOM_DIAMETER_METERS : Double = 150000 //150 km
 let YDEALS_GATEWAY_URL = "https://www.solidxpert.com/appdata/traveldeals/traveldeals_ydealsdata.json";
 
-let APP_ABOUT_URL = "https://www.solidxpert.com/appdata/traveldeals/about.html"
+let APP_ABOUT_URL = "https://www.solidxpert.com/appdata/traveldeals/about_travel_deals.html"
 let APP_PRIVACY_POLICY_URL = "https://www.solidxpert.com/appdata/traveldeals/privacy_policy.html"
 
 let PERSISTENCE_KEY_ONBOARDING_DONE = "P_Onboarding"
