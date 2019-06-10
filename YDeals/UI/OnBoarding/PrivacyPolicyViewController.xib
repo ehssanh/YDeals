@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrivacyPolicyViewController" customModule="YDeals" customModuleProvider="target">
+            <connections>
+                <outlet property="checkboxHolderView" destination="eOT-ir-H0W" id="kaV-Sr-6c1"/>
+                <outlet property="checkboxText" destination="Afn-jw-2xu" id="H27-ON-NG3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQ6-Wt-Qg1">
+                    <rect key="frame" x="20" y="760" width="374" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="TMd-xM-Jox"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <state key="normal" title="I Agree">
+                        <color key="titleColor" red="0.2958234549" green="0.74881148340000003" blue="0.99858099219999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onAgreeButtonClicked:" destination="-1" eventType="touchUpInside" id="G9K-ln-bct"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane_sale" translatesAutoresizingMaskIntoConstraints="NO" id="xpN-xc-5av">
+                    <rect key="frame" x="57" y="92" width="300" height="234.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="xpN-xc-5av" secondAttribute="height" multiplier="10:9" constant="39.333333333333314" id="MOi-eJ-Bp7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIm-c6-BK1">
+                    <rect key="frame" x="20" y="373.5" width="374" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="ZAi-Gm-7Gr"/>
+                    </constraints>
+                    <string key="text">Welcome!
+Let's find the cheapest flight and travel deals in Canada!</string>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOT-ir-H0W">
+                    <rect key="frame" x="20" y="696" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Atg-Va-yKq"/>
+                        <constraint firstAttribute="width" constant="30" id="GH5-t4-xhp"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="Afn-jw-2xu" customClass="UITopAlignedLabel" customModule="YDeals" customModuleProvider="target">
+                    <rect key="frame" x="64" y="696" width="330" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="V40-MX-s1d"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.2958234549" green="0.74881148340000003" blue="0.99858099219999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eOT-ir-H0W" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="66J-C2-4Jn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xpN-xc-5av" secondAttribute="trailing" constant="57" id="76S-WT-RBK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xQ6-Wt-Qg1" secondAttribute="trailing" constant="20" id="AdK-Us-pVN"/>
+                <constraint firstItem="xpN-xc-5av" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="CtE-md-J14"/>
+                <constraint firstItem="OIm-c6-BK1" firstAttribute="top" secondItem="xpN-xc-5av" secondAttribute="bottom" constant="47" id="Cv8-DK-Siz"/>
+                <constraint firstItem="xQ6-Wt-Qg1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="E7g-Aq-gfg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Afn-jw-2xu" secondAttribute="trailing" constant="20" id="FvX-aK-Slg"/>
+                <constraint firstItem="xQ6-Wt-Qg1" firstAttribute="top" secondItem="Afn-jw-2xu" secondAttribute="bottom" constant="21" id="NEd-N2-QVF"/>
+                <constraint firstItem="Afn-jw-2xu" firstAttribute="leading" secondItem="eOT-ir-H0W" secondAttribute="trailing" constant="14" id="NMk-fj-mWs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xQ6-Wt-Qg1" secondAttribute="bottom" constant="42" id="Q4l-Z7-Mwr"/>
+                <constraint firstItem="OIm-c6-BK1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fA8-CH-a3P"/>
+                <constraint firstItem="xQ6-Wt-Qg1" firstAttribute="top" secondItem="eOT-ir-H0W" secondAttribute="bottom" constant="34" id="gtL-B0-nG3"/>
+                <constraint firstItem="OIm-c6-BK1" firstAttribute="width" secondItem="xQ6-Wt-Qg1" secondAttribute="width" id="jg1-Ac-Fc4"/>
+                <constraint firstItem="xpN-xc-5av" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="57" id="tNh-E8-TdP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OIm-c6-BK1" secondAttribute="trailing" constant="20" id="vvh-bL-6wf"/>
+                <constraint firstItem="xpN-xc-5av" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xax-q7-grc"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-210.1449275362319" y="101.11607142857143"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="plane_sale" width="156" height="156"/>
+    </resources>
+</document>

@@ -61,7 +61,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plane_sale" width="16" height="16"/>
+        <image name="plane_sale" width="156" height="156"/>
         <image name="ydeals.png" width="116" height="124"/>
     </resources>
 </document>

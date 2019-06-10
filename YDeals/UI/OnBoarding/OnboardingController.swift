@@ -11,7 +11,7 @@ import UIKit
 
 class OnboardingController {
     
-    let onboardingSequence : [OnboardingSequenceElement.Type] = [PickAirportViewController.self]
+    let onboardingSequence : [OnboardingSequenceElement.Type] = [PrivacyPolicyViewController.self, PickAirportViewController.self]
     
     var currentSequeceElement : OnboardingSequenceElement?
     var sequenceElements = [OnboardingSequenceElement]()
@@ -88,10 +88,24 @@ class OnboardingController {
     }
     
     func navigateTo(elementType:OnboardingSequenceElement.Type) -> Void{
+        //If onboarding is skipped,sequenceElements is empty and we should use
+        //onBoardingSequence instead.
+        if (self.onboardingSequence.contains(where: { (OnboardingElementype) -> Bool in
+            return elementType == OnboardingElementype;
+        })){
+
+            let newElement = elementType.init(nibName: String(describing: elementType), bundle: Bundle.main, controller: self);
+            self.sequenceElements.append(newElement);
+            self.currentSequeceElement = newElement;
+        }else{
+            // Type is not even included in OnBOARDING
+            return;
+        }
+        
+        // If sequence has run, sequenceElements is not empty :
         let onboardingElement = self.sequenceElements.first { (theElement) -> Bool in
             return type(of: theElement) == elementType
         }
-        
         
         guard let foundElement = onboardingElement else {
             iterateOnboardingSequence()

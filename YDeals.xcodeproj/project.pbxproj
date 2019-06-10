@@ -134,8 +134,10 @@
 		BF54E0FA225DABD200574817 /* Date + codingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09B225DABD100574817 /* Date + codingStrategy.swift */; };
 		BF54E0FB225DABD200574817 /* String + toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09C225DABD100574817 /* String + toDate.swift */; };
 		BF54E0FC225DABD200574817 /* String + toBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09D225DABD100574817 /* String + toBool.swift */; };
-		BF585F71228B69150051561B /* PopupInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF585F70228B69150051561B /* PopupInformationView.swift */; };
-		BF585F73228B69200051561B /* PopupInformationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF585F72228B69200051561B /* PopupInformationView.xib */; };
+		BF9FF95022ADAF8F009C48DE /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FF94E22ADAF8E009C48DE /* PrivacyPolicyViewController.swift */; };
+		BF9FF95122ADAF8F009C48DE /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9FF94F22ADAF8E009C48DE /* PrivacyPolicyViewController.xib */; };
+		BF9FF95322ADB4E4009C48DE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FF95222ADB4E4009C48DE /* CheckBox.swift */; };
+		BF9FF95522ADC13F009C48DE /* UITopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FF95422ADC13F009C48DE /* UITopAlignedLabel.swift */; };
 		BFA544D722951FBB008266E1 /* SearchbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA544D622951FBB008266E1 /* SearchbarView.swift */; };
 		BFA544D922951FC7008266E1 /* SearchbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA544D822951FC7008266E1 /* SearchbarView.xib */; };
 		BFB13166229A609200A4CCCA /* ydeals.png in Resources */ = {isa = PBXBuildFile; fileRef = BFB13165229A609200A4CCCA /* ydeals.png */; };
@@ -309,8 +311,10 @@
 		BF54E09C225DABD100574817 /* String + toDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + toDate.swift"; sourceTree = "<group>"; };
 		BF54E09D225DABD100574817 /* String + toBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + toBool.swift"; sourceTree = "<group>"; };
 		BF54E09E225DABD200574817 /* FeedKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedKit.h; sourceTree = "<group>"; };
-		BF585F70228B69150051561B /* PopupInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupInformationView.swift; sourceTree = "<group>"; };
-		BF585F72228B69200051561B /* PopupInformationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupInformationView.xib; sourceTree = "<group>"; };
+		BF9FF94E22ADAF8E009C48DE /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
+		BF9FF94F22ADAF8E009C48DE /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
+		BF9FF95222ADB4E4009C48DE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		BF9FF95422ADC13F009C48DE /* UITopAlignedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITopAlignedLabel.swift; sourceTree = "<group>"; };
 		BFA544D622951FBB008266E1 /* SearchbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchbarView.swift; sourceTree = "<group>"; };
 		BFA544D822951FC7008266E1 /* SearchbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchbarView.xib; sourceTree = "<group>"; };
 		BFB13165229A609200A4CCCA /* ydeals.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ydeals.png; sourceTree = "<group>"; };
@@ -413,8 +417,8 @@
 				91FC866C2284F190002E204C /* AllowPushViewController.xib */,
 				91FC866F2284F1B7002E204C /* PickAirportViewController.swift */,
 				91FC86702284F1B7002E204C /* PickAirportViewController.xib */,
-				BF585F70228B69150051561B /* PopupInformationView.swift */,
-				BF585F72228B69200051561B /* PopupInformationView.xib */,
+				BF9FF94E22ADAF8E009C48DE /* PrivacyPolicyViewController.swift */,
+				BF9FF94F22ADAF8E009C48DE /* PrivacyPolicyViewController.xib */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -457,6 +461,8 @@
 				BF51EBA92262C0D8001E1017 /* UIImageViewExtensions.swift */,
 				BF0AAB502262E34C00506592 /* UIColor.swift */,
 				916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */,
+				BF9FF95222ADB4E4009C48DE /* CheckBox.swift */,
+				BF9FF95422ADC13F009C48DE /* UITopAlignedLabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -966,7 +972,6 @@
 			files = (
 				BFB13166229A609200A4CCCA /* ydeals.png in Resources */,
 				BF3AED362275776F0058B5CB /* LoginViewController.xib in Resources */,
-				BF585F73228B69200051561B /* PopupInformationView.xib in Resources */,
 				BFDF92EA2263DD25009076C8 /* CustomActivityIndicatorView.xib in Resources */,
 				BF53985622642B6400587CAE /* LogoView.xib in Resources */,
 				BFDF92E22262FC13009076C8 /* EntryDetailsViewController.xib in Resources */,
@@ -981,6 +986,7 @@
 				91FC86722284F1B7002E204C /* PickAirportViewController.xib in Resources */,
 				BFD4398C2264621B0009FFA0 /* SpalshScreen.storyboard in Resources */,
 				BFB49AAD225D847E0098F830 /* Main.storyboard in Resources */,
+				BF9FF95122ADAF8F009C48DE /* PrivacyPolicyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,6 +1034,7 @@
 				914AB5B5228C97B70073DD81 /* WebDetailViewController.swift in Sources */,
 				BF54E0B2225DABD200574817 /* AtomFeed + mapAttributes.swift in Sources */,
 				BF54E0A8225DABD200574817 /* AtomFeedContributor.swift in Sources */,
+				BF9FF95522ADC13F009C48DE /* UITopAlignedLabel.swift in Sources */,
 				BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */,
 				BFDC7108228A93FD00013E0B /* SettingsViewController.swift in Sources */,
 				BF54E0BD225DABD200574817 /* RSSFeedSkipHour.swift in Sources */,
@@ -1047,6 +1054,7 @@
 				BF54E0FC225DABD200574817 /* String + toBool.swift in Sources */,
 				BF54E0C3225DABD200574817 /* RSSFeedItemSource.swift in Sources */,
 				BF54E0A2225DABD200574817 /* ISO8601DateFormatter.swift in Sources */,
+				BF9FF95022ADAF8F009C48DE /* PrivacyPolicyViewController.swift in Sources */,
 				BF54E0D5225DABD200574817 /* MediaContent.swift in Sources */,
 				BF54E0BF225DABD200574817 /* RSSFeedItemCategory.swift in Sources */,
 				BF0AAB552262E6A100506592 /* OffsetIndexableCollection.swift in Sources */,
@@ -1056,7 +1064,6 @@
 				BF54E0C4225DABD200574817 /* RSSFeed.swift in Sources */,
 				BF53985A22643F9300587CAE /* SpalshScreenViewController.swift in Sources */,
 				BF54E0B7225DABD200574817 /* RDFPath.swift in Sources */,
-				BF585F71228B69150051561B /* PopupInformationView.swift in Sources */,
 				BF51EB9D226284A5001E1017 /* EntryCollectionViewCell.swift in Sources */,
 				BF54E0E1225DABD200574817 /* MediaScene.swift in Sources */,
 				91CC03E3228620DC00DE80DA /* AppSettings.swift in Sources */,
@@ -1124,6 +1131,7 @@
 				BF54E0EA225DABD200574817 /* JSONFeed.swift in Sources */,
 				BFB49AE8225D98240098F830 /* Parser.swift in Sources */,
 				BF51EBA3226289AC001E1017 /* EntryCollectionViewDelegate.swift in Sources */,
+				BF9FF95322ADB4E4009C48DE /* CheckBox.swift in Sources */,
 				BF54E0D4225DABD200574817 /* MediaRights.swift in Sources */,
 				BF3AED352275776F0058B5CB /* LoginViewController.swift in Sources */,
 				BF0AAB582262EAA500506592 /* LogoView.swift in Sources */,
