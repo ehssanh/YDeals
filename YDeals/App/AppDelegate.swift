@@ -7,53 +7,33 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     static let onboardingController = OnboardingController()
+    var notificationHandler : NotificationHandler?
+    
+    private var isAppUpdated : Bool = false;
+    private var application : UIApplication!
 
-
+    //----------------------------------------------------
+    //MARK: -
+    //MARK: App Lifecycle
+    //----------------------------------------------------
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let rootVC = determineInitialViewController();
         self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
         
-        _ = checkAppVersionForUpdate();
+        self.application = application;
+        self.isAppUpdated = checkAppVersionForUpdate();
+        self.notificationHandler = NotificationHandler(application);
         
         return true
-    }
-    
-    private func checkAppVersionForUpdate() -> Bool{
-        let version = getAppVersion();
-        let lastSavedVersion = Persistence.load(key: PERSISTENCE_KEY_APP_VERSION) as! String?
-        Persistence.save(value: version, key: PERSISTENCE_KEY_APP_VERSION);
-
-        if (lastSavedVersion == nil){
-            return false;
-        }else if (lastSavedVersion != version){
-            return true;
-        }
-        
-        print(version);
-        return false;
-    }
-    
-    private func determineInitialViewController() -> UIViewController {
-        return UIStoryboard(name: "SpalshScreen", bundle: nil).instantiateInitialViewController()!;
-    }
-    
-    func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
-        let navCtrl = UINavigationController(rootViewController: rootVC);
-        return navCtrl;
-    }
-    
-    func getAppVersion() -> String {
-        let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-        return versionNumber + "." + buildNumber;
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -77,5 +57,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        self.notificationHandler?.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: deviceToken);
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        self.notificationHandler?.didReceiveRemoteNotification(userInfo: userInfo, fetchCompletionHandler: completionHandler);
+    }
+ 
+    //----------------------------------------------------
+    //MARK: -
+    //MARK: Public Methods
+    //----------------------------------------------------
+    private func determineInitialViewController() -> UIViewController {
+        return UIStoryboard(name: "SpalshScreen", bundle: nil).instantiateInitialViewController()!;
+    }
+    
+    func setupNavigationController(_ rootVC:UIViewController) -> UINavigationController{
+        let navCtrl = UINavigationController(rootViewController: rootVC);
+        return navCtrl;
+    }
+    
+    func getAppVersion() -> String {
+        let versionNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        let buildNumber = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
+        return versionNumber + "." + buildNumber;
+    }
+    
+    
+    //----------------------------------------------------
+    //MARK: -
+    //MARK: Private Methods
+    //----------------------------------------------------
+    
+    private func checkAppVersionForUpdate() -> Bool{
+        let version = getAppVersion();
+        let lastSavedVersion = Persistence.load(key: PERSISTENCE_KEY_APP_VERSION) as! String?
+        Persistence.save(value: version, key: PERSISTENCE_KEY_APP_VERSION);
+        
+        if (lastSavedVersion == nil){
+            return false;
+        }else if (lastSavedVersion != version){
+            return true;
+        }
+        
+        print(version);
+        return false;
+    }
+
 }
 

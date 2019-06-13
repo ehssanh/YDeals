@@ -13,16 +13,16 @@ class PrivacyPolicyViewController: OnboardingSequenceElement {
     @IBOutlet weak var checkboxText: UILabel!
     @IBOutlet weak var checkboxHolderView: UIView!
     
-    private var agreed : Bool = false;
+    private var circleBox : Checkbox!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let consentAlreadyGiven = Persistence.load(key: PERSISTENCE_KEY_PRIVACY_CONSENT)
-        if ( consentAlreadyGiven != nil && (consentAlreadyGiven as! Bool)==true ) {
-            self.navigateToNext(withData: nil);
-            return;
-        }
+//        let consentAlreadyGiven = Persistence.load(key: PERSISTENCE_KEY_PRIVACY_CONSENT)
+//        if ( consentAlreadyGiven != nil && (consentAlreadyGiven as! Bool)==true ) {
+//            self.navigateToNext(withData: nil);
+//            return;
+//        }
 
         setupLabelTextBesideCheckbox();
         setupCheckBox();
@@ -50,26 +50,30 @@ class PrivacyPolicyViewController: OnboardingSequenceElement {
     }
     
     private func setupCheckBox(){
-        let circleBox = Checkbox(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-        circleBox.borderStyle = .circle
-        circleBox.checkmarkStyle = .tick
-        circleBox.borderWidth = 1
-        circleBox.uncheckedBorderColor = .white
-        circleBox.checkedBorderColor = .white
-        circleBox.checkmarkSize = 0.8
-        circleBox.checkmarkColor = .white
-        circleBox.addTarget(self, action: #selector(circleBoxValueChanged(sender:)), for: .valueChanged)
+        self.circleBox = Checkbox(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        self.circleBox.borderStyle = .circle
+        self.circleBox.checkmarkStyle = .tick
+        self.circleBox.borderWidth = 1
+        self.circleBox.uncheckedBorderColor = .white
+        self.circleBox.checkedBorderColor = .white
+        self.circleBox.checkmarkSize = 0.8
+        self.circleBox.checkmarkColor = .white
+        self.circleBox.addTarget(self, action: #selector(circleBoxValueChanged(sender:)), for: .valueChanged)
         
         self.checkboxHolderView.addSubview(circleBox)
-        circleBox.isHidden = false;
+        self.circleBox.isHidden = false;
+        self.circleBox.isChecked = true;
     }
     
     // target action example
     @objc func circleBoxValueChanged(sender: Checkbox) {
-        self.agreed.toggle();
+        // Nothing
     }
 
     @objc func onLabelTapped(sender: UILabel){
+        
+        self.circleBox.isChecked.toggle();
+        
         let privacyPolicyurl = URL(string: APP_PRIVACY_POLICY_URL);
         let svc = SFSafariViewController(url: privacyPolicyurl!)
         svc.modalPresentationStyle = .overFullScreen
@@ -77,7 +81,7 @@ class PrivacyPolicyViewController: OnboardingSequenceElement {
     }
     
     @IBAction func onAgreeButtonClicked(_ sender: Any) {
-        if ( agreed ){
+        if ( self.circleBox.isChecked ){
             self.navigateToNext(withData: nil);
             Persistence.save(value: true, key: PERSISTENCE_KEY_PRIVACY_CONSENT);
         }else{

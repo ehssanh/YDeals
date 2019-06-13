@@ -10,25 +10,45 @@ import UIKit
 
 class AllowPushViewController: OnboardingSequenceElement {
 
+    private var notificationHandler : NotificationHandler?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
+    }
+    
+    @IBAction func onAllowPushButtonClicked(_ sender: Any) {
         
-        self.navigateToNext(withData: nil);
+        guard let notificationHandler = self.notificationHandler else {
+            navigateToNext(withData: nil);
+            return;
+        }
+        
+        notificationHandler.registerForPush { (token, error) in
+            
+            if error != nil {
+                print(error?.localizedDescription ?? "");
+                self.navigateToNext(withData: nil);
+                return;
+            }
+            
+            if token == nil {
+                print("TOKEN WAS NIL ")
+                self.navigateToNext(withData: nil);
+                return;
+            }
+            
+            //TODO: Send token to Server, save it
+            self.navigateToNext(withData: nil);
+            
+            #if DEBUG
+            let tokenStr = String(data: token!, encoding: .utf8)
+            print("TOKEN RECEIVED : \(tokenStr!)")
+            #endif
+        }
     }
     
-    
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

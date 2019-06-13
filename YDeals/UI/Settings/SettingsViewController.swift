@@ -16,7 +16,7 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
     private let VERSION_GROUP_INDEX = 1
     
     private let groupNames = ["General","Version"];
-    private let generalSettings = ["About", "Privacy Policy", "Change Airport"]
+    private let generalSettings = ["Change Airport", "About", "Privacy Policy" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,9 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
         switch indexPath.section {
             case GENERAL_GROUP_INDEX:
                 do {
-                    if ( indexPath.row == generalSettings.firstIndex(of: "About") ){
+                    if (indexPath.row == generalSettings.firstIndex(of: "Change Airport")){
+                        AppDelegate.onboardingController.navigateTo(elementType: PickAirportViewController.self);
+                    }else if ( indexPath.row == generalSettings.firstIndex(of: "About") ){
                         _ = self.navigateTo(xibName: "WebDetailViewController", clazzType: WebDetailViewController.self) { (vc) in
                             vc.loadPage(url:APP_ABOUT_URL , withtitle: "About")
                         }
@@ -77,8 +79,6 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
                         _ = self.navigateTo(xibName: "WebDetailViewController", clazzType: WebDetailViewController.self) { (vc) in
                             vc.loadPage(url:APP_PRIVACY_POLICY_URL , withtitle: "About")
                         }
-                    }else if (indexPath.row == generalSettings.firstIndex(of: "Change Airport")){
-                        AppDelegate.onboardingController.navigateTo(elementType: PickAirportViewController.self);
                     }
                 }
             default:

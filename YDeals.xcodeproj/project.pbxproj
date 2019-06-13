@@ -13,6 +13,8 @@
 		916B34C4228A1AC100AB545E /* YDealsGatewaysParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */; };
 		916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C5228A1AE200AB545E /* YDealsGateway.swift */; };
 		916B34C8228A2F7F00AB545E /* MKAirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */; };
+		91A525C322B1A6DA00F43634 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C222B1A6DA00F43634 /* NotificationHandler.swift */; };
+		91A525C522B1C5E700F43634 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C422B1C5E700F43634 /* ErrorCode.swift */; };
 		91CC03E12285FE5700DE80DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E02285FE5700DE80DA /* Utilities.swift */; };
 		91CC03E3228620DC00DE80DA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E2228620DC00DE80DA /* AppSettings.swift */; };
 		91CC03E6228623D000DE80DA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E5228623D000DE80DA /* LocationHelper.swift */; };
@@ -189,6 +191,9 @@
 		916B34C3228A1AC100AB545E /* YDealsGatewaysParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGatewaysParser.swift; sourceTree = "<group>"; };
 		916B34C5228A1AE200AB545E /* YDealsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGateway.swift; sourceTree = "<group>"; };
 		916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAirportAnnotation.swift; sourceTree = "<group>"; };
+		91A525C222B1A6DA00F43634 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		91A525C422B1C5E700F43634 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
+		91A525C622B1D51200F43634 /* YDeals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YDeals.entitlements; sourceTree = "<group>"; };
 		91CC03E02285FE5700DE80DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		91CC03E2228620DC00DE80DA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		91CC03E5228623D000DE80DA /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
@@ -380,6 +385,23 @@
 				914AB5B8228CD3190073DD81 /* Persistence.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		91A525C022B195F700F43634 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				91CC03E2228620DC00DE80DA /* AppSettings.swift */,
+				91A525C422B1C5E700F43634 /* ErrorCode.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		91A525C122B1A6B100F43634 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				91A525C222B1A6DA00F43634 /* NotificationHandler.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		91CC03DF2285FE4400DE80DA /* Utilities */ = {
@@ -723,6 +745,9 @@
 		BFB49AA6225D847E0098F830 /* YDeals */ = {
 			isa = PBXGroup;
 			children = (
+				91A525C622B1D51200F43634 /* YDeals.entitlements */,
+				91A525C022B195F700F43634 /* Config */,
+				91A525C122B1A6B100F43634 /* Notifications */,
 				914AB5B7228CD3080073DD81 /* Persistence */,
 				91CC03E4228623B900DE80DA /* Location */,
 				BFB49AE4225D97A70098F830 /* Parser */,
@@ -782,7 +807,6 @@
 			isa = PBXGroup;
 			children = (
 				BFB49AA7225D847E0098F830 /* AppDelegate.swift */,
-				91CC03E2228620DC00DE80DA /* AppSettings.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -932,6 +956,11 @@
 					BFB49AA3225D847E0098F830 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BFB49AB7225D84810098F830 = {
 						CreatedOnToolsVersion = 10.1;
@@ -1014,6 +1043,7 @@
 				BFB49AAA225D847E0098F830 /* MainViewController.swift in Sources */,
 				BF51EBA522628D63001E1017 /* GradientView.swift in Sources */,
 				916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */,
+				91A525C322B1A6DA00F43634 /* NotificationHandler.swift in Sources */,
 				BF54E0CC225DABD200574817 /* ContentNamespace.swift in Sources */,
 				BF54E0ED225DABD200574817 /* JSONFeedItem.swift in Sources */,
 				BF54E0CD225DABD200574817 /* DublinCoreNamespace.swift in Sources */,
@@ -1033,6 +1063,7 @@
 				BF54E0F9225DABD200574817 /* Array + Equatable.swift in Sources */,
 				914AB5B5228C97B70073DD81 /* WebDetailViewController.swift in Sources */,
 				BF54E0B2225DABD200574817 /* AtomFeed + mapAttributes.swift in Sources */,
+				91A525C522B1C5E700F43634 /* ErrorCode.swift in Sources */,
 				BF54E0A8225DABD200574817 /* AtomFeedContributor.swift in Sources */,
 				BF9FF95522ADC13F009C48DE /* UITopAlignedLabel.swift in Sources */,
 				BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */,
@@ -1315,6 +1346,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YDeals/YDeals.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 55XL3SK93H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1342,6 +1374,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YDeals/YDeals.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 55XL3SK93H;

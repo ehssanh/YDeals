@@ -11,7 +11,7 @@ import UIKit
 
 class OnboardingController {
     
-    let onboardingSequence : [OnboardingSequenceElement.Type] = [PrivacyPolicyViewController.self, PickAirportViewController.self]
+    let onboardingSequence : [OnboardingSequenceElement.Type] = [PrivacyPolicyViewController.self, AllowPushViewController.self, PickAirportViewController.self]
     
     var currentSequeceElement : OnboardingSequenceElement?
     var sequenceElements = [OnboardingSequenceElement]()
