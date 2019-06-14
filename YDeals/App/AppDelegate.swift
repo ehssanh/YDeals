@@ -59,7 +59,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        self.notificationHandler?.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: deviceToken);
+        self.notificationHandler?.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: deviceToken, error:nil);
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        self.notificationHandler?.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: nil, error:error);
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

@@ -42,9 +42,9 @@ class NotificationHandler {
     }
     
     
-    func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data){
+    func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: Data?, error:Error?){
         if (self.pushRegistrationCompletionBlock != nil){
-            self.pushRegistrationCompletionBlock!(deviceToken, nil);
+            self.pushRegistrationCompletionBlock!(deviceToken, error);
         }
     }
     

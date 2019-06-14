@@ -38,14 +38,16 @@ class AllowPushViewController: OnboardingSequenceElement {
                 self.navigateToNext(withData: nil);
                 return;
             }
+           
+            #if DEBUG
+            
+            let tokenStr = token!.map { String(format: "%2.2hhx", $0) }.joined()
+            print("TOKEN RECEIVED : \(tokenStr)")
+            #endif
             
             //TODO: Send token to Server, save it
             self.navigateToNext(withData: nil);
             
-            #if DEBUG
-            let tokenStr = String(data: token!, encoding: .utf8)
-            print("TOKEN RECEIVED : \(tokenStr!)")
-            #endif
         }
     }
     
