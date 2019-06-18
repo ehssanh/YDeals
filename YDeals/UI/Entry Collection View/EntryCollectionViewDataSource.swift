@@ -33,7 +33,14 @@ class EntryCollectionViewDataSource: NSObject, UICollectionViewDataSource {
     func filterEntriesWithKeyword(keyword:String){
         self.isFilteringMode = true;
         let filteredResult = self.data.filter { (feedEntry) -> Bool in
-            feedEntry.keywords?.contains(keyword.lowercased()) ?? false;
+            //feedEntry.keywords?.contains(keyword.lowercased()) ?? false;
+            
+            let filteredKeywords = feedEntry.keywords?.filter({ (item) -> Bool in
+                let stringMatch = item.lowercased().range(of: keyword.lowercased())
+                return stringMatch != nil ? true : false
+            })
+            
+            return !(filteredKeywords == nil || filteredKeywords!.isEmpty)
         }
         
         self.filteredResults = Array.init(filteredResult);

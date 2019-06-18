@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.isAppUpdated = checkAppVersionForUpdate();
         if (self.isAppUpdated){
-            let updateOnboardingSequence = [PrivacyPolicyViewController.self]
+            let updateOnboardingSequence = [PrivacyPolicyViewController.self, PickAirportViewController.self]
             AppDelegate.onboardingController.updateMode();
             AppDelegate.onboardingController.setOnboardingSequence(newSequence: updateOnboardingSequence);
             

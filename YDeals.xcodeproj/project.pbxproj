@@ -746,6 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				91A525C622B1D51200F43634 /* YDeals.entitlements */,
+				BFB49AE1225D968E0098F830 /* App */,
 				91A525C022B195F700F43634 /* Config */,
 				91A525C122B1A6B100F43634 /* Notifications */,
 				914AB5B7228CD3080073DD81 /* Persistence */,
@@ -755,7 +756,6 @@
 				BFB49AD5225D84B30098F830 /* Models */,
 				BF4C3D42225F0FC10091FF27 /* Presenter */,
 				BFB49AE3225D96CC0098F830 /* UI */,
-				BFB49AE1225D968E0098F830 /* App */,
 				BF51EBA62262A2BA001E1017 /* Extensions */,
 				91CC03DF2285FE4400DE80DA /* Utilities */,
 				BFDF92EB2263FC56009076C8 /* Assets */,
@@ -814,15 +814,15 @@
 		BFB49AE3225D96CC0098F830 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				BFA544D522951F9E008266E1 /* SearchbarView */,
-				BF53985722643F4C00587CAE /* SplashScreen */,
 				BF0AAB562262EA7900506592 /* Logo */,
+				BF53985722643F4C00587CAE /* SplashScreen */,
 				BF3AED32227577130058B5CB /* OnBoarding */,
+				BFDC7105228A6AC600013E0B /* Main */,
 				BFDF92DE2262FBD8009076C8 /* EntryDetailsViewController */,
 				BF51EBA12262897D001E1017 /* Entry Collection View */,
 				BF41AC9B226EDCF500F730CE /* Entity CollectionView Cell */,
-				BFDC7105228A6AC600013E0B /* Main */,
 				BFDC7104228A6AA800013E0B /* Settings */,
+				BFA544D522951F9E008266E1 /* SearchbarView */,
 				BFDF92E52263DCD1009076C8 /* ActivityIndicator */,
 			);
 			path = UI;
@@ -1375,7 +1375,7 @@
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = YDeals/YDeals.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 55XL3SK93H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1391,7 +1391,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidxpert.YTravelApps.YDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "YDeals - Dev";
+				PROVISIONING_PROFILE_SPECIFIER = "YDeals - Production";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
