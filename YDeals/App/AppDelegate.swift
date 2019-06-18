@@ -25,13 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //----------------------------------------------------
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.application = application;
+
+        self.isAppUpdated = checkAppVersionForUpdate();
+        if (self.isAppUpdated){
+            let updateOnboardingSequence = [PrivacyPolicyViewController.self]
+            AppDelegate.onboardingController.updateMode();
+            AppDelegate.onboardingController.setOnboardingSequence(newSequence: updateOnboardingSequence);
+            
+        }
+
+        self.notificationHandler = NotificationHandler(application);
+        
         let rootVC = determineInitialViewController();
         self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
-        
-        self.application = application;
-        self.isAppUpdated = checkAppVersionForUpdate();
-        self.notificationHandler = NotificationHandler(application);
         
         return true
     }
@@ -101,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Persistence.save(value: version, key: PERSISTENCE_KEY_APP_VERSION);
         
         if (lastSavedVersion == nil){
-            return false;
+            return false; // First install is not an update
         }else if (lastSavedVersion != version){
             return true;
         }
