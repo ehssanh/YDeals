@@ -15,7 +15,8 @@ class AllowPushViewController: OnboardingSequenceElement {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
+        //self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
+        self.notificationHandler = nil;
     }
     
     @IBAction func onAllowPushButtonClicked(_ sender: Any) {
@@ -47,7 +48,6 @@ class AllowPushViewController: OnboardingSequenceElement {
             
             //TODO: Send token to Server, save it
             self.navigateToNext(withData: nil);
-            
         }
     }
     
