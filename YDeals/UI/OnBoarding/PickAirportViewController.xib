@@ -26,7 +26,7 @@
                     <viewLayoutGuide key="safeArea" id="uBA-ye-7va"/>
                 </mapView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your favourite departure airport" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pK3-7u-0rw">
-                    <rect key="frame" x="20" y="52" width="374" height="32"/>
+                    <rect key="frame" x="20" y="42" width="374" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="dTo-bM-CY2"/>
                     </constraints>
@@ -34,9 +34,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUE-Sc-meI">
-                    <rect key="frame" x="20" y="92" width="374" height="43"/>
-                    <string key="text">By giving location permission, we can locate the airport nearest to you faster.  You can always change your mind in your iPhone's Settings.</string>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="With location permission, we can locate the airport nearest to you faster.  Click on your favourite airport to select it." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUE-Sc-meI">
+                    <rect key="frame" x="20" y="82" width="374" height="43"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -50,7 +49,7 @@
                 <constraint firstItem="Yvk-QD-JpR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="77" id="Vxb-fz-jVC"/>
                 <constraint firstItem="Yvk-QD-JpR" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="-148" id="WDQ-O2-CLa"/>
                 <constraint firstItem="nUE-Sc-meI" firstAttribute="top" secondItem="pK3-7u-0rw" secondAttribute="bottom" constant="8" id="aI4-ss-MQu"/>
-                <constraint firstItem="pK3-7u-0rw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="cmb-Hq-Rek"/>
+                <constraint firstItem="pK3-7u-0rw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="42" id="cmb-Hq-Rek"/>
                 <constraint firstAttribute="trailing" secondItem="pK3-7u-0rw" secondAttribute="trailing" constant="20" id="iZC-cz-Xkh"/>
                 <constraint firstItem="pK3-7u-0rw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="pOj-H3-Bnn"/>
                 <constraint firstItem="nUE-Sc-meI" firstAttribute="width" secondItem="pK3-7u-0rw" secondAttribute="width" id="uVY-xt-ffW"/>

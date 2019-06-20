@@ -73,7 +73,7 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
         self.locationManager?.getUserLocation(completion: { (location, locErr) in
             
             if let err = locErr {
-                Utilities.showError(err.localizedDescription, parent: self)
+                Utilities.showLog(err.localizedDescription, parent: self)
             }
             
             guard let userLoation = location else{
@@ -87,7 +87,20 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
                 
                 self.map.showsUserLocation = true;
                 self.map.userLocation.title = nil;
-                self.map.setRegion(mapRegion, animated: true);
+                
+                self.locationManager?.convertLatLongToAddressInCountry(latitude: coordinate2d.latitude, longitude: coordinate2d.longitude, countryFound: { (countryName) in
+                    if "canada" == countryName.lowercased() {
+                        self.map.setRegion(mapRegion, animated: true);
+                    }else{
+                        //Default to YYZ if Person outside Canada
+                        toast("Looks like you are outside Canada. Defaulting to Toronto (YYZ) Airport. Feel free to change it!", size: .small, duration: .normal)
+                        let yyzCoordinate = CLLocationCoordinate2D(latitude: 43.6777, longitude: -79.6248);
+                        let yyzRegion = MKCoordinateRegion(center: yyzCoordinate, latitudinalMeters: MAP_ZOOM_DIAMETER_METERS, longitudinalMeters: MAP_ZOOM_DIAMETER_METERS)
+                        self.map.setRegion(yyzRegion, animated: true);
+                    }
+                })
+                
+                
             }
         })
     }
