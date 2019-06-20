@@ -137,6 +137,7 @@
 		BF54E0FA225DABD200574817 /* Date + codingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09B225DABD100574817 /* Date + codingStrategy.swift */; };
 		BF54E0FB225DABD200574817 /* String + toDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09C225DABD100574817 /* String + toDate.swift */; };
 		BF54E0FC225DABD200574817 /* String + toBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF54E09D225DABD100574817 /* String + toBool.swift */; };
+		BF9A5F8A22BA0F2400AA2DAC /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9A5F8922BA0F2400AA2DAC /* SnapshotHelper.swift */; };
 		BF9FF95022ADAF8F009C48DE /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FF94E22ADAF8E009C48DE /* PrivacyPolicyViewController.swift */; };
 		BF9FF95122ADAF8F009C48DE /* PrivacyPolicyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9FF94F22ADAF8E009C48DE /* PrivacyPolicyViewController.xib */; };
 		BF9FF95322ADB4E4009C48DE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9FF95222ADB4E4009C48DE /* CheckBox.swift */; };
@@ -318,6 +319,7 @@
 		BF54E09C225DABD100574817 /* String + toDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + toDate.swift"; sourceTree = "<group>"; };
 		BF54E09D225DABD100574817 /* String + toBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String + toBool.swift"; sourceTree = "<group>"; };
 		BF54E09E225DABD200574817 /* FeedKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedKit.h; sourceTree = "<group>"; };
+		BF9A5F8922BA0F2400AA2DAC /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		BF9FF94E22ADAF8E009C48DE /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		BF9FF94F22ADAF8E009C48DE /* PrivacyPolicyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyPolicyViewController.xib; sourceTree = "<group>"; };
 		BF9FF95222ADB4E4009C48DE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -781,6 +783,7 @@
 		BFB49AC6225D84810098F830 /* YDealsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				BF9A5F8922BA0F2400AA2DAC /* SnapshotHelper.swift */,
 				BFB49AC7225D84810098F830 /* YDealsUITests.swift */,
 				BFB49AC9225D84810098F830 /* Info.plist */,
 			);
@@ -1198,6 +1201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB49AC8225D84810098F830 /* YDealsUITests.swift in Sources */,
+				BF9A5F8A22BA0F2400AA2DAC /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

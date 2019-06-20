@@ -11,4 +11,5 @@ import MapKit
 
 class MKAirportAnnotation: MKPointAnnotation {
     var airportData : YDealsGateway?
+    
 }

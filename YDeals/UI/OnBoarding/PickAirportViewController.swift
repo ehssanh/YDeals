@@ -56,6 +56,9 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
                 annotation.title = airport.cityName + "(" + airport.gateway + ")";
                 annotation.airportData = airport
                 
+                annotation.isAccessibilityElement = true;
+                annotation.accessibilityLabel = airport.gateway;
+                
                 DispatchQueue.main.async {
                     self.map.addAnnotation(annotation);
                 }
@@ -74,6 +77,7 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
             
             if let err = locErr {
                 Utilities.showLog(err.localizedDescription, parent: self)
+                //Utilities.showError(err.localizedDescription, parent: self)
             }
             
             guard let userLoation = location else{

@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.application = application;
+        
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("UI_TEST_MODE") {
+            Persistence.save(value: false, key: PERSISTENCE_KEY_ONBOARDING_DONE);
+        }
 
         self.isAppUpdated = checkAppVersionForUpdate();
         if (self.isAppUpdated){
