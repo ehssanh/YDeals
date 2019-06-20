@@ -1,0 +1,39 @@
+{
+  "default": {
+    "keyword": {
+      "color": "#f8ff38"
+    },
+    "title": {
+      "color": "#ffffff"
+    },
+    "background": "./background.jpg",
+    "padding": 50,
+    "show_complete_frame": false,
+    "stack_title" : false,
+    "title_below_image": false,
+    "frame" : "WHITE"
+  },
+
+
+  "data": [
+    {
+      "filter": "Location",
+      "keyword": {
+        "text": "Favourite Airports"
+      },
+      "title":{
+        "text" : "closest to you in Canada."
+      }
+    },
+    {
+      "filter": "Notification",
+      "keyword": {
+        "text": "Be the first"
+      },
+      "title":{
+        "text" : "to know about the deals."
+      }
+    }
+    
+  ]
+}
