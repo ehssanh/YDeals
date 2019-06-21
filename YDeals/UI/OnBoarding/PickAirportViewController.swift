@@ -56,9 +56,6 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
                 annotation.title = airport.cityName + "(" + airport.gateway + ")";
                 annotation.airportData = airport
                 
-                annotation.isAccessibilityElement = true;
-                annotation.accessibilityLabel = airport.gateway;
-                
                 DispatchQueue.main.async {
                     self.map.addAnnotation(annotation);
                 }
@@ -125,5 +122,16 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
         Persistence.save(value:airport , key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY)
         self.navigateToNext(withData: airportAnnotation.airportData);
     }
+    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+        
+        for view in views{
+            if view.annotation?.isKind(of: MKAirportAnnotation.self) ?? false {
+                view.isAccessibilityElement = true;
+                view.accessibilityIdentifier = "YYZ";
+            }
+        }
+    }
+    
 }
 

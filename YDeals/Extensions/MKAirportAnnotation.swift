@@ -10,6 +10,6 @@ import Foundation
 import MapKit
 
 class MKAirportAnnotation: MKPointAnnotation {
-    var airportData : YDealsGateway?
     
+    var airportData : YDealsGateway? 
 }
