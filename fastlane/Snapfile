@@ -5,10 +5,10 @@ clean true
 erase_simulator true
 
 # A list of devices you want to take the screenshots from
- # devices([
- #   "iPhone 8 Plus", 
- #   "iPhone Xs Max"
- # ])
+  devices([
+    "iPhone 8 Plus", 
+    "iPhone Xs Max"
+ ])
 
 
  languages([

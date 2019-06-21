@@ -40,11 +40,11 @@ class YDealsUITests: XCTestCase {
 
         snapshot("01PrivacyPolicy")
         
-        app.buttons["I Agree"].waitForExistence(timeout: 2)
+        let _ = app.buttons["I Agree"].waitForExistence(timeout: 2)
         app.buttons["I Agree"].tap()
 
         snapshot("02Notification")
-        app.buttons["Yes, Please"].waitForExistence(timeout: 2)
+        let _ = app.buttons["Yes, Please"].waitForExistence(timeout: 2)
         app.buttons["Yes, Please"].tap()
 
         addUIInterruptionMonitor(withDescription: "System Dialog") {
@@ -64,6 +64,7 @@ class YDealsUITests: XCTestCase {
         
         pin.tap();
 
+        let _ = app.collectionViews.children(matching: .cell).element(boundBy: 6).waitForExistence(timeout: 4)
         snapshot("04List")
         app.collectionViews.children(matching: .cell).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.tap()
 
