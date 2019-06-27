@@ -15,8 +15,7 @@ class AllowPushViewController: OnboardingSequenceElement {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
-        self.notificationHandler = nil;
+        self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
     }
     
     @IBAction func onAllowPushButtonClicked(_ sender: Any) {
@@ -35,19 +34,19 @@ class AllowPushViewController: OnboardingSequenceElement {
             }
             
             if token == nil {
-                print("TOKEN WAS NIL ")
+                Utilities.dLog(message: "TOKEN WAS NIL ")
                 self.navigateToNext(withData: nil);
+                Persistence.save(value: nil, key: PERSISTENCE_KEY_DEVICE_TOKEN);
                 return;
             }
-           
-            #if DEBUG
-            
+
             let tokenStr = token!.map { String(format: "%2.2hhx", $0) }.joined()
-            print("TOKEN RECEIVED : \(tokenStr)")
-            #endif
+            Persistence.save(value: tokenStr, key: PERSISTENCE_KEY_DEVICE_TOKEN);
+            
+            Utilities.dLog(message: "TOKEN RECEIVED : \(tokenStr)");
             
             //TODO: Send token to Server, save it
-            self.navigateToNext(withData: nil);
+            self.navigateToNext(withData: tokenStr);
         }
     }
     

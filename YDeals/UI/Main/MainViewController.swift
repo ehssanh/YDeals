@@ -33,6 +33,17 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
         self.tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onViewTapped))
         
         self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
+        let deviceToken = Persistence.load(key: PERSISTENCE_KEY_DEVICE_TOKEN) as! String?;
+
+        
+        if (deviceToken != nil && self.airport != nil){
+            
+            self.serverAPI.registerDevice(deviceToken: deviceToken!, airport: self.airport.gateway) { (successful) in
+                if (successful){
+                    Utilities.dLog(message: "Registered. DEVICE TOKEN, Airport sent to server.")
+                }
+            }
+        }
         
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;

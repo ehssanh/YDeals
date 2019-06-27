@@ -16,6 +16,7 @@
 		919446B322BAFB9C00411238 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919446B222BAFB9B00411238 /* Toast.swift */; };
 		91A525C322B1A6DA00F43634 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C222B1A6DA00F43634 /* NotificationHandler.swift */; };
 		91A525C522B1C5E700F43634 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C422B1C5E700F43634 /* ErrorCode.swift */; };
+		91A5A26822C53C57002E4966 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A26722C53C57002E4966 /* ServerAPI.swift */; };
 		91CC03E12285FE5700DE80DA /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E02285FE5700DE80DA /* Utilities.swift */; };
 		91CC03E3228620DC00DE80DA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E2228620DC00DE80DA /* AppSettings.swift */; };
 		91CC03E6228623D000DE80DA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E5228623D000DE80DA /* LocationHelper.swift */; };
@@ -197,6 +198,7 @@
 		91A525C222B1A6DA00F43634 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		91A525C422B1C5E700F43634 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		91A525C622B1D51200F43634 /* YDeals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YDeals.entitlements; sourceTree = "<group>"; };
+		91A5A26722C53C57002E4966 /* ServerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
 		91CC03E02285FE5700DE80DA /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		91CC03E2228620DC00DE80DA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		91CC03E5228623D000DE80DA /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
@@ -406,6 +408,14 @@
 				91A525C222B1A6DA00F43634 /* NotificationHandler.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		91A5A26622C53C48002E4966 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				91A5A26722C53C57002E4966 /* ServerAPI.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		91CC03DF2285FE4400DE80DA /* Utilities */ = {
@@ -750,6 +760,7 @@
 		BFB49AA6225D847E0098F830 /* YDeals */ = {
 			isa = PBXGroup;
 			children = (
+				91A5A26622C53C48002E4966 /* Http */,
 				91A525C622B1D51200F43634 /* YDeals.entitlements */,
 				BFB49AE1225D968E0098F830 /* App */,
 				91A525C022B195F700F43634 /* Config */,
@@ -1113,6 +1124,7 @@
 				BF54E0C1225DABD200574817 /* RSSFeedTextInput.swift in Sources */,
 				BF54E0C7225DABD200574817 /* iTunesCategory.swift in Sources */,
 				BFB49ADB225D85550098F830 /* FeedEntry.swift in Sources */,
+				91A5A26822C53C57002E4966 /* ServerAPI.swift in Sources */,
 				BF54E0AD225DABD200574817 /* AtomFeed + mapCharacters.swift in Sources */,
 				BF54E0A1225DABD200574817 /* RFC822DateFormatter.swift in Sources */,
 				BF54E0E9225DABD200574817 /* MediaPlayer.swift in Sources */,

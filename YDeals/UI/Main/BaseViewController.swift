@@ -12,6 +12,7 @@ import UIKit
 class BaseViewController: UIViewController {
     
     private var activityIndicator : CustomActivityIndicatorView!
+    let serverAPI = ServerAPI();
 
     override func viewDidLoad() {
         super.viewDidLoad();
