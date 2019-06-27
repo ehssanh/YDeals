@@ -34,11 +34,10 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
         
         self.airport = Persistence.load(key: PERSISTENCE_KEY_CURRENT_YDEALS_GATEWAY, type: YDealsGateway.self) ;
         let deviceToken = Persistence.load(key: PERSISTENCE_KEY_DEVICE_TOKEN) as! String?;
-
         
         if (deviceToken != nil && self.airport != nil){
             
-            self.serverAPI.registerDevice(deviceToken: deviceToken!, airport: self.airport.gateway) { (successful) in
+            self.serverAPI.registerDevice(deviceToken: deviceToken!, airport: self.airport.gateway) { (successful, registrationId) in
                 if (successful){
                     Utilities.dLog(message: "Registered. DEVICE TOKEN, Airport sent to server.")
                 }

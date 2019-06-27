@@ -35,6 +35,11 @@ class Persistence {
         UserDefaults.standard.synchronize();
     }
     
+    class func save(value:Double, key:String){
+        UserDefaults.standard.set(value, forKey: key);
+        UserDefaults.standard.synchronize();
+    }
+    
     class func save<T>(value:T?, key:String) where T:Codable{
         
         guard let value = value else{

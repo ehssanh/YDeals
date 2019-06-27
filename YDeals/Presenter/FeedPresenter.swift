@@ -24,6 +24,7 @@ class FeedPresenter : Presenter {
     func present() {
         DispatchQueue.global().async {
             self.parser.parse { (feed, error) in
+                
                 DispatchQueue.main.async {
                     self.delegate.presenterReadyToPresent(item: feed, error: error);
                 }

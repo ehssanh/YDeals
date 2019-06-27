@@ -97,7 +97,7 @@ class FeedkitParser: GenericFeedParser {
                         entryItem.htmlContent = newHtmlContent;
                     }
                     
-                    // Remove footer (can't fond this..")
+                    // Remove footer (can't find this..")
                     let rangeOfFooter2 = newHtmlContent.range(of:"<div style=\"background-color: #ffffd7;");
                     if let footerRange2 = rangeOfFooter2{
                         newHtmlContent = String(newHtmlContent[...footerRange2.lowerBound.advanced(by: -1)])
