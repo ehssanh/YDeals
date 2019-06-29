@@ -46,7 +46,7 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
         
         //TODO: Use data provider based on User option to
         let feedUrl = URL(string: self.airport.url)!;
-        self.gatewayName?.text = self.airport.gateway + " Deals";
+        self.gatewayName?.text = "From: " + self.airport.cityName.split(separator: ",")[0];
         
         self.parser = FeedkitParser(feedUrl: feedUrl);
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);

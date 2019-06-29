@@ -103,6 +103,14 @@ class FeedkitParser: GenericFeedParser {
                         newHtmlContent = String(newHtmlContent[...footerRange2.lowerBound.advanced(by: -1)])
                         entryItem.htmlContent = newHtmlContent;
                     }
+                    
+                    // Remove "Join us.. "(ve 2)
+                    //<p><strong>Live deal discussion
+                    let rangeOfFooter3 = newHtmlContent.range(of:"<p><strong>Live deal discussion");
+                    if let footerRange3 = rangeOfFooter3{
+                        newHtmlContent = String(newHtmlContent[...footerRange3.lowerBound.advanced(by: -1)])
+                        entryItem.htmlContent = newHtmlContent;
+                    }
                 }
                 
                 result.entries?.append(entryItem);

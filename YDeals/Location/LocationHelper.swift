@@ -34,7 +34,7 @@ class LocationHelper : NSObject, CLLocationManagerDelegate {
                 case .notDetermined:
                     self.locationManager.requestWhenInUseAuthorization();
                 case .denied ,.restricted:
-                    Utilities.showError("Location permission denied", parent: self.parentViewController);
+                    Utilities.showLog("Location permission denied", parent: self.parentViewController);
                 case .authorizedAlways, .authorizedWhenInUse:
                     self.locationManager.startUpdatingLocation();
                 @unknown default:

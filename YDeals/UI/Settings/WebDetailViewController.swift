@@ -19,12 +19,13 @@ class WebDetailViewController: BaseViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.webView.navigationDelegate = self;
         
         if (self.url != nil){
             let request = URLRequest(url: self.url!);
             showUIBusy();
             self.webView.load(request);
+            self.webView.navigationDelegate = self;
+            
         }
     }
     
@@ -46,5 +47,12 @@ class WebDetailViewController: BaseViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         self.hideUIBusy();
     }
-
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let url = navigationAction.request.url
+        let hostAddress = url?.host
+        
+        print("");
+    }
+    
 }

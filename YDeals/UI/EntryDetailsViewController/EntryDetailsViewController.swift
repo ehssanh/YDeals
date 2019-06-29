@@ -8,6 +8,7 @@
 
 import UIKit
 import WebKit
+import SafariServices
 
 class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
 
@@ -44,7 +45,8 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
             + "<div style=\"color:#A9A9A9;text-color:#A9A9A9;\"><hr>\(self.dateToString(date: item.publishedDate))<hr></div>"
             + "\(item.htmlContent ?? "")</p></body></html>";
         
-        webView.loadHTMLString(htmlString, baseURL: URL(string: "https://www.yvrdeals.com"));
+        let baseUrl = "https://" + (URL(string: item.link!)?.host)! ;
+        webView.loadHTMLString(htmlString, baseURL: URL(string: baseUrl)!);
         
     }
     
@@ -66,6 +68,25 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
         hideUIBusy();
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        
+        guard let linkUrl = navigationAction.request.url else {
+            decisionHandler(.allow);
+            return;
+        }
+        
+        if (linkUrl.absoluteString.contains("/go/")){
+            let svc = SFSafariViewController(url: linkUrl)
+            svc.preferredBarTintColor = APP_BACKGROUND_COLOR;
+            svc.preferredControlTintColor = .white;
+            svc.modalPresentationStyle = .overFullScreen
+            self.present(svc, animated: true, completion: nil)
+            decisionHandler(.cancel)
+        }else{
+            decisionHandler(.allow);
+        }
     }
     
     func showShareButton() -> Void{
