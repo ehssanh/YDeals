@@ -52,6 +52,16 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
         self.presenter = FeedPresenter(parser:self.parser, delegate: self);
         self.showUIBusy();
         self.presenter.present();
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name: NSNotification.Name(NOTIFICATION_APP_REFRESH), object: nil);
+    }
+    
+    
+    @objc private func refreshView() -> Void {
+        if (self.presenter != nil){
+            self.showUIBusy();
+            self.presenter.present();
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

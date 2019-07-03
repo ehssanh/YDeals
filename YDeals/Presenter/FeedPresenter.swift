@@ -31,6 +31,4 @@ class FeedPresenter : Presenter {
             }
         }
     }
-    
-    
 }

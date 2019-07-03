@@ -393,6 +393,13 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		919D86A422CD27700056457B /* Monetization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Monetization;
+			sourceTree = "<group>";
+		};
 		91A525C022B195F700F43634 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,9 +767,9 @@
 		BFB49AA6225D847E0098F830 /* YDeals */ = {
 			isa = PBXGroup;
 			children = (
-				91A5A26622C53C48002E4966 /* Http */,
 				91A525C622B1D51200F43634 /* YDeals.entitlements */,
 				BFB49AE1225D968E0098F830 /* App */,
+				91A5A26622C53C48002E4966 /* Http */,
 				91A525C022B195F700F43634 /* Config */,
 				91A525C122B1A6B100F43634 /* Notifications */,
 				914AB5B7228CD3080073DD81 /* Persistence */,
@@ -774,6 +781,7 @@
 				BFB49AE3225D96CC0098F830 /* UI */,
 				BF51EBA62262A2BA001E1017 /* Extensions */,
 				91CC03DF2285FE4400DE80DA /* Utilities */,
+				919D86A422CD27700056457B /* Monetization */,
 				BFDF92EB2263FC56009076C8 /* Assets */,
 				BFB49AB3225D84810098F830 /* Info.plist */,
 				BFB13165229A609200A4CCCA /* ydeals.png */,
