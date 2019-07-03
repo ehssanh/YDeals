@@ -8,6 +8,9 @@
 
 import UIKit
 import UserNotifications
+import FirebaseCore
+import GoogleMobileAds
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -45,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootVC = determineInitialViewController();
         self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
+        
+        FirebaseApp.configure();
+        GADMobileAds.sharedInstance().start(completionHandler: nil);
         
         return true
     }

@@ -1,0 +1,6 @@
+framework module Pods_YDealsTests {
+  umbrella header "Pods-YDealsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
