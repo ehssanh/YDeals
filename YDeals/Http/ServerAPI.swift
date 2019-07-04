@@ -99,7 +99,7 @@ class ServerAPI {
     }
     
     
-    func updateConfiguration(whenCompleted onComplete:@escaping ((_ configData:Data?, _ error:Error?) -> Void)) {
+    func updateConfiguration(whenCompleted onComplete:@escaping ((_ config:AppConfiguration?, _ error:Error?) -> Void)) {
         let configUrl = URL(string: APP_REMOTE_CONFIG_URL)!;
         let task = URLSession.shared.dataTask(with:configUrl) { (data, response, err) in
             if (err != nil){
@@ -113,14 +113,24 @@ class ServerAPI {
             }
             
             let statusCode = (response as! HTTPURLResponse).statusCode;
-            if (statusCode != self.HTTP_OK_STATUS_CODE){
+            if (statusCode != 200){
                 onComplete(nil, err);
                 return;
             }
             
-            onComplete(data, nil);
+            do{
+                let decoder = JSONDecoder();
+                let conf = try decoder.decode(AppConfiguration.self, from: data!)
+                onComplete(conf, nil);
+                
+            }catch{
+                onComplete(nil, error);
+            }
         };
         
         task.resume();
     }
+    
+    
+    
 }
