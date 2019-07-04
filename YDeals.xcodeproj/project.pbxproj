@@ -24,6 +24,9 @@
 		91CC03E3228620DC00DE80DA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E2228620DC00DE80DA /* AppSettings.swift */; };
 		91CC03E6228623D000DE80DA /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CC03E5228623D000DE80DA /* LocationHelper.swift */; };
 		91DABD4122BC3A06005E8042 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DABD4022BC3A06005E8042 /* SnapshotHelper.swift */; };
+		91F3CF6222CD66BF00A24C92 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3CF6122CD66BF00A24C92 /* AppConfiguration.swift */; };
+		91F3CF6422CD682F00A24C92 /* LocalConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 91F3CF6322CD682F00A24C92 /* LocalConfig.json */; };
+		91F3CF6622CD775300A24C92 /* AdSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F3CF6522CD775300A24C92 /* AdSettings.swift */; };
 		91FC866D2284F190002E204C /* AllowPushViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC866B2284F190002E204C /* AllowPushViewController.swift */; };
 		91FC866E2284F190002E204C /* AllowPushViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC866C2284F190002E204C /* AllowPushViewController.xib */; };
 		91FC86712284F1B7002E204C /* PickAirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC866F2284F1B7002E204C /* PickAirportViewController.swift */; };
@@ -215,6 +218,9 @@
 		91CC03E2228620DC00DE80DA /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		91CC03E5228623D000DE80DA /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		91DABD4022BC3A06005E8042 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		91F3CF6122CD66BF00A24C92 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		91F3CF6322CD682F00A24C92 /* LocalConfig.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = LocalConfig.json; sourceTree = "<group>"; };
+		91F3CF6522CD775300A24C92 /* AdSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdSettings.swift; sourceTree = "<group>"; };
 		91FC866B2284F190002E204C /* AllowPushViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllowPushViewController.swift; sourceTree = "<group>"; };
 		91FC866C2284F190002E204C /* AllowPushViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllowPushViewController.xib; sourceTree = "<group>"; };
 		91FC866F2284F1B7002E204C /* PickAirportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAirportViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +428,9 @@
 			children = (
 				91CC03E2228620DC00DE80DA /* AppSettings.swift */,
 				91A525C422B1C5E700F43634 /* ErrorCode.swift */,
+				91F3CF6122CD66BF00A24C92 /* AppConfiguration.swift */,
+				91F3CF6322CD682F00A24C92 /* LocalConfig.json */,
+				91F3CF6522CD775300A24C92 /* AdSettings.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1065,6 +1074,7 @@
 			files = (
 				BFB13166229A609200A4CCCA /* ydeals.png in Resources */,
 				BF3AED362275776F0058B5CB /* LoginViewController.xib in Resources */,
+				91F3CF6422CD682F00A24C92 /* LocalConfig.json in Resources */,
 				BFDF92EA2263DD25009076C8 /* CustomActivityIndicatorView.xib in Resources */,
 				BF53985622642B6400587CAE /* LogoView.xib in Resources */,
 				BFDF92E22262FC13009076C8 /* EntryDetailsViewController.xib in Resources */,
@@ -1275,6 +1285,7 @@
 				BF54E0EB225DABD200574817 /* JSONFeedAttachment.swift in Sources */,
 				BF54E0F3225DABD200574817 /* Result.swift in Sources */,
 				BF54E0B5225DABD200574817 /* RSSFeed + mapCharacters.swift in Sources */,
+				91F3CF6222CD66BF00A24C92 /* AppConfiguration.swift in Sources */,
 				BF54E0BC225DABD200574817 /* RSSFeedItemGUID.swift in Sources */,
 				BF54E0E6225DABD200574817 /* MediaStatus.swift in Sources */,
 				BF54E0F8225DABD200574817 /* String + toDuration.swift in Sources */,
@@ -1295,6 +1306,7 @@
 				BF54E0EC225DABD200574817 /* JSONFeedHub.swift in Sources */,
 				BF54E0AA225DABD200574817 /* AtomFeedEntrySummary.swift in Sources */,
 				BF54E0E0225DABD200574817 /* MediaParam.swift in Sources */,
+				91F3CF6622CD775300A24C92 /* AdSettings.swift in Sources */,
 				BF54E0E3225DABD200574817 /* MediaEmbed.swift in Sources */,
 				BFB49AA8225D847E0098F830 /* AppDelegate.swift in Sources */,
 				BF54E0A7225DABD200574817 /* AtomFeedEntryCategory.swift in Sources */,

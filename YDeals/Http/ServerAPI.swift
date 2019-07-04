@@ -94,14 +94,33 @@ class ServerAPI {
                 return;
             }
             
-            
         }
         task.resume();
     }
     
     
-    func updateGatewayLastDeal(gateway:YDealsGateway, feed:Feed?){
+    func updateConfiguration(whenCompleted onComplete:@escaping ((_ configData:Data?, _ error:Error?) -> Void)) {
+        let configUrl = URL(string: APP_REMOTE_CONFIG_URL)!;
+        let task = URLSession.shared.dataTask(with:configUrl) { (data, response, err) in
+            if (err != nil){
+                onComplete(nil, err);
+                return;
+            }
+            
+            if (response==nil || data==nil){
+                onComplete(nil, err);
+                return;
+            }
+            
+            let statusCode = (response as! HTTPURLResponse).statusCode;
+            if (statusCode != self.HTTP_OK_STATUS_CODE){
+                onComplete(nil, err);
+                return;
+            }
+            
+            onComplete(data, nil);
+        };
         
+        task.resume();
     }
-    
 }
