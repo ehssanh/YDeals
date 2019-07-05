@@ -17,6 +17,7 @@
 		916B34C6228A1AE200AB545E /* YDealsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C5228A1AE200AB545E /* YDealsGateway.swift */; };
 		916B34C8228A2F7F00AB545E /* MKAirportAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */; };
 		919446B322BAFB9C00411238 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919446B222BAFB9B00411238 /* Toast.swift */; };
+		919F093F22CE6C92001A2D15 /* AdMobHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F093E22CE6C92001A2D15 /* AdMobHelper.swift */; };
 		91A525C322B1A6DA00F43634 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C222B1A6DA00F43634 /* NotificationHandler.swift */; };
 		91A525C522B1C5E700F43634 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A525C422B1C5E700F43634 /* ErrorCode.swift */; };
 		91A5A26822C53C57002E4966 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A5A26722C53C57002E4966 /* ServerAPI.swift */; };
@@ -210,6 +211,7 @@
 		916B34C5228A1AE200AB545E /* YDealsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YDealsGateway.swift; sourceTree = "<group>"; };
 		916B34C7228A2F7F00AB545E /* MKAirportAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAirportAnnotation.swift; sourceTree = "<group>"; };
 		919446B222BAFB9B00411238 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		919F093E22CE6C92001A2D15 /* AdMobHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobHelper.swift; sourceTree = "<group>"; };
 		91A525C222B1A6DA00F43634 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		91A525C422B1C5E700F43634 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		91A525C622B1D51200F43634 /* YDeals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YDeals.entitlements; sourceTree = "<group>"; };
@@ -419,6 +421,8 @@
 		919D86A422CD27700056457B /* Monetization */ = {
 			isa = PBXGroup;
 			children = (
+				91F3CF6522CD775300A24C92 /* AdSettings.swift */,
+				919F093E22CE6C92001A2D15 /* AdMobHelper.swift */,
 			);
 			path = Monetization;
 			sourceTree = "<group>";
@@ -430,7 +434,6 @@
 				91A525C422B1C5E700F43634 /* ErrorCode.swift */,
 				91F3CF6122CD66BF00A24C92 /* AppConfiguration.swift */,
 				91F3CF6322CD682F00A24C92 /* LocalConfig.json */,
-				91F3CF6522CD775300A24C92 /* AdSettings.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1276,6 +1279,7 @@
 				BF54E0E7225DABD200574817 /* MediaStarRating.swift in Sources */,
 				BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */,
 				91FC86712284F1B7002E204C /* PickAirportViewController.swift in Sources */,
+				919F093F22CE6C92001A2D15 /* AdMobHelper.swift in Sources */,
 				BF54E0EE225DABD200574817 /* JSONFeedAuthor.swift in Sources */,
 				BF54E0FA225DABD200574817 /* Date + codingStrategy.swift in Sources */,
 				BF54E09F225DABD200574817 /* DateSpec.swift in Sources */,

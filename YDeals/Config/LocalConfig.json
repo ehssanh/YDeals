@@ -1,11 +1,4 @@
 {
     "version" : "1.0.0",
-    "ads_enabled" : true,
-    "adsettings" : {
-        "provider" : "admob",
-        "appid" : "ca-app-pub-9566147283740852~3233547782",
-        "bannerid" : "ca-app-pub-9566147283740852/2598536238",
-        "interstitialid" : "ca-app-pub-9566147283740852/2902197683",
-        "testbannerid" : "ca-app-pub-3940256099942544/2934735716"
-    }
+    "ads_enabled" : true
 }

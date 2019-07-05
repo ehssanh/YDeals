@@ -14,8 +14,11 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var adView: UIView!
     
     private var item : FeedEntry?
+    
+    private var adHelper : AdMobHelper!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,38 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         
         if let entry = item{
             loadContent(item: entry);
+        }
+        
+        self.adView.isHidden = true;
+        self.adHelper = AdMobHelper(with: self);
+        self.adHelper.showBannerAd { (bannerView) in
+            if bannerView != nil {
+                self.adView.isHidden = false;
+                self.adView.addSubview(bannerView!);
+                bannerView!.backgroundColor = .clear;
+                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
+                                                      attribute: .leading,
+                                                      relatedBy: .equal,
+                                                      toItem: self.adView,
+                                                      attribute: .leading,
+                                                      multiplier: 1,
+                                                      constant: 0))
+                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
+                                                      attribute: .trailing,
+                                                      relatedBy: .equal,
+                                                      toItem: self.adView,
+                                                      attribute: .trailing,
+                                                      multiplier: 1,
+                                                      constant: 0))
+                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!, attribute: .width, relatedBy: .equal, toItem: self.adView, attribute: .width, multiplier: 1.0, constant: 0.0));
+//                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
+//                                                      attribute: .bottom,
+//                                                      relatedBy: .equal,
+//                                                      toItem: self.view.safeAreaLayoutGuide.bottomAnchor,
+//                                                      attribute: .top,
+//                                                      multiplier: 1,
+//                                                      constant: 0))
+            }
         }
     }
     

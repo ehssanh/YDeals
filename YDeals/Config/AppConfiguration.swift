@@ -12,12 +12,10 @@ import Foundation
 struct AppConfiguration : Codable {
     var version : String
     var adsEnabled : Bool
-    var adSettings : AdSettings
     
     enum CodingKeys : String, CodingKey{
         case version
         case adsEnabled = "ads_enabled"
-        case adSettings = "adsettings"
     }
     
 }

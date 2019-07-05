@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntryDetailsViewController" customModule="YDeals" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="O4S-Vf-75g" id="qQR-bl-eDm"/>
                 <outlet property="image" destination="Vdh-ZG-pMU" id="TbU-LR-m3X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="NHO-O7-Vha" id="Jay-EH-lAr"/>
@@ -36,6 +37,13 @@
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O4S-Vf-75g">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <color key="backgroundColor" red="0.89935499429999999" green="0.16654059290000001" blue="0.1032814458" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="qMY-6Q-qqF"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -44,6 +52,9 @@
                 <constraint firstAttribute="bottom" secondItem="NHO-O7-Vha" secondAttribute="bottom" id="CAl-n4-Yhb"/>
                 <constraint firstItem="Vdh-ZG-pMU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="KEn-xL-M2T"/>
                 <constraint firstItem="NHO-O7-Vha" firstAttribute="top" secondItem="Vdh-ZG-pMU" secondAttribute="bottom" constant="8" id="Z2o-yv-yo4"/>
+                <constraint firstItem="O4S-Vf-75g" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="faJ-1r-ekL"/>
+                <constraint firstItem="O4S-Vf-75g" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="iH4-GD-iFC"/>
+                <constraint firstItem="O4S-Vf-75g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="r9M-fT-JT4"/>
                 <constraint firstItem="Vdh-ZG-pMU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="sZF-cY-tpA"/>
                 <constraint firstItem="NHO-O7-Vha" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ueL-ZU-veA"/>
             </constraints>
