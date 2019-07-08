@@ -19,7 +19,9 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9566147283740852~3233547782</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationUsageDescription</key>
@@ -49,7 +51,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-    <key>GADApplicationIdentifier</key>
-    <string>ca-app-pub-9566147283740852~3233547782</string>
 </dict>
 </plist>

@@ -9,7 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
-class AdMobHelper : NSObject, GADBannerViewDelegate {
+class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDelegate {
     
     let ADMOB_APP_ID = "ca-app-pub-9566147283740852~3233547782";
     let BANNER_AD_UNIT_ID = "ca-app-pub-9566147283740852/2598536238";
@@ -39,16 +39,33 @@ class AdMobHelper : NSObject, GADBannerViewDelegate {
         self.bannerReadyClosure = whenBannerReady ;
         let adRequest = GADRequest();
         
-        banner = GADBannerView(adSize: GADAdSizeFromCGSize(CGSize(width: self.rootViewController.view.bounds.width, height: 50.0)));
+        let windowWidth = UIApplication.shared.windows[0].frame.width;
+        banner = GADBannerView(adSize: GADAdSizeFromCGSize(CGSize(width: windowWidth, height: 50.0)));
         banner.rootViewController = self.rootViewController;
         banner.delegate = self;
+        
         #if DEBUG
-        adRequest.testDevices = [ kGADSimulatorID ];
-        banner.adUnitID = testUnitId.banner.rawValue;
+        adRequest.testDevices = [ kGADSimulatorID, "7883c3684f16cdae7b8475185196ecdf" ];
+        banner.adUnitID = BANNER_AD_UNIT_ID;
+        //banner.adUnitID = testUnitId.banner.rawValue;
         #else
         banner.adUnitID = BANNER_AD_UNIT_ID;
         #endif
+        
         banner.load(adRequest);
+    }
+    
+    func showNativeAd(numberOfAds:Int) -> Void {
+        let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
+        multipleAdsOptions.numberOfAds = 5
+        
+        let adLoader = GADAdLoader(adUnitID: "ca-app-pub-3940256099942544/3986624511",
+                                   rootViewController: self.rootViewController,
+                                   adTypes: [GADAdLoaderAdType.unifiedNative],
+                                   options: [multipleAdsOptions])
+        adLoader.delegate = self
+        
+        adLoader.load(GADRequest())
     }
     
     //MARK: -
@@ -87,5 +104,16 @@ class AdMobHelper : NSObject, GADBannerViewDelegate {
         print("adViewWillLeaveApplication")
     }
     
+    
+    //MARK: -
+    //MARK: Native Ads
+    
+    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADUnifiedNativeAd) {
+        
+    }
+    
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
+        
+    }
     
 }

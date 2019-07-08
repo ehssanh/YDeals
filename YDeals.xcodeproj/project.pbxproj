@@ -34,6 +34,8 @@
 		91FC86722284F1B7002E204C /* PickAirportViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91FC86702284F1B7002E204C /* PickAirportViewController.xib */; };
 		91FC86742284FA8A002E204C /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC86732284FA8A002E204C /* OnboardingController.swift */; };
 		922E67C2E6C308D103EAF09C /* Pods_YDealsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473C6921405BA0E4B812B804 /* Pods_YDealsTests.framework */; };
+		BF0A0F0222D1AFEE005320A3 /* AdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A0F0022D1AFEE005320A3 /* AdCollectionViewCell.swift */; };
+		BF0A0F0322D1AFEE005320A3 /* AdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0A0F0122D1AFEE005320A3 /* AdCollectionViewCell.xib */; };
 		BF0AAB4F2262E1B100506592 /* InfiniteCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */; };
 		BF0AAB512262E34C00506592 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB502262E34C00506592 /* UIColor.swift */; };
 		BF0AAB532262E66C00506592 /* OffsetIndexableSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */; };
@@ -229,6 +231,8 @@
 		91FC86702284F1B7002E204C /* PickAirportViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickAirportViewController.xib; sourceTree = "<group>"; };
 		91FC86732284FA8A002E204C /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		9F924E76D6120AC42FCEBD96 /* Pods-YDeals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDeals.debug.xcconfig"; path = "Target Support Files/Pods-YDeals/Pods-YDeals.debug.xcconfig"; sourceTree = "<group>"; };
+		BF0A0F0022D1AFEE005320A3 /* AdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF0A0F0122D1AFEE005320A3 /* AdCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF0AAB4E2262E1B100506592 /* InfiniteCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteCollectionView.swift; sourceTree = "<group>"; };
 		BF0AAB502262E34C00506592 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF0AAB522262E66C00506592 /* OffsetIndexableSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OffsetIndexableSequence.swift; sourceTree = "<group>"; };
@@ -515,6 +519,8 @@
 				BF51EBA422628D63001E1017 /* GradientView.swift */,
 				BF51EB9B226284A5001E1017 /* EntryCollectionViewCell.swift */,
 				BF51EB9C226284A5001E1017 /* EntryCollectionViewCell.xib */,
+				BF0A0F0022D1AFEE005320A3 /* AdCollectionViewCell.swift */,
+				BF0A0F0122D1AFEE005320A3 /* AdCollectionViewCell.xib */,
 			);
 			path = "Entity CollectionView Cell";
 			sourceTree = "<group>";
@@ -1080,6 +1086,7 @@
 				91F3CF6422CD682F00A24C92 /* LocalConfig.json in Resources */,
 				BFDF92EA2263DD25009076C8 /* CustomActivityIndicatorView.xib in Resources */,
 				BF53985622642B6400587CAE /* LogoView.xib in Resources */,
+				BF0A0F0322D1AFEE005320A3 /* AdCollectionViewCell.xib in Resources */,
 				BFDF92E22262FC13009076C8 /* EntryDetailsViewController.xib in Resources */,
 				BFDC7109228A93FD00013E0B /* SettingsViewController.xib in Resources */,
 				914AB5B6228C97B70073DD81 /* WebDetailViewController.xib in Resources */,
@@ -1333,6 +1340,7 @@
 				BF51EBA3226289AC001E1017 /* EntryCollectionViewDelegate.swift in Sources */,
 				BF9FF95322ADB4E4009C48DE /* CheckBox.swift in Sources */,
 				BF54E0D4225DABD200574817 /* MediaRights.swift in Sources */,
+				BF0A0F0222D1AFEE005320A3 /* AdCollectionViewCell.swift in Sources */,
 				BF3AED352275776F0058B5CB /* LoginViewController.swift in Sources */,
 				BF0AAB582262EAA500506592 /* LogoView.swift in Sources */,
 				BFB49AEA225D98E90098F830 /* FeedkitParser.swift in Sources */,

@@ -25,6 +25,8 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         
         self.webView.navigationDelegate = self;
         
+        self.view.backgroundColor = APP_BACKGROUND_COLOR;
+        
         if let entry = item{
             loadContent(item: entry);
         }
@@ -34,8 +36,10 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         self.adHelper.showBannerAd { (bannerView) in
             if bannerView != nil {
                 self.adView.isHidden = false;
+                self.adView.backgroundColor = APP_BACKGROUND_COLOR;
                 self.adView.addSubview(bannerView!);
                 bannerView!.backgroundColor = .clear;
+                
                 self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
                                                       attribute: .leading,
                                                       relatedBy: .equal,
@@ -43,6 +47,7 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
                                                       attribute: .leading,
                                                       multiplier: 1,
                                                       constant: 0))
+                
                 self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
                                                       attribute: .trailing,
                                                       relatedBy: .equal,
@@ -50,14 +55,22 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
                                                       attribute: .trailing,
                                                       multiplier: 1,
                                                       constant: 0))
-                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!, attribute: .width, relatedBy: .equal, toItem: self.adView, attribute: .width, multiplier: 1.0, constant: 0.0));
-//                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
-//                                                      attribute: .bottom,
-//                                                      relatedBy: .equal,
-//                                                      toItem: self.view.safeAreaLayoutGuide.bottomAnchor,
-//                                                      attribute: .top,
-//                                                      multiplier: 1,
-//                                                      constant: 0))
+
+                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
+                                                      attribute: .bottom,
+                                                      relatedBy: .equal,
+                                                      toItem: self.adView,
+                                                      attribute: .bottom,
+                                                      multiplier: 1,
+                                                      constant: 0))
+                
+                self.adView.addConstraint(NSLayoutConstraint(item: bannerView!,
+                                                             attribute: .top,
+                                                             relatedBy: .equal,
+                                                             toItem: self.adView,
+                                                             attribute: .top,
+                                                             multiplier: 1,
+                                                             constant: 0))
             }
         }
     }
