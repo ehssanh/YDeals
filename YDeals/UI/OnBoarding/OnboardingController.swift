@@ -47,8 +47,13 @@ class OnboardingController {
         Persistence.save(value: false, key: PERSISTENCE_KEY_ONBOARDING_DONE);
     }
     
+    func iterateOnboardingSequenceOnMainThread(){
+        DispatchQueue.main.async { [weak self] in
+            self?.iterateOnboardingSequence();
+        }
+    }
 
-    func iterateOnboardingSequence() -> Void{
+    private func iterateOnboardingSequence() -> Void{
         
         if (self.currentSequeceElementObject == nil){
             let T = onboardingSequence.first!;
@@ -123,7 +128,7 @@ class OnboardingController {
             
             if (onboardingElementType == self.onboardingSequence.first){
                 self.currentSequeceElementObject = nil;
-                iterateOnboardingSequence();
+                iterateOnboardingSequenceOnMainThread();
                 
                 return;
             }else {
@@ -137,7 +142,7 @@ class OnboardingController {
                 let elementBeforeType = self.onboardingSequence[elementBeforeTypeIdx];
                 let elementBefore = elementBeforeType.init(nibName: String(describing: elementBeforeType), bundle: Bundle.main, controller: self);
                 self.currentSequeceElementObject = elementBefore;
-                iterateOnboardingSequence();
+                iterateOnboardingSequenceOnMainThread();
 
                 return;
             }
@@ -184,7 +189,7 @@ class OnboardingSequenceElement : BaseViewController {
     
     func navigateToNext(withData data:Any?){
         self.data = data;
-        self.onboardingController?.iterateOnboardingSequence();
+        self.onboardingController?.iterateOnboardingSequenceOnMainThread();
     }
 }
 

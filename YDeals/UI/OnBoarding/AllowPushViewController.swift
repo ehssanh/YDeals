@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AllowPushViewController: OnboardingSequenceElement {
 
@@ -14,8 +15,34 @@ class AllowPushViewController: OnboardingSequenceElement {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
+        
+        if #available(iOS 10.0, *) {
+            let current = UNUserNotificationCenter.current()
+            current.getNotificationSettings(completionHandler: { settings in
+                
+                DispatchQueue.main.async {
+                    self.notificationHandler = (UIApplication.shared.delegate as! AppDelegate).notificationHandler;
+                    let deviceToken = Persistence.load(key: PERSISTENCE_KEY_DEVICE_TOKEN) as! String?;
+                    
+                    if (deviceToken != nil){
+                        self.navigateToNext(withData: nil);
+                        return;
+                    }
+                    
+                    switch(settings.authorizationStatus){
+                        
+                    case .notDetermined:
+                        break;
+                    case .denied, .authorized, .provisional:
+                        self.navigateToNext(withData: nil);
+                        return;
+                    @unknown default:
+                        self.navigateToNext(withData: nil);
+                        break;
+                    }
+                }
+            })
+        }
     }
     
     @IBAction func onAllowPushButtonClicked(_ sender: Any) {
@@ -29,20 +56,20 @@ class AllowPushViewController: OnboardingSequenceElement {
             
             if error != nil {
                 print(error?.localizedDescription ?? "");
+                Persistence.save(value: nil, key: PERSISTENCE_KEY_DEVICE_TOKEN);
                 self.navigateToNext(withData: nil);
                 return;
             }
             
             if token == nil {
                 Utilities.dLog(message: "TOKEN WAS NIL ")
-                self.navigateToNext(withData: nil);
                 Persistence.save(value: nil, key: PERSISTENCE_KEY_DEVICE_TOKEN);
+                self.navigateToNext(withData: nil);
                 return;
             }
 
             let tokenStr = token!.map { String(format: "%2.2hhx", $0) }.joined()
             Persistence.save(value: tokenStr, key: PERSISTENCE_KEY_DEVICE_TOKEN);
-            
             Utilities.dLog(message: "TOKEN RECEIVED : \(tokenStr)");
             
             //TODO: Send token to Server, save it
@@ -50,6 +77,11 @@ class AllowPushViewController: OnboardingSequenceElement {
         }
     }
     
-
+    @IBAction func onNoThanksButtonPushed(_ sender: Any) {
+        Persistence.save(value: nil, key: PERSISTENCE_KEY_DEVICE_TOKEN);
+        self.navigateToNext(withData: nil);
+        return;
+    }
+    
 
 }

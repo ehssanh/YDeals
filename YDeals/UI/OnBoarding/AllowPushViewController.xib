@@ -23,21 +23,6 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plane_sale" translatesAutoresizingMaskIntoConstraints="NO" id="7er-g8-Z9O">
                     <rect key="frame" x="57" y="92" width="261" height="195"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-af-LzC">
-                    <rect key="frame" x="20" y="676" width="335" height="60"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="MRt-JQ-ruj"/>
-                        <constraint firstAttribute="height" constant="60" id="xsa-Zt-Qlz"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                    <state key="normal" title="Yes, Please">
-                        <color key="titleColor" red="0.2958234549" green="0.74881148340000003" blue="0.99858099219999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="onAllowPushButtonClicked:" destination="-1" eventType="touchUpInside" id="Y3R-bW-APt"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKf-oV-HLt">
                     <rect key="frame" x="20" y="317" width="335" height="70"/>
                     <constraints>
@@ -51,34 +36,63 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="qEZ-AT-YmU" customClass="UITopAlignedLabel" customModule="YDeals" customModuleProvider="target">
-                    <rect key="frame" x="20" y="383.33333333333326" width="335" height="261.66666666666674"/>
+                    <rect key="frame" x="20" y="383.33333333333331" width="335" height="114.66666666666669"/>
                     <string key="text">By allowing push notifications, we can send you a notification whenever there is a deal available from your city. Hot deals won't last forever, it's important to be among the first to know. 
 </string>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0R5-Ky-Fex">
+                    <rect key="frame" x="129" y="728" width="117" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="117" id="I13-6F-OmT"/>
+                        <constraint firstAttribute="height" constant="30" id="OuS-Jp-1dB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="No, thanks. ">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="onNoThanksButtonPushed:" destination="-1" eventType="touchUpInside" id="tJs-LV-r6m"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQn-af-LzC">
+                    <rect key="frame" x="20" y="660" width="335" height="60"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="0e8-Bw-k58"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <state key="normal" title="Yes, Please">
+                        <color key="titleColor" red="0.2958234549" green="0.74881148340000003" blue="0.99858099219999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onAllowPushButtonClicked:" destination="-1" eventType="touchUpInside" id="Y3R-bW-APt"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.1676160882185771" green="0.75147771341412051" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="IKf-oV-HLt" firstAttribute="top" secondItem="7er-g8-Z9O" secondAttribute="bottom" constant="30" id="0q3-0Y-HqL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gQn-af-LzC" secondAttribute="trailing" constant="20" id="0r3-Vj-41s"/>
                 <constraint firstItem="7er-g8-Z9O" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="57" id="850-bE-Y2S"/>
-                <constraint firstItem="gQn-af-LzC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IrC-8Y-kJO"/>
-                <constraint firstItem="gQn-af-LzC" firstAttribute="top" secondItem="qEZ-AT-YmU" secondAttribute="bottom" constant="31" id="Jce-tq-9aR"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="gQn-af-LzC" secondAttribute="bottom" constant="42" id="Lav-Bu-wm4"/>
+                <constraint firstItem="0R5-Ky-Fex" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8BV-qm-vxT"/>
+                <constraint firstItem="gQn-af-LzC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BEj-Vd-xWg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gQn-af-LzC" secondAttribute="trailing" constant="20" id="BmC-N4-YSe"/>
                 <constraint firstItem="7er-g8-Z9O" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="QW1-az-Xdp"/>
                 <constraint firstItem="7er-g8-Z9O" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="48" id="T4Z-RN-uKY"/>
                 <constraint firstItem="qEZ-AT-YmU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="X5c-5O-etf"/>
                 <constraint firstItem="IKf-oV-HLt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cKM-LX-vQ6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0R5-Ky-Fex" secondAttribute="bottom" constant="20" id="cgW-vZ-hSC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7er-g8-Z9O" secondAttribute="trailing" constant="57" id="o52-7D-aZH"/>
                 <constraint firstItem="7er-g8-Z9O" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.24" id="qVa-5c-GFr"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qEZ-AT-YmU" secondAttribute="trailing" constant="20" id="rag-go-INH"/>
+                <constraint firstItem="0R5-Ky-Fex" firstAttribute="top" secondItem="gQn-af-LzC" secondAttribute="bottom" constant="8" id="sxU-i9-OuR"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IKf-oV-HLt" secondAttribute="trailing" constant="20" id="wVc-9q-0pz"/>
                 <constraint firstItem="qEZ-AT-YmU" firstAttribute="top" secondItem="IKf-oV-HLt" secondAttribute="bottom" constant="-3.5" id="yvy-cD-9mz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="46.875" y="32.74647887323944"/>
+            <point key="canvasLocation" x="45.600000000000001" y="32.512315270935964"/>
         </view>
     </objects>
     <resources>
