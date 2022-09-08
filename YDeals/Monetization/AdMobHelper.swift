@@ -40,13 +40,13 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
         let adRequest = GADRequest();
         
         let windowWidth = UIApplication.shared.windows[0].frame.width;
-        banner = GADBannerView(adSize: GADAdSizeFromCGSize(CGSize(width: windowWidth, height: 50.0)));
+        banner = GADBannerView(adSize: GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(windowWidth));
         banner.rootViewController = self.rootViewController;
         banner.delegate = self;
         
         #if DEBUG
         //adRequest.testDevices = ["7883c3684f16cdae7b8475185196ecdf" ];
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716";
+        banner.adUnitID = testUnitId.banner.rawValue;
         //banner.adUnitID = testUnitId.banner.rawValue;
         #else
         banner.adUnitID = BANNER_AD_UNIT_ID;
