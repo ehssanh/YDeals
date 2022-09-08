@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.1'
+platform :ios, '15.2'
 
 target 'YDeals' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -9,7 +9,7 @@ target 'YDeals' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Analytics'
-pod 'Firebase/AdMob'
+pod 'Google-Mobile-Ads-SDK'
 
   target 'YDealsTests' do
     inherit! :search_paths

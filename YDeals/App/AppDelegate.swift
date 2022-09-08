@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible();
         
         FirebaseApp.configure();
-        GADMobileAds.sharedInstance().start(completionHandler: nil);
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }

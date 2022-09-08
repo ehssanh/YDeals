@@ -9,8 +9,7 @@
 import Foundation
 import GoogleMobileAds
 
-class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDelegate {
-    
+class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
     let ADMOB_APP_ID = "ca-app-pub-9566147283740852~3233547782";
     let BANNER_AD_UNIT_ID = "ca-app-pub-9566147283740852/2598536238";
     let INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-9566147283740852/2902197683";
@@ -32,6 +31,7 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDel
     init(with rvc:UIViewController) {
         self.rootViewController = rvc;
         super.init();
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
     }
     
     func showBannerAd(whenBannerReady: @escaping ((_ banner:GADBannerView?)->Void)){
@@ -45,8 +45,8 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDel
         banner.delegate = self;
         
         #if DEBUG
-        adRequest.testDevices = [ kGADSimulatorID, "7883c3684f16cdae7b8475185196ecdf" ];
-        banner.adUnitID = BANNER_AD_UNIT_ID;
+        //adRequest.testDevices = ["7883c3684f16cdae7b8475185196ecdf" ];
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716";
         //banner.adUnitID = testUnitId.banner.rawValue;
         #else
         banner.adUnitID = BANNER_AD_UNIT_ID;
@@ -61,7 +61,7 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDel
         
         let adLoader = GADAdLoader(adUnitID: "ca-app-pub-3940256099942544/3986624511",
                                    rootViewController: self.rootViewController,
-                                   adTypes: [GADAdLoaderAdType.unifiedNative],
+                                   adTypes: [.native],
                                    options: [multipleAdsOptions])
         adLoader.delegate = self
         
@@ -69,51 +69,17 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADUnifiedNativeAdLoaderDel
     }
     
     //MARK: -
-    //MARK: Google Ad Banner View Delegate Methods
-    
-    /// Tells the delegate an ad request loaded an ad.
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+    //MARK: Google Ad Banner View Delegate Methods    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         self.bannerReadyClosure?(bannerView);
     }
     
     /// Tells the delegate an ad request failed.
-    func adView(_ bannerView: GADBannerView,
-                didFailToReceiveAdWithError error: GADRequestError) {
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         self.bannerReadyClosure?(nil);
     }
     
-    /// Tells the delegate that a full-screen view will be presented in response
-    /// to the user clicking on an ad.
-    func adViewWillPresentScreen(_ bannerView: GADBannerView) {
-        print("adViewWillPresentScreen")
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+        self.bannerReadyClosure?(nil);
     }
-    
-    /// Tells the delegate that the full-screen view will be dismissed.
-    func adViewWillDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewWillDismissScreen")
-    }
-    
-    /// Tells the delegate that the full-screen view has been dismissed.
-    func adViewDidDismissScreen(_ bannerView: GADBannerView) {
-        print("adViewDidDismissScreen")
-    }
-    
-    /// Tells the delegate that a user click will open another app (such as
-    /// the App Store), backgrounding the current app.
-    func adViewWillLeaveApplication(_ bannerView: GADBannerView) {
-        print("adViewWillLeaveApplication")
-    }
-    
-    
-    //MARK: -
-    //MARK: Native Ads
-    
-    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADUnifiedNativeAd) {
-        
-    }
-    
-    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: GADRequestError) {
-        
-    }
-    
 }
