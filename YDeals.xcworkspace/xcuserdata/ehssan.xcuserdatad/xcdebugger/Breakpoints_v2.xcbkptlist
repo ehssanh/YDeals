@@ -27,32 +27,128 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "885F2C42-4E8B-42D6-AA52-F6BDED4FC4BE"
+            uuid = "3DE54866-1CC6-44B0-8DA0-BF83B400E67E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YDeals/UI/EntryDetailsViewController/EntryDetailsViewController.swift"
+            filePath = "YDeals/Location/LocationHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getLocation(forPlaceCalled:placeFound:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "340832F7-F93D-448A-9546-1A9421EFB103"
+            uuid = "A0871A24-9320-4314-AA68-9902A90A8D10"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YDeals/UI/EntryDetailsViewController/EntryDetailsViewController.swift"
+            filePath = "YDeals/Location/LocationHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "convertLatLongToAddressInCountry(latitude:longitude:countryFound:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E236EA7D-3EBE-4669-8646-87BB21AE0678"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YDeals/UI/OnBoarding/PickAirportViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "addAirportAnnotationPoints(gateways:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5D80CA3-9915-452D-B6DC-0C46B5BE56FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YDeals/UI/OnBoarding/PickAirportViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D5D80CA3-9915-452D-B6DC-0C46B5BE56FF - dafe4ea6b005d186"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;YDeals.YDealsGateway&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YDeals.PickAirportViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "YDeals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ehssan/code/YDeals/YDeals/UI/OnBoarding/PickAirportViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "110">
+               </Location>
+               <Location
+                  uuid = "D5D80CA3-9915-452D-B6DC-0C46B5BE56FF - dafe4ea6b005d186"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;YDeals.YDealsGateway&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in YDeals.PickAirportViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "YDeals"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ehssan/code/YDeals/YDeals/UI/OnBoarding/PickAirportViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "135">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "958D8FF2-4783-45FB-87A0-AB0655C669F7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YDeals/Parser/YDealsGatewaysParser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "parse(whenComplete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0075E680-5598-49C0-97C0-036D5B7E1C83"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YDeals/Parser/YDealsGatewaysParser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "parse(whenComplete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

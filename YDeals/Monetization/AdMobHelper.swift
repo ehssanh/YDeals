@@ -69,7 +69,7 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
     }
     
     //MARK: -
-    //MARK: Google Ad Banner View Delegate Methods    
+    //MARK: Google Ad Banner View Delegate Methods
     func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
         self.bannerReadyClosure?(bannerView);
     }

@@ -15,6 +15,8 @@ class YDealsGateway: Codable {
     var airportAddress : String
     var url : String
     var siteUrl : String
+    var latitude : String
+    var longitude : String
     
     enum CodingKeys : String, CodingKey{
         case airportAddress = "address"
@@ -23,5 +25,7 @@ class YDealsGateway: Codable {
         case gateway
         case url
         case siteUrl = "siteurl"
+        case latitude = "lat"
+        case longitude = "long"
     }
 }

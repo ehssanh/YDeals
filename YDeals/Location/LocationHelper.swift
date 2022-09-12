@@ -62,6 +62,8 @@ class LocationHelper : NSObject, CLLocationManagerDelegate {
                           placeFound: @escaping(CLLocation?) -> Void) {
         
         let geocoder = CLGeocoder();
+        
+        
         geocoder.geocodeAddressString(name) { (placemarks, geoCodeError) in
             
             if geoCodeError != nil {

@@ -45,21 +45,25 @@ class PickAirportViewController: OnboardingSequenceElement, MKMapViewDelegate {
         }
         
         for airport in supportedAirports{
-            self.locationManager?.getLocation(forPlaceCalled: airport.airportAddress, placeFound: { (location) in
+//            self.locationManager?.getLocation(forPlaceCalled: airport.airportAddress, placeFound: { (location) in
+//
+//
+//            })
+            
+            guard let lat = CLLocationDegrees(airport.latitude),
+               let long = CLLocationDegrees(airport.longitude) else {
+                return;
+            }
 
-                guard let location = location else{
-                    return;
-                }
-
-                let annotation = MKAirportAnnotation()
-                annotation.coordinate = location.coordinate;
-                annotation.title = airport.cityName + "(" + airport.gateway + ")";
-                annotation.airportData = airport
-                
-                DispatchQueue.main.async {
-                    self.map.addAnnotation(annotation);
-                }
-            })
+            let location = CLLocation(latitude: lat, longitude: long)
+            let annotation = MKAirportAnnotation()
+            annotation.coordinate = location.coordinate;
+            annotation.title = airport.cityName + "(" + airport.gateway + ")";
+            annotation.airportData = airport
+            
+            DispatchQueue.main.async {
+                self.map.addAnnotation(annotation);
+            }
         }
     }
     

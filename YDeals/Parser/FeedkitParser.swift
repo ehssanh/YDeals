@@ -70,8 +70,9 @@ class FeedkitParser: GenericFeedParser {
                 
                 //img src=&quot;https://yvrdeals.com/img/ul/f1rqi551jcrz75do.jpg&quot;
                 //<img src=\"https://yvrdeals.com/img/ul/vvnzmb1ubuaswlr0.jpg\"
-                if let htmlContent = entryItem.htmlContent {
-                    let imgTagRange = htmlContent.range(of: "<img src=\"")!
+                if let htmlContent = entryItem.htmlContent,
+                   let imgTagRange = htmlContent.range(of: "<img src=\"") {
+                    
                     let restOfString = String(htmlContent[imgTagRange.upperBound...]);
                     let indexOfClosingQuote = restOfString.firstIndex(of: "\"");
                     var imgLink = restOfString[...indexOfClosingQuote!];
