@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,19 +20,22 @@
                     <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-ie-Bd9">
                         <rect key="frame" x="0.0" y="0.0" width="360" height="220"/>
                     </imageView>
-                    <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2B-jI-fLv" customClass="GradientView" customModule="YDeals" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="111"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2B-jI-fLv" customClass="GradientView" customModule="YDeals" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="156"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-GI-cNa">
-                                <rect key="frame" x="8" y="8" width="344" height="110"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-GI-cNa">
+                                <rect key="frame" x="8" y="24" width="344" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qgb-GI-cNa" firstAttribute="leading" secondItem="u2B-jI-fLv" secondAttribute="leading" constant="8" id="FIY-94-LHQ"/>
+                            <constraint firstItem="Qgb-GI-cNa" firstAttribute="top" secondItem="u2B-jI-fLv" secondAttribute="top" constant="24" id="Yr8-s1-UkA"/>
+                            <constraint firstAttribute="trailing" secondItem="Qgb-GI-cNa" secondAttribute="trailing" constant="8" id="rFa-mc-sXg"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
                                 <color key="value" red="0.03614362976581368" green="0.048745767924922946" blue="0.078474339430894324" alpha="0.70145440251572322" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,13 +47,21 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="u2B-jI-fLv" secondAttribute="centerYWithinMargins" constant="142" id="4hN-d5-WNd"/>
                 <constraint firstAttribute="bottom" secondItem="WeQ-ie-Bd9" secondAttribute="bottom" id="6Yv-1f-wS0"/>
+                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7o9-rS-z3S"/>
+                <constraint firstItem="u2B-jI-fLv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9A1-HN-lQH"/>
+                <constraint firstItem="WeQ-ie-Bd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="9dZ-YW-oOv"/>
+                <constraint firstItem="u2B-jI-fLv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Dpl-WU-M9O"/>
+                <constraint firstAttribute="trailing" secondItem="WeQ-ie-Bd9" secondAttribute="trailing" id="IYW-ar-4Oy"/>
                 <constraint firstAttribute="trailing" secondItem="WeQ-ie-Bd9" secondAttribute="trailing" id="J81-cJ-KDC"/>
+                <constraint firstAttribute="trailing" secondItem="u2B-jI-fLv" secondAttribute="trailing" id="K5B-EP-aVt"/>
                 <constraint firstItem="WeQ-ie-Bd9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SJv-bS-OjL"/>
+                <constraint firstAttribute="bottom" secondItem="WeQ-ie-Bd9" secondAttribute="bottom" id="Zap-3N-hqf"/>
                 <constraint firstItem="WeQ-ie-Bd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qeD-gk-acm"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="360" height="220"/>
             <connections>
                 <outlet property="backgroundImage" destination="WeQ-ie-Bd9" id="W9M-3C-yVL"/>
@@ -61,4 +70,9 @@
             <point key="canvasLocation" x="385.60000000000002" y="228.48575712143929"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
