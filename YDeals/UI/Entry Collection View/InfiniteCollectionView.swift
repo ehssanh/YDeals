@@ -9,10 +9,6 @@
 import UIKit
 
 class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallback{
-    func requestExpand(lastVisibleCellIndex: Int, whenDone completion: (Bool) -> Void) {
-
-    }
-    
 
     private var controller : BaseInfiniteViewController?
     private var collectionViewDelegate : EntryCollectionViewDelegate?;
@@ -85,12 +81,28 @@ class InfiniteCollectionView: UICollectionView, EntryCollectionViewDelegateCallb
         self.controller?.loadMore();
     }
     
-    // MARK: -
-    // MARK: EntryCollectionViewDelegateCallback Methods
-    func itemClicked(feedEntry: FeedEntry) {
-        let vc = EntryDetailsViewController(nibName: "EntryDetailsViewController", bundle: Bundle.main)
-        vc.loadItem(item: feedEntry)
-        self.controller?.navigationController?.pushViewController(vc, animated: true)
+    func requestExpand(lastVisibleCellIndex: Int, whenDone completion: (Bool) -> Void) {
+
     }
     
+    // MARK: -
+    // MARK: EntryCollectionViewDelegateCallback Methods
+    var clickCount = 0
+    let INTERSTITIAL_AD_CLICK_THRESHOLD = 3
+    let admobHelper = AdMobHelper()
+    
+    func itemClicked(feedEntry: FeedEntry) {
+        
+        let vc = EntryDetailsViewController(nibName: "EntryDetailsViewController",
+                                            bundle: Bundle.main,
+                                            adMobHelper: self.admobHelper)
+        vc.loadItem(item: feedEntry)
+        self.controller?.navigationController?.pushViewController(vc, animated: true)
+        
+        clickCount += 1
+        if (clickCount >= INTERSTITIAL_AD_CLICK_THRESHOLD) {
+            vc.loadInterstitialI()
+            clickCount = 0
+        }
+    }
 }

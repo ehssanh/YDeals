@@ -9,6 +9,11 @@
 import Foundation
 import GoogleMobileAds
 
+#if canImport(AppTrackingTransparency)
+import AppTrackingTransparency
+import AdSupport
+#endif
+
 class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
     let ADMOB_APP_ID = "ca-app-pub-9566147283740852~3233547782";
     let BANNER_AD_UNIT_ID = "ca-app-pub-9566147283740852/2598536238";
@@ -23,25 +28,33 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
         case nativeAdvancedVideo = "ca-app-pub-3940256099942544/1044960115"
     }
     
-    var rootViewController : UIViewController
     var bannerReadyClosure : ((GADBannerView?) -> Void)?
     
     var banner : GADBannerView!
     
-    init(with rvc:UIViewController) {
-        self.rootViewController = rvc;
+    override init() {
         super.init();
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
     }
     
-    func showBannerAd(whenBannerReady: @escaping ((_ banner:GADBannerView?)->Void)){
+    static func initializeMobileAds() {
+        if #available(iOS 14.5, *) {
+            ATTrackingManager.requestTrackingAuthorization { Status in
+                GADMobileAds.sharedInstance().start(completionHandler: nil)
+            }
+        } else {
+            GADMobileAds.sharedInstance().start(completionHandler: nil)
+        }
+    }
+    
+    func showBannerAd(rootViewController:UIViewController, whenBannerReady: @escaping ((_ banner:GADBannerView?)->Void)){
         
         self.bannerReadyClosure = whenBannerReady ;
         let adRequest = GADRequest();
         
         let windowWidth = UIApplication.shared.windows[0].frame.width;
         banner = GADBannerView(adSize: GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(windowWidth));
-        banner.rootViewController = self.rootViewController;
+        banner.rootViewController = rootViewController
         banner.delegate = self;
         
         #if DEBUG
@@ -55,12 +68,28 @@ class AdMobHelper : NSObject, GADBannerViewDelegate, GADAdLoaderDelegate {
         banner.load(adRequest);
     }
     
-    func showNativeAd(numberOfAds:Int) -> Void {
+    //MARK: -
+    //MARK: Google Ad Interstitial Delegate Methods
+    func showInterstitial(rootViewController:UIViewController) -> Void {
+        let adRequest = GADRequest();
+        GADInterstitialAd.load(withAdUnitID: INTERSTITIAL_AD_UNIT_ID,
+                               request: adRequest) { interstitial, error in
+            if let _ = error {
+                return
+            }
+            
+            if let interstitial = interstitial {
+                interstitial.present(fromRootViewController: rootViewController)
+            }
+        }
+    }
+    
+    func showNativeAd(rootViewController:UIViewController, numberOfAds:Int) -> Void {
         let multipleAdsOptions = GADMultipleAdsAdLoaderOptions()
         multipleAdsOptions.numberOfAds = 5
         
         let adLoader = GADAdLoader(adUnitID: "ca-app-pub-3940256099942544/3986624511",
-                                   rootViewController: self.rootViewController,
+                                   rootViewController: rootViewController,
                                    adTypes: [.native],
                                    options: [multipleAdsOptions])
         adLoader.delegate = self

@@ -32,6 +32,7 @@ class EntryCollectionViewCell: UICollectionViewCell {
     
         if let imageUrl = entry.imageUrl {
             self.backgroundImage.lazyLoadFromUrl(url: imageUrl)
+
         }
     }
 

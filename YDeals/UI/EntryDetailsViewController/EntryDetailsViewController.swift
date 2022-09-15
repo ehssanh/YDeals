@@ -18,7 +18,18 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
     
     private var item : FeedEntry?
     
-    private var adHelper : AdMobHelper!
+    private var adHelper : AdMobHelper?
+    
+    
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, adMobHelper:AdMobHelper) {
+        self.adHelper = adMobHelper
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.adHelper = nil
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +43,8 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
         }
         
         self.adView.isHidden = true;
-        self.adHelper = AdMobHelper(with: self);
-        self.adHelper.showBannerAd { (bannerView) in
+        self.adHelper?.showBannerAd(rootViewController: self,
+                                    whenBannerReady: { bannerView in
             if bannerView != nil {
                 self.adView.isHidden = false;
                 self.adView.backgroundColor = APP_BACKGROUND_COLOR;
@@ -72,7 +83,11 @@ class EntryDetailsViewController: BaseViewController, WKNavigationDelegate {
                                                              multiplier: 1,
                                                              constant: 0))
             }
-        }
+        })
+    }
+    
+    func loadInterstitialI() {
+        self.adHelper?.showInterstitial(rootViewController: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
