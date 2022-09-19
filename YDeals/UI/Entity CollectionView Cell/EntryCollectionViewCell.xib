@@ -21,12 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="360" height="220"/>
                     </imageView>
                     <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u2B-jI-fLv" customClass="GradientView" customModule="YDeals" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="360" height="156"/>
+                        <rect key="frame" x="0.0" y="0.0" width="360" height="132"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgb-GI-cNa">
                                 <rect key="frame" x="8" y="24" width="344" height="17"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -38,7 +38,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                                <color key="value" red="0.03614362976581368" green="0.048745767924922946" blue="0.078474339430894324" alpha="0.70145440251572322" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.70497920237430911" colorSpace="custom" customColorSpace="sRGB"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="endColor">
                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,7 +49,7 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="u2B-jI-fLv" secondAttribute="centerYWithinMargins" constant="142" id="4hN-d5-WNd"/>
+                <constraint firstAttribute="bottom" secondItem="u2B-jI-fLv" secondAttribute="centerYWithinMargins" constant="154" id="4hN-d5-WNd"/>
                 <constraint firstAttribute="bottom" secondItem="WeQ-ie-Bd9" secondAttribute="bottom" id="6Yv-1f-wS0"/>
                 <constraint firstItem="WeQ-ie-Bd9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7o9-rS-z3S"/>
                 <constraint firstItem="u2B-jI-fLv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9A1-HN-lQH"/>
@@ -67,12 +67,7 @@
                 <outlet property="backgroundImage" destination="WeQ-ie-Bd9" id="W9M-3C-yVL"/>
                 <outlet property="title" destination="Qgb-GI-cNa" id="n3g-6E-Rc8"/>
             </connections>
-            <point key="canvasLocation" x="385.60000000000002" y="228.48575712143929"/>
+            <point key="canvasLocation" x="81.599999999999994" y="102.54872563718142"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

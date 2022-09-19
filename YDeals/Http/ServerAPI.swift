@@ -25,8 +25,8 @@ class ServerAPI {
         composedUrl += "&airport=\(airport)";
         
         let regDeviceUrl = URL(string: composedUrl)!
-        
-        let task = URLSession.shared.dataTask(with: regDeviceUrl) { (data, response, error) in
+        let request = URLRequest(url: regDeviceUrl, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+        let task = URLSession.shared.dataTask(with: request, completionHandler:{ (data, response, error) in
             if (error != nil){
                 onSuccess(false, nil);
                 return;
@@ -59,7 +59,7 @@ class ServerAPI {
                 Utilities.dLog(message: error.localizedDescription)
                 onSuccess(false, nil);
             }
-        };
+        })
         
         task.resume();
     }
@@ -76,8 +76,9 @@ class ServerAPI {
         composedUrl += "&airport=\(newAirportGateway)";
         
         let regDeviceUrl = URL(string: composedUrl)!
-        
-        let task = URLSession.shared.dataTask(with: regDeviceUrl) { (data, response, error) in
+        let request = URLRequest(url: regDeviceUrl, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+        let task = URLSession.shared.dataTask(with: request, completionHandler:{ (data, response, error) in
+            
             if (error != nil){
                 onSuccess(false, nil);
                 return;
@@ -94,14 +95,16 @@ class ServerAPI {
                 return;
             }
             
-        }
+        })
+        
         task.resume();
     }
     
     
     func updateConfiguration(whenCompleted onComplete:@escaping ((_ config:AppConfiguration?, _ error:Error?) -> Void)) {
-        let configUrl = URL(string: APP_REMOTE_CONFIG_URL)!;
-        let task = URLSession.shared.dataTask(with:configUrl) { (data, response, err) in
+        let regDeviceUrl = URL(string: APP_REMOTE_CONFIG_URL)!
+        let request = URLRequest(url: regDeviceUrl, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
+        let task = URLSession.shared.dataTask(with: request, completionHandler:{ (data, response, err) in
             if (err != nil){
                 onComplete(nil, err);
                 return;
@@ -126,7 +129,7 @@ class ServerAPI {
             }catch{
                 onComplete(nil, error);
             }
-        };
+        })
         
         task.resume();
     }
