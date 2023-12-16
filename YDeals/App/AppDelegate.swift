@@ -8,7 +8,7 @@
 
 import UIKit
 import UserNotifications
-import FirebaseCore
+//import FirebaseCore
 import GoogleMobileAds
 
 
@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = setupNavigationController(rootVC);
         self.window?.makeKeyAndVisible();
         
-        FirebaseApp.configure();
+        //FirebaseApp.configure();
         
         return true
     }
