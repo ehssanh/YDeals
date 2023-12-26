@@ -18,10 +18,19 @@ class SettingsViewController: BaseViewController, UITableViewDelegate, UITableVi
     private let groupNames = ["General","Version"];
     private let generalSettings = ["Change Airport", "About", "Privacy Policy" ]
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white;
+        
+        self.view.backgroundColor = APP_BACKGROUND_COLOR;
 
         self.tableView.dataSource = self;
         self.tableView.delegate = self;

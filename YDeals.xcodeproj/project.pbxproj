@@ -1449,6 +1449,7 @@
 					"$(SRCROOT)",
 				);
 				MARKETING_VERSION = 1.4;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidxpert.YTravelApps.YDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "YDeals - Dev";
@@ -1481,6 +1482,7 @@
 					"$(SRCROOT)",
 				);
 				MARKETING_VERSION = 1.4;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidxpert.YTravelApps.YDeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "YDeals - Production";

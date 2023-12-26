@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgC-rt-gpS">
-                    <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <wkWebViewConfiguration key="configuration">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -30,6 +30,7 @@
                     </wkWebViewConfiguration>
                 </wkWebView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="jgC-rt-gpS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="45v-w5-DjD"/>
@@ -37,8 +38,6 @@
                 <constraint firstItem="jgC-rt-gpS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9z6-JK-Q9p"/>
                 <constraint firstItem="jgC-rt-gpS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tvW-hf-XNx"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>

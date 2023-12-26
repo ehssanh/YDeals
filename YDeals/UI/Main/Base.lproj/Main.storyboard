@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SRf-MN-Rek" customClass="InfiniteCollectionView" customModule="YDeals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="96" width="375" height="854"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="710"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4uJ-Fg-d23">
                                     <size key="itemSize" width="50" height="50"/>
@@ -29,14 +29,14 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YVRDeals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="K2q-qZ-qoT">
-                                <rect key="frame" x="68" y="55" width="239" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YVRDeals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" autoshrinkMode="minimumScaleFactor" translatesAutoresizingMaskIntoConstraints="NO" id="K2q-qZ-qoT">
+                                <rect key="frame" x="68" y="61" width="239" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKs-rP-WYO">
-                                <rect key="frame" x="323" y="54" width="32" height="32"/>
+                                <rect key="frame" x="323" y="60" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="2O7-og-SWR"/>
                                     <constraint firstAttribute="height" constant="32" id="XNB-yo-1hk"/>
@@ -52,11 +52,12 @@
                                 <state key="normal" image="search_floating"/>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.29582345485687256" green="0.74881148338317871" blue="0.99858099222183228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zwZ-av-xNe" secondAttribute="trailing" constant="20" id="55W-aK-WlN"/>
+                            <constraint firstItem="SRf-MN-Rek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9WP-qT-HHq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TKs-rP-WYO" secondAttribute="trailing" constant="20" id="B90-rr-vnc"/>
-                            <constraint firstAttribute="bottom" secondItem="SRf-MN-Rek" secondAttribute="bottom" constant="-138" id="KFM-Tw-ZwM"/>
                             <constraint firstItem="K2q-qZ-qoT" firstAttribute="centerX" secondItem="SRf-MN-Rek" secondAttribute="centerX" id="L37-m3-Dmp"/>
                             <constraint firstItem="SRf-MN-Rek" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lij-do-8z3"/>
                             <constraint firstItem="TKs-rP-WYO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="QxJ-JB-k6H"/>
@@ -65,9 +66,10 @@
                             <constraint firstItem="SRf-MN-Rek" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h1g-da-lIf"/>
                             <constraint firstItem="TKs-rP-WYO" firstAttribute="leading" secondItem="K2q-qZ-qoT" secondAttribute="trailing" constant="16" id="hoi-wL-2Eb"/>
                             <constraint firstItem="SRf-MN-Rek" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="52" id="j4V-Tg-NNW"/>
+                            <constraint firstAttribute="bottom" secondItem="SRf-MN-Rek" secondAttribute="bottom" id="pA6-Cq-apd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zwZ-av-xNe" secondAttribute="bottom" constant="20" id="pwx-L8-IVT"/>
+                            <constraint firstItem="SRf-MN-Rek" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uli-rN-Wg1"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="SRf-MN-Rek" id="Cwi-98-BRp"/>

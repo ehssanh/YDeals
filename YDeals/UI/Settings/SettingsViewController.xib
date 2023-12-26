@@ -22,10 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-w3-R6e">
-                    <rect key="frame" x="0.0" y="88" width="414" height="756"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="48" width="414" height="796"/>
+                    <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="4iC-w3-R6e" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="DTT-PU-nXL"/>
@@ -33,9 +34,12 @@
                 <constraint firstItem="4iC-w3-R6e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LAa-hh-kl2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4iC-w3-R6e" secondAttribute="bottom" constant="18" id="NPB-zv-Qky"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="47.826086956521742" y="85.714285714285708"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -95,7 +95,9 @@ class MainViewController: BaseInfiniteViewController, FeedPresenterDelegate, Sea
     }
     
     @objc func onSettingsButtonClicked() -> Void{
-        let _ = self.navigateTo(xibName: "SettingsViewController", clazzType: SettingsViewController.self, initBlock: nil);
+        DispatchQueue.main.async {
+            let _ = self.navigateTo(xibName: "SettingsViewController", clazzType: SettingsViewController.self, initBlock: nil);
+        }
     }
     
     override func refreshViewController() {
